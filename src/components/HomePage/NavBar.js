@@ -15,12 +15,13 @@ export default function NavBar() {
           Contact Us
         </li>
         <li className=" font-bold mx-6 text-lg hover:text-green-500">Login</li>
-      </ul>
-      <input
+        <input
         type="search"
         placeholder="search"
         className=" border-[1px] border-black rounded-xl mx-6 text-center p-[2px]"
       ></input>
+      </ul>
+      
     </div>
   );
 }
