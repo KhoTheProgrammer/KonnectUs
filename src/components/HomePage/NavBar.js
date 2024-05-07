@@ -15,7 +15,7 @@ export default function NavBar() {
       <input
         type="search"
         placeholder="search"
-        className=" h-10 mt-2 ml-[90px] border-[1px] border-black rounded-xl mx-6 "
+        className=" h-10 mt-2 ml-[90px] border-[1px] border-black text-center rounded-xl mx-6 "
       ></input>
     </div>
   );
