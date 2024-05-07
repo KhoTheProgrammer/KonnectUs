@@ -1,5 +1,3 @@
-import logo from "./logo.jpg";
-
 export default function NavBar() {
   return (
     <div className="grid grid-cols-[1fr_3fr] p-3">
