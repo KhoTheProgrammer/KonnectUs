@@ -1,4 +1,5 @@
 import logo from "./logo.jpg";
+import Search from "../../Search";
 
 export default function NavBar() {
   return (
@@ -13,11 +14,7 @@ export default function NavBar() {
           <li className=" mx-5 font-bold">Contact Us</li>
           <li className=" mx-5 font-bold">Login</li>
         </ul>
-        <input
-          type="search"
-          placeholder="search"
-          className=" h-10 mt-2 ml-[90px] border-[1px] border-black rounded-xl mx-6 "
-        ></input>
+        <Search/>
       </div>
     </div>
   );
