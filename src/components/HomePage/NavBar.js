@@ -1,6 +1,6 @@
 
 import logo from "./logo.jpg";
-import Search from "../../Search";
+import Search from "../Search and Filtering/Search";
 export default function NavBar() {
   return (
     <div className="grid grid-cols-[1fr_3fr] p-3">
