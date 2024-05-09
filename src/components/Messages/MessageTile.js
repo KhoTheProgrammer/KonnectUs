@@ -3,7 +3,7 @@
 export default function MessageTile({message}) {
 
   //this returns the message tile for the signed in user
-  if(message.id == 'me'){
+  if(message.id === 'me'){
   return (
     <div  className = 'float-right items-start gap-2.5'>
     <div className=' w-full max-w-[320px] leading-1.5 p-3 border-green-500 bg-green-500  rounded-tl-xl rounded-bl-xl'>
