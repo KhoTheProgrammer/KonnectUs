@@ -13,6 +13,7 @@ export default function MessageTile({message}) {
       </div>
       <p className=" text-sm font-normal py-2.5 bg-green-500 text-white ">{message.text}</p>
     </div>
+    <br></br>
     </div>
   )
 }
@@ -28,6 +29,7 @@ else {
       </div>
       <p className=" text-sm font-normal py-2.5 bg-gray-500 text-white ">{message.text}</p>
     </div>
+    <br></br>
     </div>
   )
 }
