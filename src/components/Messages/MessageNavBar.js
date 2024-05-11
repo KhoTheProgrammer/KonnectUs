@@ -8,7 +8,7 @@ export default function MessagesNavBar() {
   );
 
   return (
-    <div>
+    <div className = "fixed top-0 w-full">
       {
         <ul className="flex flex-row justify-between p-1 bg-green-700  text-white ">
           {buttons.map(drawButtons)}
