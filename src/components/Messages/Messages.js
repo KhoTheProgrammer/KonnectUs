@@ -2,9 +2,9 @@
 
 import UserMessages from "./UserMessages";
 import MessageBox from "./MessageBox";
+import MessagesNavBar from "./MessageNavBar";
 
 export default function Messages() {
-
   //sample data that is used to test the Messaging components
   let data = [
     {
@@ -26,6 +26,10 @@ export default function Messages() {
   return (
     <div className=" flex flex-col">
       <ul>
+        <li>
+          <MessagesNavBar />
+        </li>
+        <br></br>
         <li>
           <UserMessages messages={data} />
         </li>
