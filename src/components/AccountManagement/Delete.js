@@ -1,6 +1,6 @@
 export default function Delete() {
   return (
-    <div className=" bg-[#392a05] p-4">
+    <div className=" bg-green-300 p-4">
       {" "}
       <h2 className="text-center font-medium text-xl">DELETE ACCOUNT</h2>
       <form>
