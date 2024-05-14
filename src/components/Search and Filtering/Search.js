@@ -1,4 +1,5 @@
 import React, { useState } from 'react'; 
+
 function Search() {
   const [filterData, setFilterData] = useState([]); 
 
@@ -24,17 +25,24 @@ function Search() {
       <div className='search-top'>
         <input 
           type="text" 
-          className=" h-10 mt-2 ml-[90px] border-[1px] border-black rounded-xl px-4 py-2  " 
+          className="h-10 mt-0.1 ml-[90px] border-[1px] border-black rounded-xl px-2 py-0.1" 
           placeholder='Search here...' 
           onChange={e => handleFilter(e.target.value)} 
         />
       </div>
 
-      
-      <div className="   search-result border border-transparent bg-transparent absolute top-full left-0 mt-1 p-2 rounded-lg shadow-lg">
+      <div className="search-result border border-transparent bg-transparent absolute top-full left-0 mt-1 p-2 rounded-lg shadow-lg overflow-auto max-h-60">
         {filterData.map((d, i) => (
           <div key={i} className="p-1">
-            {d.name} - {d.email}
+            <div className="outer-card">
+              <div className="inner-card">
+                <img src={`https://source.unsplash.com/100x100/?portrait`} alt="User" />
+              </div>
+              <div className="inner-card">
+                <p>{d.name}</p>
+                <p>{d.email}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
