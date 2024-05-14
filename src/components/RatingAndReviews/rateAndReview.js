@@ -64,7 +64,7 @@ const ReviewRating = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="container mx-auto bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-3xl font-bold mb-4 text-center">Provied you Review and Rating</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center">Rate and Review Us</h2>
         <form onSubmit={handleSubmit} className="mb-8">
           <div className="mb-4 flex items-center justify-center">
             <label className="block mb-2 text-lg mr-4">Rate our service:</label>
