@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
 const AccountReports = () => {
-  const [userName, setUserName] = useState("");
+  const [AccountReported, setAccountReported] = useState("");
   const [Reason, setReason] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("userName:", userName);
+    console.log("AccountReported:", AccountReported);
     console.log("Reason:", Reason);
 
-    setUserName("");
+    setAccountReported("");
     setReason("");
   };
 
@@ -24,14 +24,14 @@ const AccountReports = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="email" className="block text- to-black float-left">
-              USERNAME:
+              ACCOUNT REPORTED:
             </label>
             <input
-              type="userName"
-              id="userName"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              className=" mt-2   w-full border- to- black rounded-md shadow-sm focus:border- to-black focus:ring focus:ring-green-200 focus:ring-opacity-50"
+              type="AccountReported"
+              id="AccountReported"
+              value={AccountReported}
+              onChange={(e) => setAccountReported(e.target.value)}
+              className=" mt-2   w-full border- to-black rounded-md shadow-sm focus:border- to-black focus:ring focus:ring-green-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -51,7 +51,7 @@ const AccountReports = () => {
           <div>
             <button
               type="Report"
-              className="w-full bg- bg- green-600 text-white py-0 px-0 rounded-md hover:bg- bg-green-600 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="w-full bg- bg-green-600 text-white py-0 px-0 rounded-md hover:bg- bg-green-600 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             >
               REPORT
             </button>
