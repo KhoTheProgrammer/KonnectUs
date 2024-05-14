@@ -15,9 +15,11 @@ const AccountReports = () => {
   };
 
   return (
-    <div>
+    <div className=" p-20">
       <h>
-        <ul className=" justify-center">REPORT LOGO</ul>
+        <ul className=" p-2  bg-green-500 flex items-center justify-center  font-bold text-3 max-w-auto  mx-3   mt-3">
+          REPORTS
+        </ul>
       </h>
 
       <div className=" max-w-auto  mx-3   mt-3">
@@ -51,9 +53,9 @@ const AccountReports = () => {
           <div>
             <button
               type="Report"
-              className="w-full bg- bg-green-600 text-white py-0 px-0 rounded-md hover:bg- bg-green-600 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="   w-32 block mx-auto bg- bg-green-500 text-white py-0 px-0 rounded-md hover:bg- bg-green-500 focus:outline-none focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             >
-              REPORT
+              SEND REPORT
             </button>
           </div>
         </form>
