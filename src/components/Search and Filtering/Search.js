@@ -26,7 +26,7 @@ function Search() {
         <input 
           type="text" 
           className="h-10 mt-0.1 ml-[90px] border-[1px] border-black rounded-xl px-2 py-0.1" 
-          placeholder='Search here...' 
+          placeholder='Search here..' 
           onChange={e => handleFilter(e.target.value)} 
         />
       </div>
