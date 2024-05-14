@@ -6,7 +6,7 @@ export default function MessageTile({message}) {
   if(message.id === 'me'){
   return (
     <div  className = 'float-right items-start gap-2.5'>
-    <div className=' w-full max-w-[320px] leading-1.5 p-3 border-green-500 bg-green-500  rounded-tl-xl rounded-bl-xl'>
+    <div className=' w-full max-w-[320px] leading-1.5 p-3 border-green-500 bg-green-500  rounded-tl-xl rounded-bl-[40px]'>
       <div className = 'flex items-center space-x-2 rtl:space-x-reverse' >
       <span className = ' text-sm font-semibold bg-green-500 text-white'>{message.id}</span>
       <span className = ' text-sm font-normal bg-green-500 text-white'>{message.timestamp}</span>
@@ -22,7 +22,7 @@ export default function MessageTile({message}) {
 else {
   return (
     <div className = 'float-left items-start gap-2.5'>
-    <div className=' w-full max-w-[320px] leading-1.5 p-3 border-gray-500 bg-gray-500  rounded-tr-xl rounded-br-xl'>
+    <div className=' w-full max-w-[320px] leading-1.5 p-3 border-gray-500 bg-gray-500  rounded-tr-xl rounded-br-[40px]'>
       <div className = 'flex items-center space-x-2 rtl:space-x-reverse' >
       <span className = ' text-sm font-semibold bg-gray-500 text-white'>{message.id}</span>
       <span className = ' text-sm font-normal bg-gray-500 text-white'>{message.timestamp}</span>
