@@ -103,12 +103,12 @@ const ReviewRating = () => {
               placeholder="Your Location"
             />
           </div>
-          <button
-            type="submit"
-            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
-          >
-            Submit Review
-          </button>
+          <button 
+  type="submit"
+  className="bg-green-500 text-white py-2 px-4 rounded hover:bg-yellow-400 w-1/2 mx-auto block"
+>
+  Submit Review
+</button>
         </form>
         <div>
           <h3 className="text-2xl font-bold mb-4 text-center">Customer current Reviews</h3>
