@@ -1,5 +1,4 @@
-import HomePage from "./Components/HomePage/HomePage"
-import Search from "./Components/Search and Filtering/Search";
+import HomePage from "./components/HomePage/HomePage.js"
 function App() {
   return (
     <div className="App">
