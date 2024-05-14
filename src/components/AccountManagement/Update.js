@@ -1,6 +1,6 @@
 export default function Update() {
   return (
-    <div className=" bg-green-300 w-full px-24 py-16 rounded-2xl">
+    <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl">
       <h2 className="text-center font-bold text-3xl text-white mb-8">UPDATE INFORMATION</h2>
       <form>
         <label className=" text-lg font-medium text-white">Name</label> <br></br>
