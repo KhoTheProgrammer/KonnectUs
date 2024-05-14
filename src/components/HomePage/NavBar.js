@@ -10,6 +10,7 @@ const drawButtons = (button) => (
 );
 
 export default function NavBar(props) {
+  
   const isSignedIn = props.isSignedIn;
   const setSignedIn = props.setSignedIn;
 
@@ -23,7 +24,10 @@ export default function NavBar(props) {
       <ul className="flex p-3 justify-end">
         {buttons.map(drawButtons)}
         <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-          {isSignedIn ? "My Account" : "Login"}
+          {isSignedIn ? (<button onClick={(e)=>{
+              e.preventDefault();
+              console.log("my account")
+          }}>My Account</button>) : "Login"}
         </li>
         <Search />
       </ul>
