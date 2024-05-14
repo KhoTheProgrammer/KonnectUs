@@ -1,4 +1,4 @@
-import KonnectUslogo from "./Konnect1.png";
+import KonnectUslogo from './Konnect1.png'
 import Search from "../Search and Filtering/Search";
 
 const buttons = ["Home", "About Us", "Products", "Team", "Contact Us"];
@@ -16,11 +16,7 @@ export default function NavBar(props) {
 
   return (
     <div className="grid grid-cols-[1fr_3fr] p-3 m-0 h-[80px]">
-      <img
-        src={KonnectUslogo}
-        alt="KonnectUs Logo"
-        className=" mb-4 h-14 w-[50]"
-      />
+      <img src={KonnectUslogo} alt="KonnectUs Logo" className=" mb-4 h-14 w-[50]"  />
       <ul className="flex p-3 justify-end">
         {buttons.map(drawButtons)}
         <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
@@ -29,8 +25,11 @@ export default function NavBar(props) {
               console.log("my account")
           }}>My Account</button>) : "Login"}
         </li>
-        <Search />
+        <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">Login</li>
+        <Search/>
       </ul>
+      
     </div>
+    
   );
 }
