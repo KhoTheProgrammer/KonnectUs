@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Main = () => {
   return (
     <div
@@ -22,10 +21,6 @@ const Main = () => {
           Connect farmers and buyers effortlessly
         </h3>
         
-          <button className="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
-            Join Us Now
-          </button>
-         
       </div>
     </div>
   );
