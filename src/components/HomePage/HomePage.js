@@ -1,7 +1,6 @@
-import Footer from "./Footer";
-import Main from "./Main";
-import NavBar from "./NavBar";
-import ProductFilterAndSearch from "./ProductFilterAndSearch";
+import Footer from "./Footer.js";
+import Main from "./Main.js";
+import NavBar from "./NavBar.js";
 
 export default function HomePage(){
 
