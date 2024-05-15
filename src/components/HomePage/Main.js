@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Main = (props) => {
   const isSignedIn = props.isSignedIn;
   const setSignedIn = props.setSignedIn;
@@ -24,9 +23,13 @@ const Main = (props) => {
         <h3 className="text-lg mt-[1%] m-0">
           Connect farmers and buyers effortlessly
         </h3>
-        <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
-          Join Us Now
-        </button>
+        {isSignedIn ? (
+          <p className="font-bold">/*SlideShow*/</p>
+        ) : (
+          <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
+            Join Us Now
+          </button>
+        )}
       </div>
     </div>
   );

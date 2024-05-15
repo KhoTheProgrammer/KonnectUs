@@ -25,7 +25,6 @@ export default function NavBar(props) {
               console.log("my account")
           }}>My Account</button>) : "Login"}
         </li>
-        <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">Login</li>
         <Search/>
       </ul>
       
