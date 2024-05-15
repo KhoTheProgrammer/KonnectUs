@@ -1,6 +1,8 @@
 import React from "react";
 
 const Main = (props) => {
+
+  //state variables passed as props to this component
   const isSignedIn = props.isSignedIn;
   const setSignedIn = props.setSignedIn;
 
