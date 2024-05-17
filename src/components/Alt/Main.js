@@ -1,7 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
-const Main = () => {
+const Main = (props) => {
+
+  //state variables passed as props to this component
+  const isSignedIn = props.isSignedIn;
+  const setSignedIn = props.setSignedIn;
+
   return (
     <div
       className="bg-cover bg-center h-[615px] flex items-center justify-center py-3"
@@ -16,16 +20,18 @@ const Main = () => {
           <span className="text-green-500">U</span>s
         </h1>
 
-        <h2 className="text-4xl font-bold  mt-[1%] italic">Farmers Zone</h2>
+        <h2 className="text-4xl font-bold  mt-[1%]">Farmers Zone</h2>
 
-        <h3 className="text-2xl mt-[1%] m-0">
+        <h3 className="text-lg mt-[1%] m-0">
           Connect farmers and buyers effortlessly
         </h3>
-        <NavLink to="/Login">
+        {isSignedIn ? (
+          <p className="font-bold">/*SlideShow*/</p>
+        ) : (
           <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
             Join Us Now
           </button>
-        </NavLink>
+        )}
       </div>
     </div>
   );
