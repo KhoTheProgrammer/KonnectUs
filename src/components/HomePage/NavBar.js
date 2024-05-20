@@ -1,4 +1,4 @@
-import KonnectUslogo from "./Konnect1.png";
+
 import KonnectUslogo from "./Konnect1.png";
 import Search from "../Search and Filtering/Search";
 import { NavLink } from "react-router-dom";
