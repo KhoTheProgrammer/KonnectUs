@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
-import { NavLink } from "react-router-dom";
+import {NavLink} from "react-router-dom"
 
 const ProductsPage = () => {
   const [products, setproducts] = useState([

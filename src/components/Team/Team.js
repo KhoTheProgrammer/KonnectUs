@@ -7,7 +7,7 @@ const Team = () => {
   const [products, setproducts] = useState([
     {
       id: 1,
-      name: "Solophina Nyirenda",
+      name: "Solophina Mkandawire",
       price: "Group leader",
       market: "Developer",
       quantity: "Project Manager",
