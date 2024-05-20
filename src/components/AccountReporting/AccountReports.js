@@ -17,13 +17,13 @@ const AccountReports = () => {
   return (
     <div className=" p-20">
       <h>
-        <ul className=" p-2  bg-green-500 flex items-center justify-center  font-bold text-3 max-w-auto  mx-3   mt-3">
+        <ul className=" p-2  bg-green-500 flex items-center justify-center  text-white font-bold text-3 max-w-auto  mx-3   mt-3">
           REPORTS
         </ul>
       </h>
 
-      <div className=" max-w-auto  mx-3   mt-3">
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <div className=" max-w-auto  mx-3     min-h-screen mt-3">
+        <form onSubmit={handleSubmit} className="space-y-4 ">
           <div>
             <label htmlFor="email" className="block text- to-black float-left">
               ACCOUNT REPORTED:
@@ -33,7 +33,7 @@ const AccountReports = () => {
               id="AccountReported"
               value={AccountReported}
               onChange={(e) => setAccountReported(e.target.value)}
-              className=" mt-2   w-full border- to-black rounded-md shadow-sm focus:border- to-black focus:ring focus:ring-green-200 focus:ring-opacity-50"
+              className=" mt-2  w-full border- to-black rounded-md shadow- focus:border- to-black focus:ring focus:ring-green-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -46,7 +46,7 @@ const AccountReports = () => {
               value={Reason}
               onChange={(e) => setReason(e.target.value)}
               rows="10"
-              className="mt-1 block w-full border- to-black rounded- size-7 shadow- md focus:border-indigo-300 focus:ring focus:ring-green-200 focus:ring-opacity-50"
+              className="mt-1 block  w-full border- to-black rounded- size-7 shadow- md focus:border-indigo-300 focus:ring focus:ring-green-200 focus:ring-opacity-50"
               required
             ></textarea>
           </div>
