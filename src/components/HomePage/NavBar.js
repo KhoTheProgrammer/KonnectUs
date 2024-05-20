@@ -1,19 +1,41 @@
+
 import KonnectUslogo from "./Konnect1.png";
 import Search from "../Search and Filtering/Search";
-
-const buttons = ["Home", "About Us", "Products", "Team", "Contact Us"];
-
-//function that will arrange the nav bar links/tabs in a list. Used as a callback to Array map()
-const drawButtons = (button) => (
-  <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-    {button}
-  </li>
-);
-
+import { NavLink } from "react-router-dom";
+import DropDown from './DropDown'
+import { useState } from "react";
 export default function NavBar(props) {
-  //state variables passed as props to this component
   const isSignedIn = props.isSignedIn;
   const setSignedIn = props.setSignedIn;
+
+  const [showDropDown, setShowDropDown] = useState(false)
+
+  const buttons = [
+    {
+      name: "Home",
+      link: "/HomePage"
+    },
+    {
+      name: "About Us",
+      link: "/AboutUs/AboutUs"
+    },
+    {
+      name: "Products",
+      link: "/ProductsPage"
+    },
+    {
+      name: "Team",
+      link: "/Team"
+    }
+  ]
+
+  const mapButtons = (button) => (
+    <NavLink to={button.link}>
+    <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+      {button.name}
+    </li>
+  </NavLink>)
+  
 
   return (
     <div className="grid grid-cols-[1fr_3fr] p-3 m-0 h-[80px]">
@@ -23,22 +45,25 @@ export default function NavBar(props) {
         className=" mb-4 h-14 w-[50]"
       />
       <ul className="flex p-3 justify-end">
-        {buttons.map(drawButtons)}
-        <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-          {isSignedIn ? (
-            <button
-              onClick={(e) => {
-                //will add logic for a sidebar or dropdown bar later
-                e.preventDefault();
-                console.log("my account");
-              }}
-            >
-              My Account
-            </button>
-          ) : (
-            "Login"
-          )}
-        </li>
+        {buttons.map(mapButtons)}
+
+
+        {isSignedIn ? (
+          <li onClick={(e) => {
+            e.preventDefault();
+            setShowDropDown(!showDropDown);
+            }
+            } className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+            <DropDown isOpen = {showDropDown}></DropDown>
+          </li>
+        )
+        :
+        (<NavLink to="/Login">
+          <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+            Login
+          </li>
+        </NavLink>)}
+
         <Search />
       </ul>
     </div>
