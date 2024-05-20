@@ -8,7 +8,7 @@ import ProductsPage from "./components/Alt/ProductsPage";
 import Team from "./components/Team/Team";
 
 // Variable to store routes
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
