@@ -140,7 +140,7 @@ class Login extends Component {
                 </h1>
                 <p className="text-xl text-center">
                   To KonnectUs Your Number One Trusted Market Place. Great to
-                  have you here again. we are here to help
+                  have you here again. we are here to help.
                 </p>
               </div>
             </div>
