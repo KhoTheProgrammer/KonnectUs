@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 const Main = () => {
   return (
@@ -16,16 +15,12 @@ const Main = () => {
           <span className="text-green-500">U</span>s
         </h1>
 
-        <h2 className="text-4xl font-bold  mt-[1%] italic">Farmers Zone</h2>
+        <h2 className="text-4xl font-bold  mt-[1%]">Farmers Zone</h2>
 
-        <h3 className="text-2xl mt-[1%] m-0">
+        <h3 className="text-lg mt-[1%] m-0">
           Connect farmers and buyers effortlessly
         </h3>
-        <NavLink to="/Login">
-          <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
-            Join Us Now
-          </button>
-        </NavLink>
+        
       </div>
     </div>
   );

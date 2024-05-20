@@ -1,14 +1,17 @@
-import React from "react";
-import Product from "./components/Product";
+import HomePage from "./components/HomePage/HomePage.js" 
+import React from 'react';
+
+
+
+
 function App() {
   return (
-    <div className="Container">
-
-      <header className="header">
-        <div></div>
-      </header>
-        <Product/>
+    
+    <div className="App">
+       <HomePage></HomePage>
+       
     </div>
+    
   );
 }
 
