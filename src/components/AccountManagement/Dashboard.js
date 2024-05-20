@@ -1,9 +1,16 @@
-export default function Dashboard() {
+export default function SideBar() {
   return (
     <div>
-      <h1 className="text-white bg-[#392a05] p-9 mb-8 font-bold text-4xl text-center">
-        DASHBOARD
-      </h1>
+      <div className=" h-screen bg-green-500 w-52">
+        <div className=" p-4">
+          <p className=" tex-white font-bold mb-7 text-center text-MD">KHOTHEPROGRAMMER</p>
+          <p className=" tex-white font-bold border-b-2 mb-4">CREATE PROFILE</p>
+          <p className=" tex-white font-bold  mb-4">DELETE ACCOUNT</p>
+          <p className=" tex-white font-bold  mb-4">MESSAGE</p>
+          <p className=" tex-white font-bold  mb-4">POST</p>
+          <p className=" tex-white font-bold  mb-4">LOGOUT</p>
+        </div>
+      </div>
     </div>
   );
 }

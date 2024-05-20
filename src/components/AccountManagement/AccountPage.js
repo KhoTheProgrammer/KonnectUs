@@ -1,16 +1,18 @@
-import Update from "./Update";
-import Change from "./Change";
-import Delete from "./Delete";
-import Dashboard from "./Dashboard";
+import Delete from "../Account/Delete";
+import {useState} from "react";
 
 export default function AccountPage() {
+  const [password, setPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+
   return (
     <div>
+      <div className="flex gap-4 justify-between text-white ">
         <Dashboard></Dashboard>
-      <div className="grid grid-cols-3 mx-8 gap-8 text-white ">
-        <Update></Update>
-        <Change></Change>
-        <Delete></Delete>
+        <div className=" w-1/2">
+          <Delete password ={password} setPassword={setPassword} newPassword={newPassword} setNewPassword={setNewPassword}/>
+        </div>
+        <div></div>
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ function Search() {
       <div className='search-top'>
         <input 
           type="text" 
-          className="h-10 mt-0.1 ml-[90px] border-[1px] border-black rounded-xl px-2 py-0.1" 
+          className="h-8 mt-0.1 ml-[90px] border-[1px] border-black rounded-xl text-center" 
           placeholder='Search here..' 
           onChange={e => handleFilter(e.target.value)} 
         />
