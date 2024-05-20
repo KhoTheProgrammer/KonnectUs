@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 
 const ProductsPage = () => {
-    const [products, setProducts] = useState([
+    const [products,setproducts] = useState([
         {
             id: 1,
             name: "Beans",
-            price: "k50",
+            price: "k1500",
             market: "machinga",
-            quantity:"50kg",
+            quantity:"1kg",
             image: "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
         },
 
         {
             id: 2,
             name: "Maizes",
-            price: "k70",
+            price: "k7000",
             market: "zomba market",
             quantity:"50kg",
             image: "https://world-crops.com/wp-content/uploads/Corn-Maize-1.jpg",
@@ -41,7 +41,7 @@ const ProductsPage = () => {
     return (
 <div className="container mx-auto px-4 py-8" style={{ backgroundImage: 'url("https://www.ashwameghagri.com/images/event_3.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl text-white font-bold text-center mb-8">PRODUCT CATALOGUE</h1>
+            <h1 className="text-3xl text-green-500 font-bold text-center mb-8">PRODUCT CATALOGUE</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {products.map((product) => (
                     <div key={product.id} className="bg-white shadow-md rounded-lg p-6">
