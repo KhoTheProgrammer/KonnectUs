@@ -135,15 +135,14 @@ class Login extends Component {
 
             <div className="bg-green-400 rounded-[40px] text-white p-4 h-[400px] w-[600px] right-10">
               <div className=" mt-24">
-              <h1 className="font-bold text-[45px] text-center">
-                Welcome back!
-              </h1>
-              <p className="text-xl text-center">
-                To KonnectUs Your Number One Trusted Market Place. Great to have
-                you here again. we are here to help
-              </p>
+                <h1 className="font-bold text-[45px] text-center">
+                  Welcome Back!
+                </h1>
+                <p className="text-xl text-center">
+                  To KonnectUs Your Number One Trusted Market Place. Great to
+                  have you here again. we are here to help.
+                </p>
               </div>
-              
             </div>
           </div>
         </div>
