@@ -1,7 +1,8 @@
 import React from "react";
+import { PiDropSimple } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
 
-const Main = () => {
+function Main(props)  {
   return (
     <div
       className="bg-cover bg-center h-[615px] flex items-center justify-center py-3"
@@ -21,14 +22,18 @@ const Main = () => {
         <h3 className="text-2xl mt-[1%] m-0">
           Connect farmers and buyers effortlessly
         </h3>
-        <NavLink to="/Login">
+        { !props.isSignedIn ? 
+        (<NavLink to="/Login">
           <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
             Join Us Now
           </button>
-        </NavLink>
+        </NavLink>)
+        :
+        <p>/*slideshow*/</p>
+        }
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Main;

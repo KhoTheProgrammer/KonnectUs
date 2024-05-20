@@ -1,5 +1,6 @@
-import Delete from "../Account/Delete";
+import Delete from "./Delete";
 import {useState} from "react";
+import Dashboard from "./Dashboard"
 
 export default function AccountPage() {
   const [password, setPassword] = useState('');
