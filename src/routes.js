@@ -9,6 +9,7 @@ import Team from "./components/Team/Team";
 import AccountPage from "./components/AccountManagement/AccountPage";
 import Product from "./components/product listing/Product";
 import AboutUs from "./components/AboutUs/AboutUs"
+import EditPost from "./components/product listing/EditPost";
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
   {
     path: "/AboutUs/AboutUs",
     element: <AboutUs />
+  },
+  {
+    path: "/product listing/EditPost",
+    element: <EditPost />
   }
 ]);
 
