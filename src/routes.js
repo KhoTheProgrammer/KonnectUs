@@ -6,6 +6,9 @@ import Login from "./components/Login/Login";
 import HomePage from "./components/HomePage/HomePage";
 import ProductsPage from "./components/Alt/ProductsPage";
 import Team from "./components/Team/Team";
+import AccountPage from "./components/AccountManagement/AccountPage";
+import Product from "./components/product listing/Product";
+import AboutUs from "./components/AboutUs/AboutUs"
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -36,6 +39,18 @@ export const router = createBrowserRouter([
   {
     path:"/Team",
     element: <Team></Team>
+  },
+  {
+    path: "/AccountManagement/AccountPage",
+    element: <AccountPage />
+  },
+  {
+    path: "/product listing/Product",
+    element: <Product />
+  },
+  {
+    path: "/AboutUs/AboutUs",
+    element: <AboutUs />
   }
 ]);
 
