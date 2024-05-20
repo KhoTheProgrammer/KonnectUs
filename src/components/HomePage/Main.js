@@ -1,11 +1,8 @@
 import React from "react";
+import { PiDropSimple } from "react-icons/pi";
+import { NavLink } from "react-router-dom";
 
-const Main = (props) => {
-
-  //state variables passed as props to this component
-  const isSignedIn = props.isSignedIn;
-  const setSignedIn = props.setSignedIn;
-
+function Main(props)  {
   return (
     <div
       className="bg-cover bg-center h-[615px] flex items-center justify-center py-3"
@@ -20,21 +17,23 @@ const Main = (props) => {
           <span className="text-green-500">U</span>s
         </h1>
 
-        <h2 className="text-4xl font-bold  mt-[1%]">Farmers Zone</h2>
+        <h2 className="text-4xl font-bold  mt-[1%] italic">Farmers Zone</h2>
 
-        <h3 className="text-lg mt-[1%] m-0">
+        <h3 className="text-2xl mt-[1%] m-0">
           Connect farmers and buyers effortlessly
         </h3>
-        {isSignedIn ? (
-          <p className="font-bold">/*SlideShow*/</p>
-        ) : (
+        { !props.isSignedIn ? 
+        (<NavLink to="/Login">
           <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
             Join Us Now
           </button>
-        )}
+        </NavLink>)
+        :
+        <p>/*slideshow*/</p>
+        }
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Main;

@@ -25,13 +25,13 @@ function Search() {
       <div className='search-top'>
         <input 
           type="text" 
-          className="h-10 mt-0.1 ml-[90px] border-[1px] border-black rounded-xl px-2 py-0.1" 
+          className="h-8 mt-0.1 ml-[90px] border-[1px] border-black rounded-xl text-center" 
           placeholder='Search here..' 
           onChange={e => handleFilter(e.target.value)} 
         />
       </div>
 
-      <div className="search-result border border-transparent bg-transparent absolute top-full left-0 mt-1 p-2 rounded-lg shadow-lg overflow-auto max-h-60">
+      <div className="search-result border border-transparent bg-transparent absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg overflow-auto max-h-60">
         {filterData.map((d, i) => (
           <div key={i} className="p-1">
             <div className="outer-card">

@@ -1,8 +1,8 @@
 import React from "react";
 
-const FooterLogin = () => {
+const Footer = () => {
   return (
-    <footerLogin className="bg-white h-[50px] text-black p-4 m-0">
+    <footer className="bg-white h-[50px] text-black p-4 m-0">
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div>
           <p className="mb-2">Email: info@konnectusfarmerszone.com</p>
@@ -38,8 +38,8 @@ const FooterLogin = () => {
           />
         </div>
       </div>
-    </footerLogin>
+    </footer>
   );
 };
 
-export default FooterLogin;
+export default Footer;
