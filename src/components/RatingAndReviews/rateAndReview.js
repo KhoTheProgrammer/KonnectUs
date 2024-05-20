@@ -6,6 +6,7 @@ const ReviewRating = () => {
   const [comment, setComment] = useState('');
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false); // State to track whether a review is being submitted
 
   const handleRatingClick = (selectedRating) => {
     setRating(selectedRating === rating ? 0 : selectedRating);
@@ -29,6 +30,7 @@ const ReviewRating = () => {
       alert("Please select a rating.");
       return;
     }
+    setIsSubmitting(true); // Set submitting state to true when review is being submitted
     const newReview = {
       rating: rating,
       comment: comment,
@@ -43,6 +45,7 @@ const ReviewRating = () => {
     setComment('');
     setName('');
     setLocation('');
+    setIsSubmitting(false); // Reset submitting state after submission
   };
 
   const renderStars = (count) => {
@@ -64,7 +67,7 @@ const ReviewRating = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="container mx-auto bg-white rounded-lg shadow-lg p-8">
-        <h2 className="text-3xl font-bold mb-4 text-center">Provied you Review and Rating</h2>
+        <h2 className="text-3xl font-bold mb-4 text-center">Rate and Review Us</h2>
         <form onSubmit={handleSubmit} className="mb-8">
           <div className="mb-4 flex items-center justify-center">
             <label className="block mb-2 text-lg mr-4">Rate our service:</label>
@@ -103,14 +106,15 @@ const ReviewRating = () => {
               placeholder="Your Location"
             />
           </div>
-          <button
+          <button 
             type="submit"
-            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-blue-600 w-full"
+            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-yellow-400 w-1/2 mx-auto block"
+            disabled={isSubmitting} // Disable button while review is being submitted
           >
-            Submit Review
+            {isSubmitting ? "Submitting..." : "Submit Review"}
           </button>
         </form>
-        <div>
+        <div className="bg-gray-200 p-4 rounded-lg">
           <h3 className="text-2xl font-bold mb-4 text-center">Customer current Reviews</h3>
           <ul>
             {reviews.map((review, index) => (
