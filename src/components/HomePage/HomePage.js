@@ -1,5 +1,3 @@
-
-
 import Footer from "./Footer.js";
 import Main from "./Main.js";
 import NavBar from "./NavBar.js";

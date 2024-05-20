@@ -11,7 +11,7 @@ const Footer = () => {
         <div>
           <p className="text-center">
             <small className="font-bold  pr-[30px]">
-              &copy; KOnectUs. All rights Reserved
+              &copy; KonectUs. 2024 All rights Reserved
             </small>
           </p>
         </div>
