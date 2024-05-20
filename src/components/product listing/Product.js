@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 
 const ProductForm = () => {
   const [products, setProducts] = useState([]);
@@ -38,10 +37,6 @@ const ProductForm = () => {
     const file = e.target.files[0];
     setImage(file);
   };
-
-const handleEdit = () => {
-
-}
 
   return (
     <div className="container mx-auto">
@@ -109,7 +104,7 @@ const handleEdit = () => {
       </form>
       <div className="mt-8">
         <h2 className="text-lg font-bold mb-4">Products</h2>
-        <ul className="flex flex-row">
+        <ul>
           {products.map((product, index) => (
             <li key={index} className="mb-2">
               {product.name} - K{product.price} - {product.location} -{" "}
@@ -122,11 +117,6 @@ const handleEdit = () => {
               </button>
             </li>
           ))}
-          <li className="ml-2 text-green-500">
-            <NavLink to = "/product listing/EditPost" >
-            <button>Edit</button>
-            </NavLink>
-          </li>
         </ul>
       </div>
     </div>
