@@ -31,7 +31,7 @@ function Search() {
         />
       </div>
 
-      <div className="search-result border border-transparent bg-transparent absolute top-full left-0 mt-1 p-2 rounded-lg shadow-lg overflow-auto max-h-60">
+      <div className="search-result border border-transparent bg-transparent absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg overflow-auto max-h-60">
         {filterData.map((d, i) => (
           <div key={i} className="p-1">
             <div className="outer-card">
