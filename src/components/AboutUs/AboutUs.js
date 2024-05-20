@@ -16,7 +16,7 @@ class AboutUs extends Component {
               provide buyers with access to high quality produce. Founded by a
               team passionate about sustanabillity and community empowerment, we
               priorittize trasparancy, fairness and, collaboration. join us in
-              creating a more sustainable and equitable food system
+              creating a more sustainable and equitable food system.
             </p>
           </div>
         </div>
