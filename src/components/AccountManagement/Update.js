@@ -1,7 +1,7 @@
 export default function Update() {
   return (
     <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl">
-      <h2 className="text-center font-bold text-3xl text-white mb-8">UPDATE INFORMATION</h2>
+      <h2 className="text-center font-bold text-3xl text-white mb-8">CREATE PROFILE</h2>
       <form>
         <label className=" text-lg font-medium text-white">Name</label> <br></br>
         <input
@@ -26,8 +26,14 @@ export default function Update() {
           required
           className="py-4 w-full text-black px-2 mb-8 rounded-lg"
         ></input>
+        <label className=" text-lg font-medium text-white">Date of birth</label><br></br>
+        <input type="date" required
+          className="py-4 w-full text-black px-2 mb-8 rounded-lg"/><br></br>
+        <label className=" text-lg font-medium text-white">Bio</label><br></br> 
+        <textarea required
+          className="py-4 w-full text-black px-2 mb-8 rounded-lg" ></textarea>
         <button className="block m-auto bg-white mt-3 p-2 text-black font-bold rounded-lg">
-          UPDATE
+          CREATE
         </button>
       </form>
     </div>
