@@ -26,6 +26,10 @@ export default function NavBar(props) {
     {
       name: "Team",
       link: "/Team"
+    },
+    {
+      name: "Reviews",
+      link: "/RateAndReview/ReviewRating"
     }
   ]
 
