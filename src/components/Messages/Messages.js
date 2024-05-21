@@ -3,6 +3,7 @@
 import UserMessages from "./UserMessages";
 import MessageBox from "./MessageBox";
 import MessagesNavBar from "./MessageNavBar";
+import SideBar from "./SideBar";
 
 export default function Messages() {
   //sample data that is used to test the Messaging components
@@ -22,21 +23,43 @@ export default function Messages() {
       id: "me",
       timestamp: "3",
     },
+    {
+      text : "I wanted to show you something",
+      id : "other",
+      timestamp : "4"
+    },
+    {
+      text : "I found something cool online",
+      id : "other",
+      timestamp : "5"
+    }
   ];
+
+
   return (
+          
+    <div className="flex flex-row">
+      <div className=" w-[40%]">
+      <SideBar/>
+      </div>
+     <div className=" w-[60%]"> 
     <div className=" flex flex-col">
       <ul>
         <li>
-          <MessagesNavBar />
+        <MessagesNavBar />
         </li>
+        <div className="h-[70px]">
         <br></br>
-        <li>
+        </div>
+        <li className="bg-gray-100">
           <UserMessages messages={data} />
         </li>
         <li>
           <MessageBox />
         </li>
       </ul>
+    </div>
+    </div>
     </div>
   );
 }

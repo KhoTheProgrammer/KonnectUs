@@ -6,7 +6,7 @@ export default function MessageBox() {
   };
 
   return (
-    <div className="fixed bottom-0 w-full">
+    <div className="fixed bottom-0 w-[60%]">
       <form onSubmit={handleSubmit}>
         <div className="flex items-center px-3 py-2 rounded-lg">
           <textarea
@@ -19,7 +19,20 @@ export default function MessageBox() {
             type="submit"
             className="inline-flex justify-center p-2 text-white bg-green-700 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
           >
-            send
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+              />
+            </svg>
           </button>
         </div>
       </form>
