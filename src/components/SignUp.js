@@ -3,16 +3,17 @@ import { useContext } from "react";
 import { usersContext } from "./Users";
 import { checkUsers } from "./Users";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   let usersData = useContext(usersContext);
+  const navigate = useNavigate();
   let users = {};
   const [user, setUser] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
-  const [isSignedIn, setissigned] = useState(false);
 
   const handleEmail = (e) => {
     setemail(e.target.value);
@@ -45,7 +46,7 @@ const SignUp = () => {
     };
     usersData.push(users);
     checkUsers();
-    setissigned(true);
+    navigate("/HomePage");
   };
 
   return (
@@ -71,12 +72,12 @@ const SignUp = () => {
         <br />
         <input type="text" onChange={handlepassword} required />
         <br />
-        <NavLink to="/HomePage">
-        <button type="submit" className="bg-green-500 p-4" disabled = {!isSignedIn}>
+        <button
+          type="submit"
+          className="bg-green-500 p-4"
+        >
           Sign Up
         </button>
-        </NavLink>
-        
       </form>
     </div>
   );
