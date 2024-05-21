@@ -1,7 +1,42 @@
+
 import KonnectUslogo from "./Konnect1.png";
 import Search from "../Search and Filtering/Search";
 import { NavLink } from "react-router-dom";
-export default function NavBar() {
+import DropDown from './DropDown'
+import { useState } from "react";
+export default function NavBar(props) {
+  const isSignedIn = props.isSignedIn;
+  const setSignedIn = props.setSignedIn;
+
+  const [showDropDown, setShowDropDown] = useState(false)
+
+  const buttons = [
+    {
+      name: "Home",
+      link: "/HomePage"
+    },
+    {
+      name: "About Us",
+      link: "/AboutUs/AboutUs"
+    },
+    {
+      name: "Products",
+      link: "/ProductsPage"
+    },
+    {
+      name: "Team",
+      link: "/Team"
+    }
+  ]
+
+  const mapButtons = (button) => (
+    <NavLink to={button.link}>
+    <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+      {button.name}
+    </li>
+  </NavLink>)
+  
+
   return (
     <div className="grid grid-cols-[1fr_3fr] p-3 m-0 h-[80px]">
       <img
@@ -9,44 +44,25 @@ export default function NavBar() {
         alt="KonnectUs Logo"
         className=" mb-4 h-14 w-[50]"
       />
-      <img
-        src={KonnectUslogo}
-        alt="KonnectUs Logo"
-        className=" mb-4 h-14 w-[50]"
-      />
       <ul className="flex p-3 justify-end">
-        <NavLink to="/HomePage">
-          <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-            Home
-          </li>
-        </NavLink>
+        {buttons.map(mapButtons)}
 
-        <NavLink to="/rateAndReview">
-          <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-            Rate and Reviews
-          </li>
-        </NavLink>
-        <NavLink to="/ProductsPage">
-          <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-            Products
-          </li>
-        </NavLink>
 
-        <NavLink to="/Team">
-          <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-            Team
+        {isSignedIn ? (
+          <li onClick={(e) => {
+            e.preventDefault();
+            setShowDropDown(!showDropDown);
+            }
+            } className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+            <DropDown isOpen = {showDropDown}></DropDown>
           </li>
-        </NavLink>
-        <NavLink to="/Messages">
-          <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-            Messages
-          </li>
-        </NavLink>
-        <NavLink to="/Login">
+        )
+        :
+        (<NavLink to="/Login">
           <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
             Login
           </li>
-        </NavLink>
+        </NavLink>)}
 
         <Search />
       </ul>

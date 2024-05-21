@@ -1,28 +1,31 @@
 export default function Delete() {
   return (
-    <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl">
-      <h2 className="text-center font-bold text-3xl text-white mb-8">
-        DELETE ACCOUNT
-      </h2>
+    <div className=" bg-green-500 p-4">
+      {" "}
+      <h2 className="text-center font-medium text-xl">DELETE ACCOUNT</h2>
       <form>
-        <label className=" text-lg font-medium text-white">Password</label>{" "}
+        <label className=" text-lg">Enter Password</label>
         <br></br>
         <input
           type="password"
-          placeholder="old password..."
+          placeholder="your password"
           required
-          className="py-4 w-full text-black mb-6 px-2 rounded-lg"
-        ></input>{" "}
+          className="p-1 w-full text-black"
+        ></input>
         <br></br>
-        <label className=" text-lg font-medium text-white">Confirm Password</label>{" "}
+        <label className=" text-lg">Confirm Password</label>
         <br></br>
         <input
           type="password"
-          placeholder="new password..."
+          placeholder="your password again"
           required
-          className="py-4 px-2 w-full  text-black mb-6 rounded-lg"
-        ></input>{" "}
-        <button className="block m-auto bg-white mt-3 p-2 text-black font-bold rounded-lg">
+          className="p-1 w-full text-black"
+        ></input>
+        <br></br>
+        <button
+          type="submit"
+          className="block m-auto bg-white mt-16 p-2 text-black font-bold"
+        >
           DELETE
         </button>
       </form>
