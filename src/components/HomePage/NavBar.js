@@ -1,7 +1,7 @@
 
 import KonnectUslogo from "./Konnect1.png";
 import Search from "../Search and Filtering/Search";
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import DropDown from './DropDown'
 import { useState } from "react";
 export default function NavBar(props) {
@@ -9,7 +9,7 @@ export default function NavBar(props) {
   const setSignedIn = props.setSignedIn;
 
   const [showDropDown, setShowDropDown] = useState(false)
-
+ 
   const buttons = [
     {
       name: "Home",
@@ -38,13 +38,13 @@ export default function NavBar(props) {
   
 
   return (
-    <div className="grid grid-cols-[1fr_3fr] p-3 m-0 h-[80px]">
+    <div className=" grid grid-cols-[1fr_3fr] p-3 m-0 h-[80px]">
       <img
         src={KonnectUslogo}
         alt="KonnectUs Logo"
         className=" mb-4 h-14 w-[50]"
       />
-      <ul className="flex p-3 justify-end">
+      <ul className="flex p-3 justify-center">
         {buttons.map(mapButtons)}
 
 
@@ -64,7 +64,7 @@ export default function NavBar(props) {
           </li>
         </NavLink>)}
 
-        <Search />
+        <Search/>
       </ul>
     </div>
   );
