@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { usersContext } from "./Users";
 import { checkUsers } from "./Users";
-import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
@@ -45,7 +44,6 @@ const SignUp = () => {
       email: email,
     };
     usersData.push(users);
-    checkUsers();
     navigate("/HomePage");
   };
 
