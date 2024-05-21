@@ -10,6 +10,7 @@ import AccountPage from "./components/AccountManagement/AccountPage";
 import Product from "./components/product listing/Product";
 import AboutUs from "./components/AboutUs/AboutUs"
 import EditPost from "./components/product listing/EditPost";
+import Chats from "./components/Messages/Chats";
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
     element: <ReviewRating />,
   },
   {
-    path: "/Messages",
+    path: "/Messages/Messages",
     element: <Messages></Messages>,
   },
   {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
   {
     path: "/product listing/EditPost",
     element: <EditPost />
+  },
+  {
+    path: "/Messages/Chats",
+    element: <Chats />
   }
 ]);
 
