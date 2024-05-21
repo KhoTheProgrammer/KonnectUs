@@ -36,15 +36,15 @@ function Main(props) {
         <h3 className="text-2xl mt-[1%] m-0">
           Connect farmers and buyers effortlessly
         </h3>
-        {!props.isSignedIn ? (
-          <NavLink to="/Login">
-            <button className="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
-              Join Us Now
-            </button>
-          </NavLink>
-        ) : (
-          <p>/*slideshow*/</p>
-        )}
+        { !props.isSignedIn ? 
+        (<NavLink to="/SignUp">
+          <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
+            Join Us Now
+          </button>
+        </NavLink>)
+        :
+        <p>/*slideshow*/</p>
+        }
       </div>
     </div>
   );
