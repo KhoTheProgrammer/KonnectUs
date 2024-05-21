@@ -1,13 +1,15 @@
 import React, { Component } from "react";
+import NavBar from "../HomePage/NavBar";
+import Footer from "../HomePage/Footer";
 
 class AboutUs extends Component {
   render() {
     return (
       <div>
-        header
+        <NavBar></NavBar>
         <div>
          
-          <div class=" bg-green-500 w-[60%] h-screen  bg-opacity-50  p-[12px] font-bold mt-[80px] rounded-tr-[80px]">
+          <div class=" bg-green-500 w-[60%] h-screen  p-[12px] font-bold mt-[80px] rounded-tr-[80px]">
             <h1 class=" text-amber-800  text-[18px] ">About Us</h1>
             <p class=" text-white flex ">
               KonnectUs Farmer's Zone is dedicated to revolutionizing
@@ -19,6 +21,7 @@ class AboutUs extends Component {
               creating a more sustainable and equitable food system.
             </p>
           </div>
+          <Footer></Footer>
         </div>
       </div>
     );

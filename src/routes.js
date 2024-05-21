@@ -8,8 +8,8 @@ import ProductsPage from "./components/Alt/ProductsPage";
 import Team from "./components/Team/Team";
 import AccountPage from "./components/AccountManagement/AccountPage";
 import Product from "./components/product listing/Product";
-import AboutUs from "./components/AboutUs/AboutUs"
-import EditPost from "./components/product listing/EditPost";
+import AboutUs from "./components/AboutUs/AboutUs";
+import SignUp from "./components/SignUp";
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -31,32 +31,29 @@ export const router = createBrowserRouter([
   },
   {
     path: "/HomePage",
-    element: <HomePage></HomePage>
+    element: <HomePage></HomePage>,
   },
   {
     path: "ProductsPage",
-    element: <ProductsPage></ProductsPage>
+    element: <ProductsPage></ProductsPage>,
   },
   {
-    path:"/Team",
-    element: <Team></Team>
+    path: "/Team",
+    element: <Team></Team>,
   },
   {
     path: "/AccountManagement/AccountPage",
-    element: <AccountPage />
+    element: <AccountPage />,
   },
   {
     path: "/product listing/Product",
-    element: <Product />
+    element: <Product />,
   },
   {
     path: "/AboutUs/AboutUs",
-    element: <AboutUs />
+    element: <AboutUs />,
   },
-  {
-    path: "/product listing/EditPost",
-    element: <EditPost />
-  }
+  { path: "/SignUp", element: <SignUp></SignUp> },
 ]);
 
 export default router;
