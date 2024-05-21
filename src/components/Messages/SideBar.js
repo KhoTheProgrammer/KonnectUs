@@ -44,7 +44,7 @@ const chats = [
 ];
 
 const drawChats = (chat) => (
-  <li key={chat.name} className="">
+  <li key={chat.name} className=" ">
     <NavLink to="/Messages/Messages">
       <div className="flex flex-row hover:bg-gray-100">
         <div>

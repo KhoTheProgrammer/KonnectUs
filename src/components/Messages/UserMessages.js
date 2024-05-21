@@ -6,7 +6,7 @@ export default function UserMessages({ messages }) {
   /*component takes messages as an argument. This feature will be developed later once APIs are introduced.
    Sample data stored in the code will be used for now to test the components. Sample data can be found in the Messages component */
   return (
-    <div className="flow-root">
+    <div className="flow-root w-full">
       <ul className="flex flex-col">
         {messages.map((message) => (
           <li key={message.timestamp}>

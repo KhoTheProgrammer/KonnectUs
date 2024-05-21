@@ -39,22 +39,22 @@ export default function Messages() {
   return (
           
     <div className="flex flex-row">
-      <div className=" w-[40%]">
+      <div className="w-0 h-0 md:w-[30%] md:h-full bg-green-300 ">
       <SideBar/>
       </div>
-     <div className=" w-[60%]"> 
-    <div className=" flex flex-col">
+     <div className="w-full lg:min-h-full bg-gray-900"> 
+    <div className=" flex flex-col bg-purple-700">
       <ul>
-        <li>
+        <li className="bg-orange-600 md:w-[70%]">
         <MessagesNavBar />
         </li>
         <div className="h-[70px]">
         <br></br>
         </div>
-        <li className="bg-gray-100">
+        <li className="bg-red-700  md:w-[70%]">
           <UserMessages messages={data} />
         </li>
-        <li>
+        <li className="bg-yellow-700">
           <MessageBox />
         </li>
       </ul>

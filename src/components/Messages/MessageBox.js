@@ -6,7 +6,7 @@ export default function MessageBox() {
   };
 
   return (
-    <div className="fixed bottom-0 w-[60%]">
+    <div className="fixed bottom-0 w-full">
       <form onSubmit={handleSubmit}>
         <div className="flex items-center px-3 py-2 rounded-lg">
           <textarea

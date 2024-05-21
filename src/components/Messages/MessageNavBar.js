@@ -10,7 +10,7 @@ export default function MessagesNavBar() {
   );
 
   return (
-    <div className="fixed top-0 w-[60%]">
+    <div className="fixed top-0 w-full">
       {
         <ul className="flex flex-row justify-between p-1 bg-green-700  text-white ">
           <NavLink to="/Messages/Chats">
