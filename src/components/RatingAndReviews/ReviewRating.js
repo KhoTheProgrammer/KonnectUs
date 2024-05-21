@@ -48,7 +48,6 @@ const ReviewRating = () => {
     setIsSubmitting(false); // Reset submitting state after submission
   };
 
-  // renders stars
   const renderStars = (count) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {

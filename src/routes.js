@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
     element: <App></App>,
   },
   {
-    path: "/RateAndReview/ReviewRating",
+    path: "/rateAndReview",
     element: <ReviewRating />,
   },
   {

@@ -3,7 +3,7 @@ import Search from "../Search and Filtering/Search";
 import DropDown from "./DropDown"
 import {useState} from "react"
 
-const buttons = ["Home", "About Us", "Products", "Team", "Contact Us","Review"];
+const buttons = ["Home", "About Us", "Products", "Team", "Contact Us"];
 
 //function that will arrange the nav bar links/tabs in a list. Used as a callback to Array map()
 const drawButtons = (button) => (
