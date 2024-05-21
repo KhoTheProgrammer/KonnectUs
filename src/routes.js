@@ -10,6 +10,7 @@ import AccountPage from "./components/AccountManagement/AccountPage";
 import Product from "./components/product listing/Product";
 import AboutUs from "./components/AboutUs/AboutUs";
 import SignUp from "./components/SignUp";
+import ContactUs from "./components/ContactUs/ContactUs";
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -53,7 +54,14 @@ export const router = createBrowserRouter([
     path: "/AboutUs/AboutUs",
     element: <AboutUs />,
   },
-  { path: "/SignUp", element: <SignUp></SignUp> },
+  {
+    path: "/SignUp",
+    element: <SignUp></SignUp>,
+  },
+  {
+    path: "/ContactUs",
+    element: <ContactUs></ContactUs>
+  }
 ]);
 
 export default router;
