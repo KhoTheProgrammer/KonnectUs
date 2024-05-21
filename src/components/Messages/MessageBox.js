@@ -1,17 +1,38 @@
 //this file describes the component(text box) which users type into when sending a message
 
-export default function MessageBox() {
-  const handleSubmit = () => {
+import { useState } from "react";
+
+export default function MessageBox(props) {
+    const messages = props.messages;
+    const updateMessages = props.updateMessages;
+
+    const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
     //to be defined later
+    e.preventDefault();
+    const newMessage = {
+      text : message,
+      id: 'me',
+      timestamp: messages.length
+    };
+
+    updateMessages([...messages, newMessage]);
   };
 
+  const handleMessage = (e) => {
+    e.preventDefault();
+    setMessage(e.target.value);
+  }
+
   return (
-    <div className="fixed bottom-0 w-full">
+    <div className="fixed bottom-0">
       <form onSubmit={handleSubmit}>
         <div className="flex items-center px-3 py-2 rounded-lg">
           <textarea
             name="Message"
             placeholder="Message"
+            onChange={handleMessage}
             row="1"
             className="block mx-4 p-2.5 w-full text-sm text-black bg-white rounded-lg border border-green-500 focus:ring-green-900 focus:border-green-900 placeholder-slate-300"
           ></textarea>
