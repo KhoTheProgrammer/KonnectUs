@@ -5,13 +5,11 @@ import Footer from "../HomePage/Footer";
 
 export default function AccountPage() {
   return (
-    <div>
+    <div className="h-full w-full">
       <NavBar></NavBar>
-      <div className="flex gap-4">
+      <div className="flex">
         <Dashboard></Dashboard>
-        <div className="w-3/4 flex justify-center mx-auto">
-          <Update />
-        </div>
+        <Update />
       </div>
       <Footer></Footer>
     </div>
