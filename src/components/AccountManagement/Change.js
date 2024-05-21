@@ -1,6 +1,7 @@
 export default function Change() {
   return (
-    <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl">
+    <div className="w-3/4 flex justify-center mx-auto h-screen items-center">
+        <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl">
       <h2 className="text-center font-bold text-3xl text-white mb-8">
         CHANGE PASSWORD
       </h2>
@@ -38,5 +39,7 @@ export default function Change() {
         </button>
       </form>
     </div>
+    </div>
+    
   );
 }
