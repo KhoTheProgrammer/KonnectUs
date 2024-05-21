@@ -11,6 +11,7 @@ import Product from "./components/product listing/Product";
 import AboutUs from "./components/AboutUs/AboutUs";
 import SignUp from "./components/SignUp";
 import ContactUs from "./components/ContactUs/ContactUs";
+import Admin from "./components/AccountManagement/Admin"
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
   {
     path: "/ContactUs",
     element: <ContactUs></ContactUs>
+  },
+  {
+    path:"/Admin",
+    element: <Admin></Admin>
   }
 ]);
 
