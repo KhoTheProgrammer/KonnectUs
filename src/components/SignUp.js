@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { usersContext } from "./Users";
 import { checkUsers } from "./Users";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   let usersData = useContext(usersContext);
+  const navigate = useNavigate();
   let users = {};
   const [user, setUser] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
-  const [isSignedIn, setissigned] = useState(false);
 
   const handleEmail = (e) => {
     setemail(e.target.value);
@@ -44,8 +44,7 @@ const SignUp = () => {
       email: email,
     };
     usersData.push(users);
-    checkUsers();
-    setissigned(true);
+    navigate("/HomePage");
   };
 
   return (
@@ -53,30 +52,30 @@ const SignUp = () => {
       <form onSubmit={handleSubmit}>
         <label>Username</label>
         <br />
-        <input type="text" onChange={handleusername} required />
+        <input type="text" onChange={handleusername} required placeholder="Enter you user name" />
         <br />
-        <label>firsname</label>
+        <label>first name</label>
         <br />
-        <input type="text" onChange={handleFname} required />
+        <input type="text" onChange={handleFname} required placeholder="Enter first name " />
         <br />
         <label>lastname</label>
         <br />
-        <input type="text" onChange={handlelname} required />
+        <input type="text" onChange={handlelname} required placeholder="Enter last name" />
         <br />
         <label>email</label>
         <br />
-        <input type="text" onChange={handleEmail} required />
+        <input type="text" onChange={handleEmail} required placeholder="Enter your email" />
         <br />
         <label>password</label>
         <br />
-        <input type="text" onChange={handlepassword} required />
+        <input type="text" onChange={handlepassword} required placeholder="Enter your password" />
         <br />
-        <NavLink to="/HomePage">
-        <button type="submit" className="bg-green-500 p-4" disabled = {!isSignedIn}>
+        <button
+          type="submit"
+          className="bg-green-500 p-4"
+        >
           Sign Up
         </button>
-        </NavLink>
-        
       </form>
     </div>
   );
