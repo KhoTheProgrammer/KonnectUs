@@ -5,6 +5,8 @@ import { usersContext } from "./Users";
 import { useNavigate } from "react-router-dom";
 import Footer from "./HomePage/Footer";
 import NavBar from "./HomePage/NavBar";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import {auth} from "./Users"
 
 const SignUp = () => {
   let usersData = useContext(usersContext);
@@ -45,6 +47,17 @@ const SignUp = () => {
       password: password,
       email: email,
     };
+
+    createUserWithEmailAndPassword(auth, email, password)
+    .then(
+      (userCredentials) => {
+        console.log(userCredentials);
+      }
+    )
+    .catch(
+      (error) => console.log(error)
+    )
+
     usersData.push(users);
     navigate("/HomePage");
   };
