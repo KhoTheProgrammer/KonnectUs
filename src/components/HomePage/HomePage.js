@@ -8,7 +8,7 @@ export default function HomePage() {
   Join Us in the Main component*/
   const [isSignedIn, setSignedIn] = useState(false);
   return (
-    <div>
+    <div >
       <NavBar isSignedIn={isSignedIn} setSignedIn={setSignedIn}></NavBar>
       <Main isSignedIn={isSignedIn} setSignedIn={setSignedIn}></Main>
       <Footer></Footer>
