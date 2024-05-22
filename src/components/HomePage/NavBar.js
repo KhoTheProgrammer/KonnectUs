@@ -21,7 +21,7 @@ export default function NavBar(props) {
     },
     {
       name: "Products",
-      link: "/ProductsPage"
+      link: "/Alt/ProductsPage"
     },
     {
       name: "Team",
