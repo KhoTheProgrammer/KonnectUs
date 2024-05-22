@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from "../Users";
 
 const Login = () => {
   const [Email, setEmail] = useState("");
@@ -51,7 +53,17 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (validateForm()) {
+    signInWithEmailAndPassword(auth, Email, Password)
+    .then(
+      (userCredentials) => {
+        console.log(userCredentials);
+      }
+    )
+    .catch(
+      (error) => console.log(error)
+    )
+
+    /*if (validateForm()) {
       // Submit form if valid
       console.log("Form is valid, submitting...");
       console.log("Remember Me:", RememberMe);
@@ -59,7 +71,8 @@ const Login = () => {
     } else {
       console.log("Form has errors.");
     }
-  };
+  };*/
+};
 
   return (
     <div>
