@@ -27,6 +27,7 @@ export default function NavBar({ isSignedIn, setSignedIn, searchTerm, setSearchT
       name: "Team",
       link: "/Team"
     },
+   
     {
       name: "Reviews",
       link: "/RatingAndReviews/ReviewsPage"
