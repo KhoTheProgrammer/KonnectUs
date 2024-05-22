@@ -18,40 +18,14 @@ const AboutUs = () => {
             <h1 className="text-black text-[22px] flex justify-center items-center">
               <b>About Us</b>
             </h1>
-            <p>
-              Welcome to KonnectUS, the ultimate platform dedicated to
-              empowering farmers and revolutionizing agriculture. At KonnectUS,
-              we believe in bridging the gap between traditional farming
-              practices and modern technology to create a thriving community for
-              farmers everywhere.
-              <h2>Mission</h2>
-              <p>
-                Our mission is to create an innovative, accessible, and
-                supportive platform that connects farmers with the resources,
-                tools, and community they need to succeed. We aim to enhance
-                agricultural productivity, promote sustainable farming
-                practices, and improve the livelihoods of farmers through
-                technology-driven solutions and a collaborative approach.
-              </p>
-              <h2>Vision</h2>
-              <p>
-                Our vision is to be the leading global platform that transforms
-                the agricultural landscape by harnessing the power of technology
-                and community. We envision a world where every farmer has the
-                knowledge, resources, and support to cultivate their land
-                efficiently and sustainably, contributing to global food
-                security and a healthier planet
-              </p>
-              <h2>Values</h2>
-              <p>
-                Innovation: We embrace cutting-edge technology and innovative
-                practices to continually improve the agricultural sector
-              </p>
-              <p>
-                Community: We foster a strong sense of community, encouraging
-                collaboration, knowledge sharing, and mutual support among
-                farmers.
-              </p>
+            <p className="text-white text-[18px]">
+              KonnectUs Farmer's Zone is dedicated to revolutionizing
+              agricultural communities by connecting farmers with buyers. Our
+              platform aims to empower farmers, streamline the supply chain, and
+              provide buyers with access to high-quality produce. Founded by a
+              team passionate about sustainability and community empowerment, we
+              prioritize transparency, fairness, and collaboration. Join us in
+              creating a more sustainable and equitable food system.
             </p>
           </div>
         </div>
