@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import NavBar from "../HomePage/NavBar";
+import Footer from "../HomePage/Footer";
+
 
 const AccountReports = () => {
   const [AccountReported, setAccountReported] = useState("");
@@ -15,6 +18,8 @@ const AccountReports = () => {
   };
 
   return (
+    <div>
+      <NavBar></NavBar>
     <div className=" p-20">
       <h>
         <ul className=" p-2  bg-green-500 flex items-center justify-center  text-white font-bold text-3 max-w-auto  mx-3   mt-3">
@@ -60,6 +65,8 @@ const AccountReports = () => {
           </div>
         </form>
       </div>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };
