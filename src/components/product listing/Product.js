@@ -65,7 +65,7 @@ const handleEdit = () => {
             type="text"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none  w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
@@ -76,7 +76,7 @@ const handleEdit = () => {
             type="text"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none  w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
@@ -87,7 +87,7 @@ const handleEdit = () => {
             type="text"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none  w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">

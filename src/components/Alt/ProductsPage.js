@@ -12,7 +12,7 @@ const ProductsPage = () => {
       name: "Beans",
       price: "K1500",
       market: "Machinga",
-      quantity: "1kg",
+      quantity: "100kg",
       image:
         "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
     },
@@ -21,7 +21,7 @@ const ProductsPage = () => {
       id: 2,
       name: "Maizes",
       price: "K7000",
-      market: "Zomba market",
+      market: "Mzuzu market",
       quantity: "50kg",
       image: "https://world-crops.com/wp-content/uploads/Corn-Maize-1.jpg",
     },
@@ -30,7 +30,7 @@ const ProductsPage = () => {
       id: 3,
       name: "Potatoes",
       price: "k700",
-      market: "Balaka martket",
+      market: "Chitipa market",
       quantity: "50kg",
       image:
         "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
@@ -39,84 +39,84 @@ const ProductsPage = () => {
       id: 4,
       name: "Chicken",
       price: "K5000",
-      market: "Balaka martket",
-      quantity: "2kg",
+      market: "Liwonde martket",
+      quantity: "200kg",
       image:
         "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
     },
     {
       id: 5,
-      name: "Beans",
+      name: "Tomato",
       price: "k1500",
       market: "machinga",
-      quantity: "1kg",
+      quantity: "1000kg",
       image:
-        "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+        "https://wallpapercave.com/wp/wp2030841.jpg",
     },
   
     {
       id: 6,
-      name: "Maizes",
-      price: "k7000",
+      name: "Onion",
+      price: "k100",
       market: "zomba market",
-      quantity: "50kg",
-      image: "https://world-crops.com/wp-content/uploads/Corn-Maize-1.jpg",
+      quantity: "550kg",
+      image: "https://5.imimg.com/data5/SELLER/Default/2022/12/UC/JB/TH/106482549/onion-500x500.png",
     },
   
     {
       id: 7,
-      name: "potatoes",
+      name: "Pumpkin",
       price: "k700",
-      market: "Balaka martket",
+      market: "Thylo market",
       quantity: "50kg",
       image:
-        "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+        "https://th.bing.com/th/id/OIP.nSstYWPGnK2A1LJF3h_nVgHaE9?rs=1&pid=ImgDetMain",
     },
     {
       id: 8,
-      name: "chicken",
-      price: "k5000",
-      market: "Balaka martket",
-      quantity: "2kg",
+      name: "Cows",
+      price: "k50000",
+      market: "Balaka market",
+      quantity: "2000kg",
       image:
-        "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
+        "https://th.bing.com/th/id/OIP.c6LNuQclyKg2Ar3ffeHx9gHaFj?rs=1&pid=ImgDetMain",
     },
     {
       id: 9,
-      name: "Beans",
-      price: "k1500",
+      name: "Cassava",
+      price: "k500",
       market: "machinga",
-      quantity: "1kg",
+      quantity: "100kg",
       image:
-        "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+        "https://th.bing.com/th/id/OIP.M0k-9tJAkEWRSBow1WxZYAHaEK?rs=1&pid=ImgDetMain",
     },
   
     {
       id: 10,
-      name: "Maizes",
-      price: "k7000",
+      name: "Goats",
+      price: "k40000",
       market: "zomba market",
-      quantity: "50kg",
-      image: "https://world-crops.com/wp-content/uploads/Corn-Maize-1.jpg",
+      quantity: "1500kg",
+      image: "https://th.bing.com/th/id/OIP.X8ckRhahEN70-vwlOqL3lAHaE8?w=5184&h=3456&rs=1&pid=ImgDetMain",
     },
   
     {
       id: 11,
-      name: "Potatoes",
+      name: "Chambo fish",
       price: "k700",
-      market: "Balaka martket",
+      market: "Lilongwe market",
       quantity: "50kg",
       image:
-        "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+        "https://th.bing.com/th/id/R.a09ebd038a5afe4d284551407f3cf80a?rik=BJxDkDHwmF6nFw&riu=http%3a%2f%2fwww.faceofmalawi.com%2fwp-content%2fuploads%2f2014%2f10%2fOreochromis-karongae-chambo.jpg&ehk=uJNvUhsVEEsJ4bqrpkdbNHlru%2bewAhc%2fNaOQ9OxO1gQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1",
     },
     {
       id: 12,
-      name: "chicken",
+      name: "Pawpaw",
       price: "k5000",
       market: "Balaka martket",
-      quantity: "2kg",
+      quantity: "28kg",
       image:
-        "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
+        "https://th.bing.com/th/id/OIP.C2dQ4im8zSEBw-t9stoIWQHaD8?rs=1&pid=ImgDetMain",
     },
   ]);
 
@@ -154,7 +154,7 @@ const ProductsPage = () => {
                 <p className="text-black mb-2 text-lg"><span className="font-bold">Quantity: </span>{product.quantity}</p>
                 <NavLink to="/Messages">
                   <button className="bg-green-500 block m-auto text-white p-2 rounded-lg font-bold hover:bg-green-700">
-                    BUY NOW
+                    ENQUIRE
                   </button>
                 </NavLink>
               </div>
