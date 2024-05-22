@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 import { usersContext } from "./Users";
-import { checkUsers } from "./Users";
+//import { checkUsers } from "./Users";
 import { useNavigate } from "react-router-dom";
+import Footer from "./HomePage/Footer";
+import NavBar from "./HomePage/NavBar";
 
 const SignUp = () => {
   let usersData = useContext(usersContext);
@@ -48,35 +50,63 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex justify-center items-center mx-auto h-screen">
-      <form onSubmit={handleSubmit}>
-        <label>Username</label>
-        <br />
-        <input type="text" onChange={handleusername} required placeholder="Enter you user name" />
-        <br />
-        <label>first name</label>
-        <br />
-        <input type="text" onChange={handleFname} required placeholder="Enter first name " />
-        <br />
-        <label>lastname</label>
-        <br />
-        <input type="text" onChange={handlelname} required placeholder="Enter last name" />
-        <br />
-        <label>email</label>
-        <br />
-        <input type="text" onChange={handleEmail} required placeholder="Enter your email" />
-        <br />
-        <label>password</label>
-        <br />
-        <input type="text" onChange={handlepassword} required placeholder="Enter your password" />
-        <br />
-        <button
-          type="submit"
-          className="bg-green-500 p-4"
-        >
-          Sign Up
-        </button>
-      </form>
+    <div>
+      <NavBar></NavBar>
+      <div className=" bg-green-500 h-[700px] p-[40px]">
+        <div className="flex justify-center items-center mx-auto bg-white rounded-[40px]  h-[500px] w-[600px] mt-[80px]">
+          <form onSubmit={handleSubmit}>
+            <label>USERNAME</label>
+            <br />
+            <input
+              type="text"
+              onChange={handleusername}
+              required
+              placeholder="Enter you user name"
+            />
+            <br />
+            <label></label>
+            <br />
+            <input
+              type="text"
+              onChange={handleFname}
+              required
+              placeholder="Enter first name "
+            />
+            <br />
+            <label>LAST NAME</label>
+            <br />
+            <input
+              type="text"
+              onChange={handlelname}
+              required
+              placeholder="Enter last name"
+            />
+            <br />
+            <label>EMAIL</label>
+            <br />
+            <input
+              type="text"
+              onChange={handleEmail}
+              required
+              placeholder="Enter your email"
+            />
+            <br />
+            <label>PASSWORD</label>
+            <br />
+            <input
+              type="text"
+              onChange={handlepassword}
+              required
+              placeholder="Enter your password"
+            />
+            <br />
+            <button type="submit" className="bg-green-500 p-4">
+              Sign Up
+            </button>
+          </form>
+        </div>
+      </div>
+      <Footer></Footer>
     </div>
   );
 };
