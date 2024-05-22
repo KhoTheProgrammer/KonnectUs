@@ -48,7 +48,7 @@ const ProductsPage = () => {
       id: 5,
       name: "Tomato",
       price: "k1500",
-      market: "machinga",
+      market: "Machinga",
       quantity: "1000kg",
       image:
         "https://wallpapercave.com/wp/wp2030841.jpg",
@@ -67,7 +67,7 @@ const ProductsPage = () => {
       id: 7,
       name: "Pumpkin",
       price: "k700",
-      market: "Thylo market",
+      market: "Thyolo market",
       quantity: "50kg",
       image:
         "https://th.bing.com/th/id/OIP.nSstYWPGnK2A1LJF3h_nVgHaE9?rs=1&pid=ImgDetMain",
@@ -85,7 +85,7 @@ const ProductsPage = () => {
       id: 9,
       name: "Cassava",
       price: "k500",
-      market: "machinga",
+      market: "Machinga",
       quantity: "100kg",
       image:
         "https://th.bing.com/th/id/OIP.M0k-9tJAkEWRSBow1WxZYAHaEK?rs=1&pid=ImgDetMain",
@@ -113,7 +113,7 @@ const ProductsPage = () => {
       id: 12,
       name: "Pawpaw",
       price: "k5000",
-      market: "Balaka martket",
+      market: "Balaka market",
       quantity: "28kg",
       image:
         "https://th.bing.com/th/id/OIP.C2dQ4im8zSEBw-t9stoIWQHaD8?rs=1&pid=ImgDetMain",
