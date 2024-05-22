@@ -7,7 +7,7 @@ const ProductForm = () => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [quantity, setQuantity] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,7 +45,7 @@ const handleEdit = () => {
 
   return (
     <div className="container mx-auto">
-      <form onSubmit={handleSubmit} className="mt-8">
+      <form onSubmit={handleSubmit} className="bg-white md:w-1/2 md:h-3/4 p-6 rounded-lg">
         <div className="mb-4">
           <label className="block text-green-500 text-sm font-bold mb-2">
             Product Name
