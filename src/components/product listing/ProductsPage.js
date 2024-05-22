@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
-import Filter from "./Filter";
+import Filter from "../Search and Filtering/Filter";
 import { NavLink } from "react-router-dom";
 
 const ProductsPage = () => {
