@@ -7,7 +7,8 @@ function Main(props) {
   const images = [
     "https://www.mowernew.com/wp-content/uploads/2023/07/pexels-gilmer-diaz-estela-6345502-1200x800.jpg",
     "https://www.mowernew.com/wp-content/uploads/2023/07/pexels-erik-mclean-9229821-1200x800.jpg",
-    
+    "https://get.pxhere.com/photo/nature-grass-plant-field-farm-lawn-meadow-prairie-sunlight-leaf-flower-green-crop-agriculture-farmland-in-rural-areas-grassland-habitat-views-ecosystem-natural-environment-grass-family-plant-stem-computer-wallpaper-land-plant-every-day-793337.jpg"
+
   ];
 
   useEffect(() => {
@@ -36,14 +37,14 @@ function Main(props) {
         <h3 className="text-2xl mt-[1%] m-0">
           Connect farmers and buyers effortlessly
         </h3>
-        { !props.isSignedIn ? 
-        (<NavLink to="/SignUp">
-          <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
-            Join Us Now
-          </button>
-        </NavLink>)
-        :
-        <p>/*slideshow*/</p>
+        {!props.isSignedIn ?
+          (<NavLink to="/SignUp">
+            <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
+              Join Us Now
+            </button>
+          </NavLink>)
+          :
+          <p></p>
         }
       </div>
     </div>
