@@ -63,12 +63,12 @@ const drawChats = (chat) => (
             />
           </svg>
         </div>
-        <div className="flex flex-col border-b-[1px] p-2 w-full">
+        <div className="flex flex-col border-b-[1px] hover:text-green-500 border-gray-300 p-2 w-full">
           <div className=" flex flex-row justify-between">
-            <span className="font-bold hover:text-green-500">{chat.name}</span>
+            <span className="font-bold ">{chat.name}</span>
             <span className="justify-end">{chat.time}</span>
           </div>
-          <div className="">{chat.message}</div>
+          <div className="hover:text-black">{chat.message}</div>
         </div>
       </div>
     </NavLink>
@@ -77,7 +77,7 @@ const drawChats = (chat) => (
 
 export default function SideBar() {
   return (
-    <div className="flex flex-row h-screen border-r-[1px] border-gray-400">
+    <div className="fixed left-0 h-0 w-0 md:w-[23%] flex flex-row md:h-screen border-r-[1px] border-gray-400">
       <div className="bg-gray-300 p-[6px]">
         <NavLink to="/HomePage">
           <div className="h-[55px]">
