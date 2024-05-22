@@ -10,6 +10,11 @@ import AccountPage from "./components/AccountManagement/AccountPage";
 import Product from "./components/product listing/Product";
 import AboutUs from "./components/AboutUs/AboutUs";
 import SignUp from "./components/SignUp";
+import ContactUs from "./components/ContactUs/ContactUs";
+import Admin from "./components/AccountManagement/Admin"
+import EditPost from "./components/product listing/EditPost";
+import Chats from "./components/Messages/Chats";
+import AccountReports from "./components/AccountReporting/AccountReports";
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -18,11 +23,11 @@ export const router = createBrowserRouter([
     element: <App></App>,
   },
   {
-    path: "/rateAndReview",
+    path: "/RateAndReview/ReviewRating",
     element: <ReviewRating />,
   },
   {
-    path: "/Messages",
+    path: "/Messages/Messages",
     element: <Messages></Messages>,
   },
   {
@@ -34,8 +39,8 @@ export const router = createBrowserRouter([
     element: <HomePage></HomePage>,
   },
   {
-    path: "ProductsPage",
-    element: <ProductsPage></ProductsPage>,
+    path: "/Alt/ProductsPage",
+    element: <ProductsPage></ProductsPage>
   },
   {
     path: "/Team",
@@ -53,7 +58,30 @@ export const router = createBrowserRouter([
     path: "/AboutUs/AboutUs",
     element: <AboutUs />,
   },
-  { path: "/SignUp", element: <SignUp></SignUp> },
+  {
+    path: "/SignUp",
+    element: <SignUp></SignUp>,
+  },
+  {
+    path: "/ContactUs",
+    element: <ContactUs></ContactUs>
+  },
+  {
+    path:"/Admin",
+    element: <Admin></Admin>
+  },
+  {
+    path: "/product listing/EditPost",
+    element: <EditPost />
+  },
+  {
+    path: "/Messages/Chats",
+    element: <Chats />
+  },
+  {
+    path: "/AccountReporting/AccountReports",
+    element: <AccountReports />
+  }
 ]);
 
 export default router;
