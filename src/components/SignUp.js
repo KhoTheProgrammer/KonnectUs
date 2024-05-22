@@ -23,7 +23,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newUser = {
+    const users = {
       username: user,
       firstname: fname,
       lastname: lname,

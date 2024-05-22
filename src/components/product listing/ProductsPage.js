@@ -46,8 +46,13 @@ const ProductsPage = () => {
       id: 5,
       name: "Beans",
       price: "k1500",
+<<<<<<< HEAD
       market: "machinga",
       quantity: "1kg",
+=======
+      market: "Machinga",
+      quantity: "1000kg",
+>>>>>>> 0a213d0d7f42ab6bfb84c27140fda6b100e7c602
       image:
         "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
     },
@@ -65,7 +70,11 @@ const ProductsPage = () => {
       id: 7,
       name: "potatoes",
       price: "k700",
+<<<<<<< HEAD
       market: "Balaka martket",
+=======
+      market: "Thyolo market",
+>>>>>>> 0a213d0d7f42ab6bfb84c27140fda6b100e7c602
       quantity: "50kg",
       image:
         "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
@@ -81,10 +90,17 @@ const ProductsPage = () => {
     },
     {
       id: 9,
+<<<<<<< HEAD
       name: "Beans",
       price: "k1500",
       market: "machinga",
       quantity: "1kg",
+=======
+      name: "Cassava",
+      price: "k500",
+      market: "Machinga",
+      quantity: "100kg",
+>>>>>>> 0a213d0d7f42ab6bfb84c27140fda6b100e7c602
       image:
         "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
     },
@@ -111,8 +127,13 @@ const ProductsPage = () => {
       id: 12,
       name: "chicken",
       price: "k5000",
+<<<<<<< HEAD
       market: "Balaka martket",
       quantity: "2kg",
+=======
+      market: "Balaka market",
+      quantity: "28kg",
+>>>>>>> 0a213d0d7f42ab6bfb84c27140fda6b100e7c602
       image:
         "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
     },

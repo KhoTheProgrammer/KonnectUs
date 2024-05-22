@@ -24,12 +24,13 @@ export default function NavBar({
     },
     {
       name: "Products",
-      link: "/Alt/ProductsPage",
+      link: "/product listing/ProductsPage"
     },
     {
       name: "Team",
       link: "/Team",
     },
+   
     {
       name: "Reviews",
       link: "/RatingAndReviews/ReviewsPage",
