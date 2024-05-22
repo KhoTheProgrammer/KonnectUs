@@ -6,27 +6,27 @@ export default function Delete() {
         DELETE ACCOUNT
       </h2>
       <form>
-        <label className=" text-lg">Enter Password</label>
+        <label className=" text-xl text-white">Enter Password</label>
         <br></br>
         <input
           type="password"
           placeholder="your password"
           required
-          className="p-1 w-full text-black"
+          className="p-1 w-full py-4 mb-8 px-2 rounded-lg text-black"
         ></input>
         <br></br>
-        <label className=" text-lg">Confirm Password</label>
+        <label className=" text-xl text-white">Confirm Password</label>
         <br></br>
         <input
           type="password"
           placeholder="your password again"
           required
-          className="p-1 w-full text-black"
+          className="p-1 w-full py-4 mb-8 px-2 rounded-lg text-black"
         ></input>
         <br></br>
         <button
           type="submit"
-          className="block m-auto bg-white mt-16 p-2 text-black font-bold"
+          className="block m-auto bg-white mt-3 p-2 text-black font-bold rounded-lg"
         >
           DELETE
         </button>
