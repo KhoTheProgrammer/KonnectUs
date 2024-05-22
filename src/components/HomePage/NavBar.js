@@ -29,7 +29,7 @@ export default function NavBar({ isSignedIn, setSignedIn, searchTerm, setSearchT
     },
     {
       name: "Reviews",
-      link: "/RateAndReview/ReviewRating"
+      link: "/RatingAndReviews/ReviewsPage"
     },
     {
       name: "Contact Us",
