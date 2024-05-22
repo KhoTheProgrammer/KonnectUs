@@ -5,7 +5,7 @@ export default function DropDown(props) {
   const isOpen = props.isOpen;
 
   return (
-    <div className="h-full font-bold bg-white rounded-b-lg">
+    <div className=" absolute font-bold bg-white rounded-b-lg">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
