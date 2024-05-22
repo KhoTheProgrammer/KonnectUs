@@ -29,7 +29,7 @@ export default function NavBar(props) {
     },
     {
       name: "Reviews",
-      link: "/RateAndReview/ReviewRating"
+      link: "/RateAndReview/ReviewsPage"
     }
   ]
 

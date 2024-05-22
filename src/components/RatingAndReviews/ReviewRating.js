@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import NavBar from '../HomePage/NavBar';
+import Footer from '../HomePage/Footer';
 
 const ReviewRating = () => {
   const [reviews, setReviews] = useState([]);
