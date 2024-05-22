@@ -9,19 +9,35 @@ export default function NavBar({ isSignedIn, setSignedIn, searchTerm, setSearchT
   const [showDropDown, setShowDropDown] = useState(false);
 
   const buttons = [
-    { name: "Home", link: "/HomePage" },
-    { name: "About Us", link: "/AboutUs/AboutUs" },
-    { name: "Products", link: "/ProductsPage" },
-    { name: "Team", link: "/Team" }
-  ];
+    {
+      name: "Home",
+      link: "/HomePage"
+    },
+    {
+      name: "About Us",
+      link: "/AboutUs/AboutUs"
+    },
+    {
+      name: "Products",
+      link: "/ProductsPage"
+    },
+    {
+      name: "Team",
+      link: "/Team"
+    },
+    {
+      name: "Reviews",
+      link: "/RateAndReview/ReviewRating"
+    }
+  ]
 
   const mapButtons = (button) => (
-    <NavLink to={button.link} key={button.name}>
-      <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-        {button.name}
-      </li>
-    </NavLink>
-  );
+    <NavLink to={button.link}>
+    <li key={button.name} className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+      {button.name}
+    </li>
+  </NavLink>)
+  
 
   return (
     <div className="grid grid-cols-[1fr_3fr] p-3 m-0 h-[80px]">

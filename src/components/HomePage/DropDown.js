@@ -28,7 +28,7 @@ export default function DropDown(props) {
               Post
             </li>
           </NavLink>
-          <NavLink to="/Messages">
+          <NavLink to="/Messages/Chats">
             <li className=" cursor-pointer text-black hover:text-green-500">
               {" "}
               Messages
