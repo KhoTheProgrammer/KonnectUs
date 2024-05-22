@@ -33,7 +33,7 @@ const AccountReports = () => {
               id="AccountReported"
               value={AccountReported}
               onChange={(e) => setAccountReported(e.target.value)}
-              className=" mt-2  w-full border- to-black rounded-md shadow- focus:border- to-black focus:ring focus:ring-green-200 focus:ring-opacity-50"
+              className="  bg-gray-200 mt-2  w-full border- to-black rounded-md shadow- focus:border- to-black focus:ring focus:ring-green-200 focus:ring-opacity-50"
               required
             />
           </div>
@@ -46,7 +46,7 @@ const AccountReports = () => {
               value={Reason}
               onChange={(e) => setReason(e.target.value)}
               rows="10"
-              className="mt-1 block  w-full border- to-black rounded- size-7 shadow- md focus:border-indigo-300 focus:ring focus:ring-green-200 focus:ring-opacity-50"
+              className="  bg-gray-200 mt-1 block  w-full border- to-black rounded- size-7 shadow- md focus:border-indigo-300 focus:ring focus:ring-green-200 focus:ring-opacity-50"
               required
             ></textarea>
           </div>
