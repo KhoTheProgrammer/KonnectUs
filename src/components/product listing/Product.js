@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import Footer from "../HomePage/Footer";
+import { NavLink, useNavigate } from "react-router-dom";
 import NavBar from "../HomePage/NavBar";
+import Footer from "../HomePage/Footer";
+import { useNavigate } from "react-router-dom";
 
 const ProductForm = () => {
   const [products, setProducts] = useState([]);
@@ -18,7 +19,8 @@ const ProductForm = () => {
       price: price,
       location: location,
       quantity: quantity,
-      image: image
+      image:image,
+
     };
     setProducts([...products, newProduct]);
     setProductName("");
@@ -41,65 +43,69 @@ const ProductForm = () => {
     setImage(file);
   };
 
-const handleEdit = () => {
-
+const handleEdit = (index) => {
+Navigate('/edit{index}');
 }
 
   return (
+    <div>
+      <NavBar></NavBar>
+      <div flex flex-center>
     <div className="container mx-auto">
-      <form onSubmit={handleSubmit} className="bg-white md:w-full md:h-3/4 p-6 rounded-lg ">
+    
+      <form onSubmit={handleSubmit} className="mt-8bg-white w-full h-3/4 p-6 m-8 rounded-lg">
         <div className="mb-4">
-          <label className="block text-green-500 text-sm font-bold mb-2">
+          <label className="block text-black text-sm font-bold mb-2">
             Product Name
           </label>
           <input
             type="text"
             value={productName}
             onChange={(e) => setProductName(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-green-500 text-sm font-bold mb-2">
+          <label className="block text-black text-sm font-bold mb-2">
             Price
           </label>
           <input
             type="text"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="shadow appearance-none  w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-green-500 text-sm font-bold mb-2">
+          <label className="block text-black text-sm font-bold mb-2">
             Location
           </label>
           <input
             type="text"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="shadow appearance-none  w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-green-500 text-sm font-bold mb-2">
+          <label className="block text-black text-sm font-bold mb-2">
             Quantity
           </label>
           <input
             type="text"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
-            className="shadow appearance-none  w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-green-500 text-sm font-bold mb-2">
+          <label className="block text-black  text-sm font-bold mb-2">
             Product Image
           </label>
           <input
             type="file"
             onChange={handleImageChange}
-            className="shadow appearance-none border aspect-square w-60 py-2 px-3 text-green-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border aspect-square w-70 py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
         />
         </div>
         <button
@@ -118,22 +124,22 @@ const handleEdit = () => {
               {product.quantity}
               <button
                 onClick={() => handleDelete(index)}
-                className="ml-2 text-sm text-green-500"
+                className="ml-2 text-sm text-black"
               >
                 Delete
               </button>
             </li>
           ))}
-          <li className="ml-2 text-green-500">
+          <li className="ml-2 text-black">
             <NavLink to = "/product listing/EditPost" >
             <button>Edit</button>
             </NavLink>
           </li>
         </ul>
       </div>
-    </div>,
-    <div>
-      <Footer></Footer>
+    </div>
+    <Footer></Footer>
+    </div>
     </div>
   );
 };
