@@ -8,7 +8,7 @@ const Filter = ({ filter, setFilter }) => {
       className="p-2 border rounded-xl"
     >
       <option value="">Filter by</option>
-      <option value="name">Product Name</option>
+      <option value="name">Name</option>
       <option value="price">Price</option>
       <option value="market">Location</option>
       <option value="quantity">Quantity</option>
