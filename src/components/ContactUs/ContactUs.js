@@ -11,7 +11,7 @@ const ContactUs = () => {
         backgroundImage:
           "url(https://www.mowernew.com/wp-content/uploads/2023/07/pexels-gilmer-diaz-estela-6345502-1200x800.jpg)",
       }}>
-        <form className="bg-white w-1/2 h-3/4 p-6 m-8 rounded-lg">
+        <form className="bg-white md:w-1/2 w-3/4 h-3/4 p-6 m-8 rounded-lg">
           <h1 className="text-center md:text-4xl font-bold text-lg mb-4 text-green-500">
             CONTACT US
           </h1>
