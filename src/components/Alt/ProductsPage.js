@@ -1,4 +1,4 @@
-// src/pages/ProductsPage.js
+
 import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
@@ -129,7 +129,7 @@ const ProductsPage = () => {
     }
     return (
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.price.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.price.toLowerCase().includes(searchTerm.toLowerCase()) ||  
       product.market.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.quantity.toLowerCase().includes(searchTerm.toLowerCase())
     );
