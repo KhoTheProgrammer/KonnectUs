@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
-import { useNavigate } from "react-router-dom";
+
 
 const ProductForm = () => {
   const [products, setProducts] = useState([]);
@@ -44,7 +44,6 @@ const ProductForm = () => {
   };
 
 const handleEdit = (index) => {
-Navigate('/edit{index}');
 }
 
   return (
