@@ -1,13 +1,40 @@
 import Dashboard from "./Dashboard";
-import Update from "./Update";
+import NavBar from "../HomePage/NavBar";
+import Footer from "../HomePage/Footer";
+import { useState } from "react";
+import Delete from "./Delete";
+import Change from "./Change";
+import { useNavigate } from "react-router";
+import Create from "./Create";
 
 export default function AccountPage() {
+  const navigate = useNavigate();
+  const [clickValue, setClickValue] = useState(1);
+
+  // Renders components dynamically
+  function renders() {
+    if (clickValue === 1) {
+      return <Create></Create>;
+    } else if (clickValue === 2) {
+      return <Delete></Delete>;
+    } else if (clickValue === 3) {
+      return <Change></Change>;
+    } else {
+      navigate("/HomePage");
+    }
+  }
+
   return (
-    <div className="flex gap-4">
-      <Dashboard></Dashboard>
-      <div className="flex h-screen justify-center items-center mx-auto">
-        <Update />
+    <div className="h-full w-full">
+      <NavBar></NavBar>
+      <div className="flex">
+        <Dashboard
+          clickValue={clickValue}
+          setClickValue={setClickValue}
+        ></Dashboard>
+        {renders()}
       </div>
+      <Footer></Footer>
     </div>
   );
 }

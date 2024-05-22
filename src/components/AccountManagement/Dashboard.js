@@ -1,12 +1,8 @@
-import { useState } from "react";
 import { createContext } from "react";
-
 
 export const clickContext = createContext();
 
-export default function Dashboard() {
-  const [clickValue, setClickValue] = useState(1);
-
+export default function Dashboard({ clickValue, setClickValue }) {
   const handleClickCreate = () => {
     setClickValue(1);
   };
@@ -24,7 +20,7 @@ export default function Dashboard() {
   };
   return (
     <div>
-      <div className="hidden md:block h-screen bg-green-500 w-52">
+      <div className="hidden md:block h-full bg-green-500 w-52">
         <div className=" p-4 text-white font-bold">
           <p className="mb-7 text-center text-MD">KHOTHEPROGRAMMER</p>
           <p
