@@ -11,6 +11,7 @@ import Product from "./components/product listing/Product";
 import AboutUs from "./components/AboutUs/AboutUs"
 import EditPost from "./components/product listing/EditPost";
 import Chats from "./components/Messages/Chats";
+import AccountReports from "./components/AccountReporting/AccountReports";
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -35,7 +36,7 @@ export const router = createBrowserRouter([
     element: <HomePage></HomePage>
   },
   {
-    path: "ProductsPage",
+    path: "/Alt/ProductsPage",
     element: <ProductsPage></ProductsPage>
   },
   {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
   {
     path: "/Messages/Chats",
     element: <Chats />
+  },
+  {
+    path: "/AccountReporting/AccountReports",
+    element: <AccountReports />
   }
 ]);
 
