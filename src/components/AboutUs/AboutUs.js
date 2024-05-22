@@ -19,7 +19,7 @@ class AboutUs extends Component {
               platform aims to empower farmers, streamline the suply chain, and
               provide buyers with access to high quality produce. Founded by a
               team passionate about sustanabillity and community empowerment, we
-              priorittize trasparancy, fairness and, collaboration. join us in
+              priorittize trasparancy, fairness and, collaboration. Join us in
               creating a more sustainable and equitable food system.
             </p>
           </div>
