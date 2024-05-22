@@ -1,5 +1,5 @@
 import KonnectUslogo from "./Konnect1.png";
-import Search from "../Search and Filtering/Search";
+import Search from "../Search and Filtering/Searching";
 import DropDown from "./DropDown"
 import {useState} from "react"
 
