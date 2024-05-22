@@ -1,28 +1,35 @@
-export default function Change({password, setPassword}) {
-
+export default function Change() {
   return (
-    <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl mt-16">
-      <h2 className="text-center font-bold text-3xl text-white mb-8">CHANGE PASSWORD</h2>
+    <div className="w-3/4 flex justify-center mx-auto h-screen items-center">
+        <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl">
+      <h2 className="text-center font-bold text-3xl text-white mb-8">
+        CHANGE PASSWORD
+      </h2>
       <form>
-        <label className=" text-lg font-medium text-white">Old Password</label> <br></br>
+        <label className=" text-lg font-medium text-white">Old Password</label>{" "}
+        <br></br>
         <input
-          type="text"
-          placeholder="old password"
+          type="password"
+          placeholder="old password..."
           required
-          className="py-4 w-full text-white mb-8 px-2 rounded-lg"
+          className="py-4 w-full text-black mb-8 px-2 rounded-lg"
         ></input>{" "}
         <br></br>
-        <label className=" text-lg font-medium text-white">New Password</label> <br></br>
+        <label className=" text-lg font-medium text-white">New Password</label>{" "}
+        <br></br>
         <input
-          type="email"
+          type="password"
           placeholder="new password..."
           required
-          className="py-4 px-2 w-full  text-white mb-8 rounded-lg"
+          className="py-4 px-2 w-full  text-black mb-8 rounded-lg"
         ></input>{" "}
         <br></br>
-        <label className=" text-lg font-medium text-white">Confirm Password</label> <br></br>
+        <label className=" text-lg font-medium text-white">
+          Confirm Password
+        </label>{" "}
+        <br></br>
         <input
-          type="tel"
+          type="password"
           placeholder="confirm password"
           required
           className="py-4 w-full text-black px-2 mb-8 rounded-lg"
@@ -32,5 +39,7 @@ export default function Change({password, setPassword}) {
         </button>
       </form>
     </div>
+    </div>
+    
   );
 }

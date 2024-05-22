@@ -23,7 +23,7 @@ function Main(props)  {
           Connect farmers and buyers effortlessly
         </h3>
         { !props.isSignedIn ? 
-        (<NavLink to="/Login">
+        (<NavLink to="/SignUp">
           <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
             Join Us Now
           </button>
