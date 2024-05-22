@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import KonnectUslogo from "./Konnect1.png";
 import Search from "../Alt/Search"; 
@@ -19,7 +18,7 @@ export default function NavBar({ isSignedIn, setSignedIn, searchTerm, setSearchT
     },
     {
       name: "Products",
-      link: "/Alt/ProductsPage"
+      link: "/ProductsPage"
     },
     {
       name: "Team",
@@ -33,7 +32,7 @@ export default function NavBar({ isSignedIn, setSignedIn, searchTerm, setSearchT
 
   const mapButtons = (button) => (
     <NavLink to={button.link}>
-    <li key={button.name} className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+    <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
       {button.name}
     </li>
   </NavLink>)
