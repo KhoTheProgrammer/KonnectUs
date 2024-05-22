@@ -21,7 +21,7 @@ export default function NavBar({ isSignedIn, setSignedIn, searchTerm, setSearchT
     },
     {
       name: "Products",
-      link: "/Alt/ProductsPage"
+      link: "/product listing/ProductsPage"
     },
     {
       name: "Team",
