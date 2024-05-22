@@ -1,7 +1,7 @@
-export default function Update() {
+export default function Create() {
   return (
     <div className="w-3/4 flex justify-center mx-auto">
-      <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl">
+      <div className=" bg-green-500 w-full md:px-24 p-8 md:py-16 rounded-2xl">
         <h2 className="text-center font-bold text-3xl text-white mb-8">
           CREATE PROFILE
         </h2>
@@ -12,7 +12,7 @@ export default function Update() {
             type="text"
             placeholder="your name..."
             required
-            className="py-4 w-full text-white mb-8 px-2 rounded-lg"
+            className="py-4 w-full  mb-8 px-2 rounded-lg"
           ></input>{" "}
           <br></br>
           <label className=" text-lg font-medium text-white">Email</label>{" "}
@@ -21,7 +21,7 @@ export default function Update() {
             type="email"
             placeholder="your email..."
             required
-            className="py-4 px-2 w-full  text-white mb-8 rounded-lg"
+            className="py-4 px-2 w-full  mb-8 rounded-lg"
           ></input>{" "}
           <br></br>
           <label className=" text-lg font-medium text-white">
