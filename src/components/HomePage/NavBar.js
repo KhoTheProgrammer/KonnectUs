@@ -6,6 +6,10 @@ import DropDown from './DropDown';
 
 export default function NavBar({ isSignedIn, setSignedIn, searchTerm, setSearchTerm }) {
   const [showDropDown, setShowDropDown] = useState(false);
+  const location = useLocation();
+
+
+
 
   const buttons = [
     {
