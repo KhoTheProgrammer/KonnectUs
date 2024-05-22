@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import KonnectUslogo from "./Konnect1.png";
-import Search from "../Alt/Search";
+import Search from "../Search and Filtering/Search";
 import { NavLink, useLocation } from "react-router-dom";
 import DropDown from './DropDown';
 

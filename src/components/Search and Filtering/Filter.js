@@ -5,7 +5,7 @@ const Filter = ({ filter, setFilter }) => {
     <select
       value={filter}
       onChange={(e) => setFilter(e.target.value)}
-      className="p-2 border rounded"
+      className="p-2 border rounded-xl"
     >
       <option value="">Filter by</option>
       <option value="name">Product Name</option>
