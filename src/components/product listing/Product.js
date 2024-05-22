@@ -102,7 +102,7 @@ const handleEdit = () => {
         </div>
         <button
           type="submit"
-          className=" bg-gray-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className=" bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Add Product
         </button>
