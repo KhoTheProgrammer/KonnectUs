@@ -6,7 +6,11 @@ const ContactUs = () => {
   return (
     <div>
       <NavBar></NavBar>
-      <div className="bg-gray-300 h-screen flex justify-center items-center">
+      <div className="bg-gray-300 h-screen flex justify-center items-center bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url(https://www.mowernew.com/wp-content/uploads/2023/07/pexels-gilmer-diaz-estela-6345502-1200x800.jpg)",
+      }}>
         <form className="bg-white md:w-1/2 md:h-3/4 p-6 rounded-lg">
           <h1 className="text-center md:text-4xl font-bold text-lg mb-4">
             CONTACT US
