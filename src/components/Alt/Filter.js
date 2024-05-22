@@ -10,8 +10,8 @@ const Filter = ({ filter, setFilter }) => {
       <option value="">Filter by</option>
       <option value="name">Product Name</option>
       <option value="price">Price</option>
-      <option value="location">Location</option>
-      <option value="location">Quantity</option>
+      <option value="market">Location</option>
+      <option value="quantity">Quantity</option>
     </select>
   );
 };
