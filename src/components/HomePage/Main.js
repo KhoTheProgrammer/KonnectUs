@@ -8,13 +8,12 @@ function Main(props) {
     "https://www.mowernew.com/wp-content/uploads/2023/07/pexels-gilmer-diaz-estela-6345502-1200x800.jpg",
     "https://www.mowernew.com/wp-content/uploads/2023/07/pexels-erik-mclean-9229821-1200x800.jpg",
     "https://get.pxhere.com/photo/nature-grass-plant-field-farm-lawn-meadow-prairie-sunlight-leaf-flower-green-crop-agriculture-farmland-in-rural-areas-grassland-habitat-views-ecosystem-natural-environment-grass-family-plant-stem-computer-wallpaper-land-plant-every-day-793337.jpg"
-
-  ];
+];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 10000); // Change image every 10 seconds
+    }, 5000); // Change image every 10 seconds
 
     return () => clearInterval(interval);
   }, [images.length]);
