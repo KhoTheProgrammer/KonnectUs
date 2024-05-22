@@ -152,7 +152,7 @@ const ProductsPage = () => {
                 <p className="text-black mb-2 text-lg"><span className="font-bold">Price: </span>{product.price}</p>
                 <p className="text-black mb-4 text-lg"><span className="font-bold">Location: </span>{product.market}</p>
                 <p className="text-black mb-2 text-lg"><span className="font-bold">Quantity: </span>{product.quantity}</p>
-                <NavLink to="/Messages">
+                <NavLink to="/Messages/Messages">
                   <button className="bg-green-500 block m-auto text-white p-2 rounded-lg font-bold hover:bg-green-700">
                     ENQUIRE
                   </button>
