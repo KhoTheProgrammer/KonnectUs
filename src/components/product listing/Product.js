@@ -7,7 +7,7 @@ const ProductForm = () => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [quantity, setQuantity] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,7 +45,7 @@ const handleEdit = () => {
 
   return (
     <div className="container mx-auto">
-      <form onSubmit={handleSubmit} className="mt-8">
+      <form onSubmit={handleSubmit} className="bg-white md:w-full md:h-3/4 p-6 rounded-lg ">
         <div className="mb-4">
           <label className="block text-green-500 text-sm font-bold mb-2">
             Product Name
@@ -97,7 +97,7 @@ const handleEdit = () => {
           <input
             type="file"
             onChange={handleImageChange}
-            className="shadow appearance-none border aspect-square w-full py-2 px-3 text-green-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border aspect-square w-60 py-2 px-3 text-green-700 leading-tight focus:outline-none focus:shadow-outline"
         />
         </div>
         <button
