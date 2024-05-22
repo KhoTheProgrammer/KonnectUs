@@ -48,7 +48,7 @@ const chats = [
 const drawChats = (chat) => (
   <li key={chat.name} className="">
     <NavLink to="/Messages/Messages">
-      <div className="flex flex-row hover:bg-gray-100">
+      <div className="flex flex-row hover:bg-white">
         <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +65,7 @@ const drawChats = (chat) => (
             />
           </svg>
         </div>
-        <div className="flex flex-col border-b-[1px] p-2 w-full">
+        <div className="flex flex-col border-b-[1px] border-green-500 p-2 w-full">
           <div className=" flex flex-row justify-between">
             <span className="font-bold hover:text-green-500">{chat.name}</span>
             <span className="justify-end">{chat.time}</span>
@@ -79,12 +79,12 @@ const drawChats = (chat) => (
 
 export default function Chats() {
   return (
-    <div className="flex flex-col h-screen ">
+    <div className="flex flex-col min-h-full justify-between ">
       <div className=" ">
         <NavBar />
       </div>
 
-      <div className=" ">
+      <div className="bg-green-300 ">
         <ul>{chats.map(drawChats)}</ul>
       </div>
 
