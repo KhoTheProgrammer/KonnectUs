@@ -1,12 +1,8 @@
-import { useState } from "react";
 import { createContext } from "react";
-
 
 export const clickContext = createContext();
 
-export default function Dashboard() {
-  const [clickValue, setClickValue] = useState(1);
-
+export default function Dashboard({ clickValue, setClickValue }) {
   const handleClickCreate = () => {
     setClickValue(1);
   };
