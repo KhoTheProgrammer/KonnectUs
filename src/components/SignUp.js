@@ -53,23 +53,23 @@ const SignUp = () => {
       <form onSubmit={handleSubmit}>
         <label>Username</label>
         <br />
-        <input type="text" onChange={handleusername} required />
+        <input type="text" onChange={handleusername} required placeholder="Enter you user name" />
         <br />
-        <label>firsname</label>
+        <label>first name</label>
         <br />
-        <input type="text" onChange={handleFname} required />
+        <input type="text" onChange={handleFname} required placeholder="Enter first name " />
         <br />
         <label>lastname</label>
         <br />
-        <input type="text" onChange={handlelname} required />
+        <input type="text" onChange={handlelname} required placeholder="Enter last name" />
         <br />
         <label>email</label>
         <br />
-        <input type="text" onChange={handleEmail} required />
+        <input type="text" onChange={handleEmail} required placeholder="Enter your email" />
         <br />
         <label>password</label>
         <br />
-        <input type="text" onChange={handlepassword} required />
+        <input type="text" onChange={handlepassword} required placeholder="Enter your password" />
         <br />
         <NavLink to="/HomePage">
         <button type="submit" className="bg-green-500 p-4" disabled = {!isSignedIn}>

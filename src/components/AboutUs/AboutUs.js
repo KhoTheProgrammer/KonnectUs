@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
+import NavBar from "../HomePage/NavBar";
+import Footer from "../HomePage/Footer";
 
 class AboutUs extends Component {
   render() {
