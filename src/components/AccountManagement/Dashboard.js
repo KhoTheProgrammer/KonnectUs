@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-export default function SideBar() {
-  return (
-    <div>
-      <div className=" h-screen bg-green-500 w-52">
-        <div className=" p-4">
-          <p className=" tex-white font-bold mb-7 text-center text-MD">KHOTHEPROGRAMMER</p>
-          <p className=" tex-white font-bold border-b-2 mb-4">CREATE PROFILE</p>
-          <p className=" tex-white font-bold  mb-4">DELETE ACCOUNT</p>
-          <p className=" tex-white font-bold  mb-4">MESSAGE</p>
-          <p className=" tex-white font-bold  mb-4">POST</p>
-          <p className=" tex-white font-bold  mb-4">LOGOUT</p>
-=======
 import { createContext } from "react";
 
 export const clickContext = createContext();
@@ -76,7 +63,6 @@ export default function Dashboard({ clickValue, setClickValue }) {
           >
             LOGOUT
           </p>
->>>>>>> 0ab091799cd209d395fb9ec07eeb53cd2d4f7ec1
         </div>
       </div>
     </div>

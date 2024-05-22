@@ -1,16 +1,11 @@
 export default function Change({password, setPassword}) {
 
   return (
-<<<<<<< HEAD
-    <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl mt-16">
-      <h2 className="text-center font-bold text-3xl text-white mb-8">CHANGE PASSWORD</h2>
-=======
     <div className="w-3/4 flex justify-center mx-auto h-screen items-center">
         <div className=" bg-green-500 w-full px-24 py-16 rounded-2xl">
       <h2 className="text-center font-bold text-3xl text-white mb-8">
         CHANGE PASSWORD
       </h2>
->>>>>>> 0ab091799cd209d395fb9ec07eeb53cd2d4f7ec1
       <form>
         <label className=" text-lg font-medium text-white">Old Password</label> <br></br>
         <input
