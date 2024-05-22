@@ -22,7 +22,7 @@ export default function NavBar({ isSignedIn, setSignedIn, searchTerm, setSearchT
     },
     {
       name: "Products",
-      link: "/ProductsPage"
+      link: "/Alt/ProductsPage"
     },
     {
       name: "Team",
