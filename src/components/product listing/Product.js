@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Footer from "../HomePage/Footer";
+import NavBar from "../HomePage/NavBar";
 
 const ProductForm = () => {
   const [products, setProducts] = useState([]);
@@ -129,6 +131,9 @@ const handleEdit = () => {
           </li>
         </ul>
       </div>
+    </div>,
+    <div>
+      <Footer></Footer>
     </div>
   );
 };
