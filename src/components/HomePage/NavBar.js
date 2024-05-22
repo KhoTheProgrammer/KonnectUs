@@ -21,17 +21,25 @@ export default function NavBar(props) {
     },
     {
       name: "Products",
-      link: "/ProductsPage"
+      link: "/Alt/ProductsPage"
     },
     {
       name: "Team",
       link: "/Team"
+    },
+    {
+      name: "Reviews",
+      link: "/RateAndReview/ReviewRating"
+    },
+    {
+      name: "Contact Us",
+      link: "/ContactUs"
     }
   ]
 
   const mapButtons = (button) => (
     <NavLink to={button.link}>
-    <li className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+    <li key={button.name} className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
       {button.name}
     </li>
   </NavLink>)
