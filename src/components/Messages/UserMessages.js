@@ -14,7 +14,7 @@ export default function UserMessages({ messages }) {
           </li>
         ))}
       </ul>
-      <div className=" h-16">
+      <div className=" h-20">
         <br></br>
       </div>
     </div>
