@@ -1,5 +1,5 @@
 export default function EditPost(){
-    return (
-        <p> </p>
-    )
+return(
+    <p>edit</p>
+)
 }
