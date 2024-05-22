@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import NavBar from '../HomePage/NavBar';
-import Footer from '../HomePage/Footer';
 
 const ReviewRating = () => {
   const [reviews, setReviews] = useState([]);
@@ -50,7 +48,6 @@ const ReviewRating = () => {
     setIsSubmitting(false); // Reset submitting state after submission
   };
 
-  // renders stars
   const renderStars = (count) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {

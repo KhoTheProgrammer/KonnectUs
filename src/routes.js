@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import ReviewRating from "./components/RatingAndReviews/ReviewRating";
+import ReviewsPage from "./components/RatingAndReviews/ReviewsPage";
 import Messages from "./components/Messages/Messages";
 import Login from "./components/Login/Login";
 import HomePage from "./components/HomePage/HomePage";
-import ProductsPage from "./components/Alt/ProductsPage";
+import ProductsPage from "./components/product listing/ProductsPage";
 import Team from "./components/Team/Team";
 import AccountPage from "./components/AccountManagement/AccountPage";
 import Product from "./components/product listing/Product";
@@ -23,8 +23,8 @@ export const router = createBrowserRouter([
     element: <App></App>,
   },
   {
-    path: "/RateAndReview/ReviewRating",
-    element: <ReviewRating />,
+    path: "/RatingAndReviews/ReviewsPage",
+    element: <ReviewsPage />,
   },
   {
     path: "/Messages/Messages",
