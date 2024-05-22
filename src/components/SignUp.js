@@ -64,7 +64,7 @@ const SignUp = () => {
               placeholder="Enter you user name"
             />
             <br />
-            <label></label>
+            <label>FIRST NAME</label>
             <br />
             <input
               type="text"
@@ -100,7 +100,7 @@ const SignUp = () => {
               placeholder="Enter your password"
             />
             <br />
-            <button type="submit" className="bg-green-500 p-4">
+            <button type="submit" className="bg-green-500 mt-[20px] rounded-lg h-8 w-[100px] text-white border-amber-100">
               Sign Up
             </button>
           </form>
