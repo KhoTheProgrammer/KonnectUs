@@ -1,4 +1,3 @@
-//Search and Filtering/Search.js
 import React from 'react';
 
 const Search = ({ searchTerm, setSearchTerm }) => {

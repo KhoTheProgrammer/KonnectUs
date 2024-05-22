@@ -1,7 +1,7 @@
-// src/HomePage/NavBar.js
+
 import React, { useState } from 'react';
 import KonnectUslogo from "./Konnect1.png";
-import Search from "../Alt/Search"; // Ensure the path is correct
+import Search from "../Alt/Search"; 
 import { NavLink, useLocation } from "react-router-dom";
 import DropDown from './DropDown';
 
