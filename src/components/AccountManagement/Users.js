@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const url = "/Users.json";
-
     fetch(url)
       .then((response) => {
         if (!response.ok) {
@@ -22,14 +23,26 @@ export default function Users() {
         console.error("Error fetching or parsing JSON:", error)
       );
   }, []);
-   // Empty dependency array means this useEffect runs once after the initial render
 
-   
+  // Function to handle option icon click
+  const handleOptionClick = (user) => {
+    setSelectedUser(user);
+  };
+
+  // Function to handle option selection
+  const handleOptionSelect = (option) => {
+    if (option === "Edit"){
+      navigate("/AccountManagement/AccountPage")
+    }
+    // Perform the desired action based on the selected option
+    setSelectedUser(null); // Reset the selected user after handling the option
+  };
+
   return (
     <div className="w-full p-8">
       <div className="flex">
         <h2 className="text-xl font-bold mb-8">Users ({users.length})</h2>
-        <NavLink to="/Login" className="ml-auto">
+        <NavLink to="/Signup" className="ml-auto">
           <div className=" flex">
             <svg
               data-slot="icon"
@@ -47,12 +60,10 @@ export default function Users() {
                 d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"
               ></path>
             </svg>
-
             <p className="text-xl font-bold mb-8 flex">Add User</p>
           </div>
         </NavLink>
       </div>
-
       <div className="border-solid border grid grid-cols-4 p-4 bg-green-500">
         <div className="mb-3">
           <h3 className="font-bold text-xl text-white">USERNAME</h3>
@@ -64,39 +75,53 @@ export default function Users() {
           <h3 className="font-bold text-xl text-white">LAST NAME</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold text-xl text-white">EMAIL</h3> 
+          <h3 className="font-bold text-xl text-white">EMAIL</h3>
         </div>
       </div>
-
       {users.map((user, index) => (
-        <div
-          key={index}
-          className="mb-3 border-solid border grid grid-cols-4 p-4 hover:bg-green-500"
-        >
+        <div key={index} className="mb-3 border-solid border grid grid-cols-4 p-4 hover:bg-green-500">
           <h3>{user.username}</h3>
           <h3>{user.firstname}</h3>
           <h3>{user.lastname}</h3>
           <div className=" flex">
             <h3>{user.email} </h3>
-            <NavLink to="/Home" className="ml-auto">
-              <svg
-                data-slot="icon"
-                fill="none"
-                stroke-width="1.5"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                className=" h-8 inline-block ml-auto"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
-                ></path>
-              </svg>
-            </NavLink>
+            <svg
+              data-slot="icon"
+              fill="none"
+              stroke-width="1.5"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              className=" h-8 inline-block ml-auto cursor-pointer"
+              onClick={() => handleOptionClick(user)}
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z"
+              ></path>
+            </svg>
           </div>
+          {selectedUser === user && (
+            <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
+              <div className="bg-white p-8 rounded-lg">
+                <h2 className="text-xl font-bold mb-4">Options</h2>
+                <button
+                  className="block w-full py-2 px-4 bg-green-500 text-white rounded mb-2"
+                  onClick={() => handleOptionSelect("Edit")}
+                >
+                  Edit
+                </button>
+                <button
+                  className="block w-full py-2 px-4 bg-red-500 text-white rounded"
+                  onClick={() => handleOptionSelect("Delete")}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       ))}
     </div>
