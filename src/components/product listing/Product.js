@@ -7,7 +7,7 @@ const ProductForm = () => {
   const [price, setPrice] = useState("");
   const [location, setLocation] = useState("");
   const [quantity, setQuantity] = useState("");
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,7 +65,7 @@ const handleEdit = () => {
             type="text"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none  w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
@@ -76,7 +76,7 @@ const handleEdit = () => {
             type="text"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none  w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
@@ -87,7 +87,7 @@ const handleEdit = () => {
             type="text"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none  w-full py-2 px-3 text-green-500 leading-tight focus:outline-none focus:shadow-outline"
           />
         </div>
         <div className="mb-4">
@@ -102,7 +102,7 @@ const handleEdit = () => {
         </div>
         <button
           type="submit"
-          className=" bg-gray-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className=" bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Add Product
         </button>

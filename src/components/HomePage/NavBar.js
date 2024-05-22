@@ -21,7 +21,7 @@ export default function NavBar(props) {
     },
     {
       name: "Products",
-      link: "/ProductsPage"
+      link: "/Alt/ProductsPage"
     },
     {
       name: "Team",
@@ -30,6 +30,10 @@ export default function NavBar(props) {
     {
       name: "Reviews",
       link: "/RateAndReview/ReviewRating"
+    },
+    {
+      name: "Contact Us",
+      link: "/ContactUs"
     }
   ]
 
