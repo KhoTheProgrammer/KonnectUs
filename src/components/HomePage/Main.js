@@ -5,11 +5,11 @@ function Main(props) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
-    "https://www.mowernew.com/wp-content/uploads/2023/07/pexels-gilmer-diaz-estela-6345502-1200x800.jpg",
-    "https://www.mowernew.com/wp-content/uploads/2023/07/pexels-erik-mclean-9229821-1200x800.jpg",
-    "https://get.pxhere.com/photo/nature-grass-plant-field-farm-lawn-meadow-prairie-sunlight-leaf-flower-green-crop-agriculture-farmland-in-rural-areas-grassland-habitat-views-ecosystem-natural-environment-grass-family-plant-stem-computer-wallpaper-land-plant-every-day-793337.jpg"
-];
-
+    "https://oxfordvitality.co.uk/cdn/shop/articles/13929060_ml-e1484929844678.jpg",
+    "https://www.greenlife.co.ke/wp-content/uploads/2022/04/Tomatoes-Farm-scaled-1-1536x1024.jpg",
+    "https://get.pxhere.com/photo/nature-grass-plant-field-farm-lawn-meadow-prairie-sunlight-leaf-flower-green-crop-agriculture-farmland-in-rural-areas-grassland-habitat-views-ecosystem-natural-environment-grass-family-plant-stem-computer-wallpaper-land-plant-every-day-793337.jpg",
+    "https://www.greenlife.co.ke/wp-content/uploads/2022/04/farming_passion.jpg"
+  ];   
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
