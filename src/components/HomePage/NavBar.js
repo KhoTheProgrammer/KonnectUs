@@ -120,7 +120,7 @@ export default function NavBar({
             </li>
           ) : (
             <NavLink to="/Login">
-              <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+              <li className="font-bold mx-6 text-[15px] hover:text-green-500 py-1 cursor-pointer">
                 Login
               </li>
             </NavLink>
