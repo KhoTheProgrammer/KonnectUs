@@ -1,4 +1,6 @@
 import React from "react";
+import NavBar from "../HomePage/NavBar";
+import Footer from "../HomePage/Footer";
 
 const ReportList = () => {
   // Dummy data for demonstration (replace with actual data later)
@@ -30,6 +32,8 @@ const ReportList = () => {
   ];
 
   return (
+    <div>
+        <NavBar></NavBar>
     <div
       style={{
         maxWidth: "800px",
@@ -89,6 +93,8 @@ const ReportList = () => {
           </li>
         ))}
       </ul>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };
