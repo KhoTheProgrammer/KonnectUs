@@ -67,7 +67,7 @@ export default function NavBar({
   const mapButtons = (button) => (
     <li
       key={button.name}
-      className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer"
+      className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer"
     >
       <NavLink to={button.link}>{button.name}</NavLink>
     </li>
