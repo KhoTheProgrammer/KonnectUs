@@ -6,7 +6,10 @@ import { useNavigate } from "react-router-dom";
 import Footer from "./HomePage/Footer";
 import NavBar from "./HomePage/NavBar";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import {auth} from "./Users"
+import {getFirestore,getDoc, addDoc, collection } from "firebase/firestore";
+import {auth} from "./Users";
+import "./Users";
+import {app} from "./Users";
 
 const SignUp = () => {
   let usersData = useContext(usersContext);
@@ -17,6 +20,20 @@ const SignUp = () => {
   const [password, setpassword] = useState("");
   const [fname, setfname] = useState("");
   const [lname, setlname] = useState("");
+  const [userID, setUserID] = useState("");
+
+  const database = getFirestore(app);
+  const colRef = collection(database, "UserData");
+
+
+  const addDetails = async (userCredentials) => {
+    const ref = await addDoc(colRef, {
+      fname : fname,
+      lname : lname,
+      userid : userCredentials.user.uid
+    });
+    console.log("data added successfully");
+  }
 
   const handleEmail = (e) => {
     setemail(e.target.value);
@@ -52,6 +69,8 @@ const SignUp = () => {
     .then(
       (userCredentials) => {
         console.log(userCredentials);
+        setUserID(userCredentials.user.uid);
+        addDetails(userCredentials);
       }
     )
     .catch(
