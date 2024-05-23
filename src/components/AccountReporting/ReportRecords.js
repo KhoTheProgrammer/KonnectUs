@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "../HomePage/NavBar";
-import Footer from "../HomePage/Footer";
 
 const ReportList = () => {
   // Dummy data for demonstration (replace with actual data later)
@@ -86,7 +85,6 @@ const ReportList = () => {
         ))}
       </ul>
     </div>
-    <Footer></Footer>
     </div>
   );
 };
