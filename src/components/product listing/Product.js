@@ -22,6 +22,7 @@ const ProductForm = () => {
       image:image,
 
     };
+    
     setProducts([...products, newProduct]);
     setProductName("");
     setPrice("");
