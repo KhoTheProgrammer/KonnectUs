@@ -125,7 +125,7 @@ const ProductsPage = () => {
 
   const filteredProducts = products.filter((product) => {
     if (filter) {
-      return product[filter].toLowerCase().includes(searchTerm.toLowerCase());
+      return  product[filter].toLowerCase().includes(searchTerm.toLowerCase());
     }
     return (
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
