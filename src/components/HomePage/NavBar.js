@@ -129,14 +129,12 @@ export default function NavBar({
           </NavLink>
         )}
 
-{!isSmallScreen && location.pathname === "/Alt/ProductsPage" && (
-            <li className="ml-6">
-              <Search
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-              />
-            </li>
-          )}
+        <li className="ml-6">
+          <Search
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          />
+        </li>
       </ul>
     </div>
     </div>
