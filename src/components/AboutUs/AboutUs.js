@@ -14,7 +14,7 @@ const AboutUs = () => {
               "url(https://www.greenlife.co.ke/wp-content/uploads/2022/04/farming_passion.jpg)",
           }}
         >
-          <div className=" bg-white w-[60%] h-[675px] mr-[500px] p-[12px] font-bold mt-[50px] rounded-[80px] rounded-b-none">
+          <div  className=" bg-white w-[60%] h-[675px] mr-[500px] p-[12px] font-bold mt-[50px] rounded-[80px] rounded-b-none">
             <h1 className=" text-green-500 text-[30px] flex justify-center items-center tracking-widest">
               <b>About Us</b>
             </h1>
