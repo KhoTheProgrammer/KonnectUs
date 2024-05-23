@@ -8,15 +8,15 @@ const AboutUs = () => {
       <NavBar />
       <div>
         <div
-          className="bg-cover bg-center h-[750px] flex items-center justify-center py-3"
+          className="bg-cover bg-center h-[750px] flex justify-center items-center"
           style={{
             backgroundImage:
               "url(https://www.greenlife.co.ke/wp-content/uploads/2022/04/farming_passion.jpg)",
           }}
         >
-          <div className=" bg-white w-[60%] h-[675px] mr-[500px] p-[12px] font-bold mt-[50px] rounded-[80px] rounded-b-none">
+          <div className=" bg-white w-[60%] h-[675px]  p-[12px]  font-bold mt-[50px] rounded-[80px] rounded-b-none">
             <h1 className=" text-green-500 text-[30px] flex justify-center items-center tracking-widest">
-              <b>About Us</b>
+              About Us
             </h1>
             <p>
               Welcome to KonnectUS, the ultimate platform dedicated to
@@ -44,27 +44,27 @@ const AboutUs = () => {
               </p>
               <h2 className=" text-center text-green-500 text-[20px] underline"><em>Values</em></h2>
               <p className=" font-sans">
-                <b>Innovation:</b> We embrace cutting-edge technology and innovative
+                Innovation: We embrace cutting-edge technology and innovative
                 practices to continually improve the agricultural sector
               </p>
               <p className=" font-sans">
-                <b>Community:</b> We foster a strong sense of community, encouraging
+                Community: We foster a strong sense of community, encouraging
                 collaboration, knowledge sharing, and mutual support among
                 farmers.
               </p>
               <p>
-              <b>Sustainability:</b> We are committed to promoting sustainable farming 
+              Sustainability: We are committed to promoting sustainable farming 
               practices that protect the environment and ensure long-term agricultural productivity.
               </p>
               <p>
-              <b>Empowerment:</b> We strive to empower farmers with the tools, knowledge, and resources they
+              Empowerment: We strive to empower farmers with the tools, knowledge, and resources they
               need to succeed and thrive.
               <p>
-              <b>Integrity:</b>  We conduct our business with the highest standards of integrity, honesty, and 
+              Integrity: We conduct our business with the highest standards of integrity, honesty, and 
               transparency
               </p>
               <p>
-              <b>Excellence:</b> We are dedicated to delivering excellence in every aspect of our platform and services,
+              Excellence: We are dedicated to delivering excellence in every aspect of our platform and services,
                ensuring the best outcomes for our users.
               </p>
 
