@@ -119,17 +119,9 @@ const ProductsPage = () => {
   ]);
 
   return (
-    <div>
-      <NavBar></NavBar>
-      <div
-        className="w-full mx-auto px-4 py-8 bg-green-500"
-        // style={{
-        //   backgroundImage:
-        //     'url("https://www.ashwameghagri.com/images/event_3.jpg")',
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        // }}
-      >
+    < div>
+      <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} isSignedIn={true} setSignedIn={() => {}} />
+      <div className="w-full mx-auto px-4 py-8 bg-green-500">
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-3xl text-white font-bold text-center mb-8">
             PRODUCT CATALOGUE
