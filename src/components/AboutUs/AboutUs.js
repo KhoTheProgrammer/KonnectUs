@@ -11,20 +11,30 @@ const AboutUs = () => {
           className="bg-cover bg-center h-[750px] flex items-center justify-center py-3"
           style={{
             backgroundImage:
-              "url(https://www.mowernew.com/wp-content/uploads/2023/07/pexels-gilmer-diaz-estela-6345502-1200x800.jpg)",
+              "url(https://www.greenlife.co.ke/wp-content/uploads/2022/04/farming_passion.jpg)",
           }}
         >
-          <div className="bg-green-500 w-[60%] h-[550px] mr-[500px] p-[12px] font-bold mt-[80px] rounded-[80px]">
-            <h1 className="text-black text-[22px] flex justify-center items-center">
+          <div className=" bg-white w-[60%] h-[675px] mr-[500px] p-[12px] font-bold mt-[50px] rounded-[80px] rounded-b-none">
+            <h1 className=" text-green-500 text-[30px] flex justify-center items-center tracking-widest">
               <b>About Us</b>
             </h1>
+<<<<<<< HEAD
+            <p className="text-white text-[18px]">
+              KonnectUs Farmer's Zone is dedicated to revolutionizing
+              agricultural communities by connecting farmers with buyers. Our
+              platform aims to empower farmers, streamline the supply chain, and
+              provide buyers with access to high-quality produce. Founded by a
+              team passionate about sustainability and community empowerment, we
+              prioritize transparency, fairness, and collaboration. Join us in
+              creating a more sustainable and equitable food system.
+=======
             <p>
               Welcome to KonnectUS, the ultimate platform dedicated to
               empowering farmers and revolutionizing agriculture. At KonnectUS,
               we believe in bridging the gap between traditional farming
               practices and modern technology to create a thriving community for
               farmers everywhere.
-              <h2>Mission</h2>
+              <h2 className=" text-center text-green-500 text-[20px] underline"><em>Mission</em></h2>
               <p>
                 Our mission is to create an innovative, accessible, and
                 supportive platform that connects farmers with the resources,
@@ -33,8 +43,8 @@ const AboutUs = () => {
                 practices, and improve the livelihoods of farmers through
                 technology-driven solutions and a collaborative approach.
               </p>
-              <h2>Vision</h2>
-              <p>
+              <h2 className=" text-center text-green-500 text-[20px] underline"><em>Vision</em></h2>
+              <p className=" font-sans">
                 Our vision is to be the leading global platform that transforms
                 the agricultural landscape by harnessing the power of technology
                 and community. We envision a world where every farmer has the
@@ -42,16 +52,34 @@ const AboutUs = () => {
                 efficiently and sustainably, contributing to global food
                 security and a healthier planet
               </p>
-              <h2>Values</h2>
-              <p>
-                Innovation: We embrace cutting-edge technology and innovative
+              <h2 className=" text-center text-green-500 text-[20px] underline"><em>Values</em></h2>
+              <p className=" font-sans">
+                <b>Innovation:</b> We embrace cutting-edge technology and innovative
                 practices to continually improve the agricultural sector
               </p>
-              <p>
-                Community: We foster a strong sense of community, encouraging
+              <p className=" font-sans">
+                <b>Community:</b> We foster a strong sense of community, encouraging
                 collaboration, knowledge sharing, and mutual support among
                 farmers.
               </p>
+              <p>
+              <b>Sustainability:</b> We are committed to promoting sustainable farming 
+              practices that protect the environment and ensure long-term agricultural productivity.
+              </p>
+              <p>
+              <b>Empowerment:</b> We strive to empower farmers with the tools, knowledge, and resources they
+              need to succeed and thrive.
+              <p>
+              <b>Integrity:</b>  We conduct our business with the highest standards of integrity, honesty, and 
+              transparency
+              </p>
+              <p>
+              <b>Excellence:</b> We are dedicated to delivering excellence in every aspect of our platform and services,
+               ensuring the best outcomes for our users.
+              </p>
+
+              </p>
+>>>>>>> 0a213d0d7f42ab6bfb84c27140fda6b100e7c602
             </p>
           </div>
         </div>

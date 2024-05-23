@@ -4,7 +4,7 @@ import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
 
 const Team = () => {
-  const [products, setproducts] = useState([
+  const [members, setmembers] = useState([
     {
       id: 1,
       name: "Solophina Mkandawire",
@@ -89,7 +89,7 @@ const Team = () => {
             MEET OUR TEAM
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8">
-            {products.map((product) => (
+            {members.map((product) => (
               <div
                 key={product.id}
                 className="bg-white shadow-md rounded-lg p-6 h-3/4"

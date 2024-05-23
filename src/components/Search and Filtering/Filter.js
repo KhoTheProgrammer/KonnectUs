@@ -7,7 +7,7 @@ const Filter = ({ filter, setFilter }) => {
       onChange={(e) => setFilter(e.target.value)}
       className="p-2 border rounded-xl"
     >
-      <option value="">Filter by</option>
+      <option value="">All</option>
       <option value="name">Name</option>
       <option value="price">Price</option>
       <option value="market">Location</option>
