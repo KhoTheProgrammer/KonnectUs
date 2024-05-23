@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { useContext } from "react";
-import { usersContext } from "./Users";
-//import { checkUsers } from "./Users";
 import { useNavigate } from "react-router-dom";
 import Footer from "./HomePage/Footer";
 import NavBar from "./HomePage/NavBar";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import {getFirestore,getDoc, addDoc, collection } from "firebase/firestore";
-import {auth} from "./Users";
+import { getFirestore, getDoc, addDoc, collection } from "firebase/firestore";
+import { auth } from "../FireBaseConfig";
 import "./Users";
-import {app} from "./Users";
+import { app } from "../FireBaseConfig";
+import { userContext } from "./Users";
 
 const SignUp = () => {
-  let usersData = useContext(usersContext);
   const navigate = useNavigate();
   let users = {};
   const [user, setUser] = useState("");
@@ -22,18 +20,22 @@ const SignUp = () => {
   const [lname, setlname] = useState("");
   const [userID, setUserID] = useState("");
 
+  //import userContext variables
+  const {isSignedIn, setSignedIn, userData, setUserData} = useContext(userContext);
+
   const database = getFirestore(app);
   const colRef = collection(database, "UserData");
 
-
-  const addDetails = async (userCredentials) => {
+  //added user details to the UserData collection
+  const setDetails = async (userCredentials) => {
     const ref = await addDoc(colRef, {
-      fname : fname,
-      lname : lname,
-      userid : userCredentials.user.uid
+      fname: fname,
+      lname: lname,
+      userid: userCredentials.user.uid,
+      username: user,
     });
     console.log("data added successfully");
-  }
+  };
 
   const handleEmail = (e) => {
     setemail(e.target.value);
@@ -63,21 +65,19 @@ const SignUp = () => {
       lastname: lname,
       password: password,
       email: email,
+      uid: userID,
     };
 
     createUserWithEmailAndPassword(auth, email, password)
-    .then(
-      (userCredentials) => {
+      .then((userCredentials) => {
         console.log(userCredentials);
         setUserID(userCredentials.user.uid);
-        addDetails(userCredentials);
-      }
-    )
-    .catch(
-      (error) => console.log(error)
-    )
+        setDetails(userCredentials);
+        setUserData(users);
+        setSignedIn(true);
+      })
+      .catch((error) => console.log(error));
 
-    usersData.push(users);
     navigate("/HomePage");
   };
 
@@ -132,7 +132,10 @@ const SignUp = () => {
               placeholder="Enter your password"
             />
             <br />
-            <button type="submit" className="bg-green-500 mt-[20px] rounded-lg h-8 w-[100px] text-white border-amber-100">
+            <button
+              type="submit"
+              className="bg-green-500 mt-[20px] rounded-lg h-8 w-[100px] text-white border-amber-100"
+            >
               Sign Up
             </button>
           </form>
