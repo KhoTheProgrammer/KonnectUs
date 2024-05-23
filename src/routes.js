@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "./App";
 import ReviewsPage from "./components/RatingAndReviews/ReviewsPage";
 import Messages from "./components/Messages/Messages";
 import Login from "./components/Login/Login";
@@ -19,8 +18,8 @@ import AccountReports from "./components/AccountReporting/AccountReports";
 // Variable to store routes
 export const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App></App>,
+    path: "/HomePage",
+    element: <HomePage></HomePage>,
   },
   {
     path: "/RatingAndReviews/ReviewsPage",
@@ -33,10 +32,6 @@ export const router = createBrowserRouter([
   {
     path: "/Login",
     element: <Login></Login>,
-  },
-  {
-    path: "/HomePage",
-    element: <HomePage></HomePage>,
   },
   {
     path: "/Alt/ProductsPage",
