@@ -1,6 +1,5 @@
 import React from "react";
-import NavBar from "../HomePage/NavBar";
-import Footer from "../HomePage/Footer";
+
 
 const ReportList = () => {
   // Dummy data for demonstration (replace with actual data later)
@@ -21,11 +20,19 @@ const ReportList = () => {
       date: "2024-05-29",
       time: "10:45 AM",
     },
+    {
+      reporter: "Jane Smith",
+      reportDescription:
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      accountReported: "another_example",
+      date: "2024-05-29",
+      time: "10:45 AM",
+    }
   ];
 
   return (
-    <div>
-        <NavBar></NavBar>
+    
+    
     <div
       style={{
         maxWidth: "800px",
@@ -86,8 +93,7 @@ const ReportList = () => {
         ))}
       </ul>
     </div>
-    <Footer></Footer>
-    </div>
+
   );
 };
 
