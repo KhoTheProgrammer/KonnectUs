@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import KonnectUslogo from "./Konnect1.png";
 import Search from "../Search and Filtering/Search";
 import { NavLink, useLocation } from "react-router-dom";
 import DropDown from "./DropDown";
+import { userContext } from "../Users";
 
 export default function NavBar({
-  isSignedIn,
-  setSignedIn,
   searchTerm,
   setSearchTerm,
 }) {
+
+  const {isSignedIn} = useContext(userContext);
   const [showDropDown, setShowDropDown] = useState(false);
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
