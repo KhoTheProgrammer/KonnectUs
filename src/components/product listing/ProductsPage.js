@@ -118,6 +118,21 @@ const ProductsPage = () => {
     },
   ]);
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filter, setFilter] = useState("");
+
+  const filteredProducts = products.filter((product) => {
+    if (filter) {
+      return  product[filter].toLowerCase().includes(searchTerm.toLowerCase());
+    }
+    return (
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.price.toLowerCase().includes(searchTerm.toLowerCase()) ||  
+      product.market.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.quantity.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  });
+
   return (
     < div>
       <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} isSignedIn={true} setSignedIn={() => {}} />
