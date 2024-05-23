@@ -5,7 +5,6 @@ import NavBar from "./HomePage/NavBar";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, getDoc, addDoc, collection } from "firebase/firestore";
 import { auth } from "../FireBaseConfig";
-import "./Users";
 import { app } from "../FireBaseConfig";
 import { userContext } from "./Users";
 
