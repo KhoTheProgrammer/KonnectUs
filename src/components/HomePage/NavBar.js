@@ -17,11 +17,11 @@ export default function NavBar({
 
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu); 
+    setShowMenu(!showMenu);
   };
 
   const closeMenu = () => {
-    setShowMenu(false); 
+    setShowMenu(false);
   };
   useEffect(() => {
     const handleResize = () => {
@@ -53,7 +53,7 @@ export default function NavBar({
       name: "Team",
       link: "/Team",
     },
-   
+
     {
       name: "Reviews",
       link: "/RatingAndReviews/ReviewsPage",
@@ -67,7 +67,7 @@ export default function NavBar({
   const mapButtons = (button) => (
     <li
       key={button.name}
-      className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer"
+      className=" font-bold mx-4 text-[15px] hover:text-green-500 py-1 cursor-pointer"
     >
       <NavLink to={button.link}>{button.name}</NavLink>
     </li>
@@ -81,12 +81,12 @@ export default function NavBar({
         className="mb-4 h-14 w-[50]"
       />
 
-<div className="flex justify-end items-center">
-        
+      <div className="flex justify-end items-center">
+
         {isSmallScreen ? (
           <div
             className="block lg:hidden top-6 right-3 absolute cursor-pointer"
-            onClick={toggleMenu} 
+            onClick={toggleMenu}
           >
             <svg
               className="h-6 w-6"
@@ -104,39 +104,35 @@ export default function NavBar({
             </svg>
           </div>
         ) : null}
-       
 
-
-      <ul className={`${
-            isSmallScreen ? (showMenu ? "block" : "hidden") : "flex"
+        <ul className={`${isSmallScreen ? (showMenu ? "block" : "hidden") : "flex"
           } lg:flex lg:justify-end lg:items-center`}>
-        {buttons.map(mapButtons)}
-        {isSignedIn ? (
-          <li
-            onClick={(e) => {
-              e.preventDefault();
-              setShowDropDown(!showDropDown);
-            }}
-            className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer"
-          >
-            <DropDown isOpen={showDropDown} />
-          </li>
-        ) : (
-          <NavLink to="/Login">
-            <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-              Login
+          {buttons.map(mapButtons)}
+          {isSignedIn ? (
+            <li
+              onClick={(e) => {
+                e.preventDefault();
+                setShowDropDown(!showDropDown);
+              }}
+              className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer"
+            >
+              <DropDown isOpen={showDropDown} />
             </li>
-          </NavLink>
-        )}
+          ) : (
+            <NavLink to="/Login">
+              <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
+                Login
+              </li>
+            </NavLink>
+          )}
 
-        <li className="ml-6">
-          <Search
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-          />
-        </li>
-      </ul>
-    </div>
+          {location.pathname === "/product%20listing/ProductsPage" && (
+            <li className="ml-3">
+              <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            </li>
+          )}
+        </ul>
+      </div>
     </div>
   );
 }
