@@ -123,8 +123,8 @@ export default function NavBar({
           </li>
         ) : (
           <NavLink to="/Login">
-            <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-              Login
+            <li className="font-bold mx-6 text-[15px] hover:text-green-500 py-1 cursor-pointer">
+              <button className=" h-7 w-20 bg-green-500 hover:bg-green-700 rounded-lg">Login</button>
             </li>
           </NavLink>
         )}
