@@ -18,6 +18,16 @@ const AboutUs = () => {
             <h1 className=" text-green-500 text-[30px] flex justify-center items-center tracking-widest">
               About Us
             </h1>
+<<<<<<< HEAD
+            <p className="text-white text-[18px]">
+              KonnectUs Farmer's Zone is dedicated to revolutionizing
+              agricultural communities by connecting farmers with buyers. Our
+              platform aims to empower farmers, streamline the supply chain, and
+              provide buyers with access to high-quality produce. Founded by a
+              team passionate about sustainability and community empowerment, we
+              prioritize transparency, fairness, and collaboration. Join us in
+              creating a more sustainable and equitable food system.
+=======
             <p>
               Welcome to KonnectUS, the ultimate platform dedicated to
               empowering farmers and revolutionizing agriculture. At KonnectUS,
@@ -69,6 +79,7 @@ const AboutUs = () => {
               </p>
 
               </p>
+>>>>>>> 0a213d0d7f42ab6bfb84c27140fda6b100e7c602
             </p>
           </div>
         </div>
