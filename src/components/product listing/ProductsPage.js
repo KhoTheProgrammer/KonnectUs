@@ -135,7 +135,7 @@ const ProductsPage = () => {
 
   return (
     < div>
-      <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} isSignedIn={true} setSignedIn={() => {}} />
+      <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm}  />
       <div className="w-full mx-auto px-4 py-8 bg-green-500">
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-3xl text-white font-bold text-center mb-8">
