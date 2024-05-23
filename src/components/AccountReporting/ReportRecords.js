@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "../HomePage/NavBar";
+
 
 const ReportList = () => {
   // Dummy data for demonstration (replace with actual data later)
@@ -23,8 +23,8 @@ const ReportList = () => {
   ];
 
   return (
-    <div>
-        <NavBar></NavBar>
+    
+    
     <div
       style={{
         maxWidth: "800px",
@@ -85,7 +85,7 @@ const ReportList = () => {
         ))}
       </ul>
     </div>
-    </div>
+
   );
 };
 
