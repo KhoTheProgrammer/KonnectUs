@@ -113,9 +113,9 @@ const Login = () => {
                     checked={RememberMe}
                     onChange={handleRememberMeChange}
                   />
-                  Remember me
                   
-                  <button>Forgot Password?</button>
+                  <label className="">Remember Me</label>
+                  <button >Forgot Password?</button>
                 </div>
                 <button
                   type="submit"
@@ -125,9 +125,7 @@ const Login = () => {
                 </button>
                 <div className=" mt-4 flex">
                   <p>Dont have an account?</p>
-                  <button className=" bg-green-500  hover:bg-green-700 rounded-md w-[70px] text-teal-50">
-                    SingUP
-                  </button>
+                  <button className=" bg-green-500  hover:bg-green-700 rounded-md w-[70px] text-teal-50">SingUP</button>
                 </div>
               </div>
             </form>
