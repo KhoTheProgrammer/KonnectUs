@@ -18,6 +18,10 @@ import AccountReports from "./components/AccountReporting/AccountReports";
 // Variable to store routes
 export const router = createBrowserRouter([
   {
+    path: "/",
+    element: <HomePage></HomePage>
+  },
+  {
     path: "/HomePage",
     element: <HomePage></HomePage>,
   },
