@@ -1,17 +1,19 @@
-import HomePage from "./components/HomePage/HomePage.js" 
-import React from 'react';
-
-
-
+import React from "react";
+import { useState } from "react";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
+import { userContext } from "./components/Users";
 
 function App() {
+  const [isSignedIn, setSignedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [userData, setUserData] = useState({});
   return (
-    
-    <div className="App">
-       <HomePage></HomePage>
-       
-    </div>
-    
+    <userContext.Provider
+      value={{ isSignedIn, setSignedIn, userData, setUserData }}
+    >
+      <RouterProvider router={router}></RouterProvider>
+    </userContext.Provider>
   );
 }
 

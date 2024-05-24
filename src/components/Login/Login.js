@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../Users";
-import { Transaction } from "firebase/firestore/lite";
+import { auth, app } from "../../FireBaseConfig";
+import { getDoc, getFirestore, collection } from "firebase/firestore";
+import { userContext } from "../Users";
 
 const Login = () => {
   const [Email, setEmail] = useState("");
@@ -13,6 +15,21 @@ const Login = () => {
     Email: "",
     Password: "",
   });
+
+  const {isSignedIn, setSignedIn, userData, setUserData} = useContext(userContext);
+
+  const navigate = useNavigate();
+
+  const database = getFirestore(app);
+  const colRef = collection(database, "UserData");
+
+  const getDetails = async (userCredentials) => {
+    const ref = await getDoc(colRef, {
+      userid: userCredentials.user.uid,
+      username: auth.currentUser.displayName
+    });
+    console.log("data added successfully");
+  };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -57,8 +74,14 @@ const Login = () => {
     signInWithEmailAndPassword(auth, Email, Password)
       .then((userCredentials) => {
         console.log(userCredentials);
-      })
-      .catch((error) => console.log(error));
+        setSignedIn(true);
+      }
+    )
+    .catch(
+      (error) => console.log(error)
+    )
+
+    navigate("/HomePage");
 
     /*if (validateForm()) {
       // Submit form if valid

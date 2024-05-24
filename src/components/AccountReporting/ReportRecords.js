@@ -20,6 +20,14 @@ const ReportList = () => {
       date: "2024-05-29",
       time: "10:45 AM",
     },
+    {
+      reporter: "Jane Smith",
+      reportDescription:
+        "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      accountReported: "another_example",
+      date: "2024-05-29",
+      time: "10:45 AM",
+    }
   ];
 
   return (
