@@ -107,15 +107,15 @@ const Login = () => {
                 {errors.Password && (
                   <div className="text-red-500">{errors.Password}</div>
                 )}
-                <div className="mt-4 flex justify-evenly ">
+                <div className="mt-4 flex justify-evenly  ">
                   <input
                     type="checkbox"
                     checked={RememberMe}
                     onChange={handleRememberMeChange}
                   />
+                  Remember me
                   
-                  <label className="">Remember Me</label>
-                  <button >Forgot Password?</button>
+                  <button>Forgot Password?</button>
                 </div>
                 <button
                   type="submit"
@@ -125,13 +125,15 @@ const Login = () => {
                 </button>
                 <div className=" mt-4 flex">
                   <p>Dont have an account?</p>
-                  <button className=" bg-green-500  hover:bg-green-700 rounded-md w-[70px] text-teal-50">SingUP</button>
+                  <button className=" bg-green-500  hover:bg-green-700 rounded-md w-[70px] text-teal-50">
+                    SingUP
+                  </button>
                 </div>
               </div>
             </form>
           </div>
 
-          <div className="bg-green-500 rounded-[40px]  hover:bg-green-700 transition-shadow  text-white p-4 h-[400px] w-[600px] right-10">
+          <div className="bg-green-500 rounded-[40px]  hover:bg-green-700 text-white p-4 h-[400px] w-[600px] right-10">
             <div className="mt-24">
               <h1 className="font-bold text-[45px] text-center">
                 Welcome Back!
