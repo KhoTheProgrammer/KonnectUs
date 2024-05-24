@@ -9,6 +9,7 @@ import { app } from "../FireBaseConfig";
 import { userContext } from "./Users";
 
 const SignUp = () => {
+  const usersData = []
   const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
@@ -49,13 +50,14 @@ const SignUp = () => {
       email: email,
       uid: userID,
     };
+    usersData.push(user);
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredentials) => {
         console.log(userCredentials);
         setUserID(userCredentials.user.uid);
         setDetails(userCredentials);
-        setUserData(users);
+        setUserData(usersData);
         setSignedIn(true);
       })
       .catch((error) => console.log(error));
