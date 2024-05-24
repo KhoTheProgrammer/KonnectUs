@@ -9,13 +9,11 @@ export default function NavBar({
   searchTerm,
   setSearchTerm,
 }) {
-
   const { isSignedIn } = useContext(userContext);
   const [showDropDown, setShowDropDown] = useState(false);
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
-
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -33,39 +31,19 @@ export default function NavBar({
     };
   }, []);
 
-
   const buttons = [
-    {
-      name: "Home",
-      link: "/HomePage",
-    },
-    {
-      name: "About Us",
-      link: "/AboutUs/AboutUs",
-    },
-    {
-      name: "Products",
-      link: "/product listing/ProductsPage"
-    },
-    {
-      name: "Team",
-      link: "/Team",
-    },
-
-    {
-      name: "Reviews",
-      link: "/RatingAndReviews/ReviewsPage",
-    },
-    {
-      name: "Contact Us",
-      link: "/ContactUs",
-    },
+    { name: "Home", link: "/HomePage" },
+    { name: "About Us", link: "/AboutUs/AboutUs" },
+    { name: "Products", link: "/product listing/ProductsPage" },
+    { name: "Team", link: "/Team" },
+    { name: "Reviews", link: "/RatingAndReviews/ReviewsPage" },
+    { name: "Contact Us", link: "/ContactUs" },
   ];
 
   const mapButtons = (button) => (
     <li
       key={button.name}
-      className=" font-bold mx-4 text-[15px] hover:text-green-500 py-1 cursor-pointer"
+      className="font-bold mx-4 text-[15px] hover:text-green-500 py-1 cursor-pointer relative z-10"
     >
       <NavLink to={button.link}>{button.name}</NavLink>
     </li>
@@ -76,12 +54,11 @@ export default function NavBar({
       <img
         src={KonnectUslogo}
         alt="KonnectUs Logo"
-        className="mb-4 h-14 w-[50]"
+        className="mb-4 h-14 w-50"
       />
 
       <div className="flex justify-end items-center">
-
-        {isSmallScreen ? (
+        {isSmallScreen && (
           <div
             className="block lg:hidden top-6 right-3 absolute cursor-pointer"
             onClick={toggleMenu}
@@ -101,10 +78,12 @@ export default function NavBar({
               />
             </svg>
           </div>
-        ) : null}
+        )}
 
-        <ul className={`${isSmallScreen ? (showMenu ? "block" : "hidden") : "flex"
-          } lg:flex  lg:justify-end lg:items-center`}>
+        <ul
+          className={`${isSmallScreen ? (showMenu ? "block" : "hidden") : "flex"
+            } lg:flex bg-white rounded-xl lg:justify-end lg:items-center`}
+        >
           {buttons.map(mapButtons)}
           {isSignedIn ? (
             <li
@@ -118,23 +97,20 @@ export default function NavBar({
             </li>
           ) : (
             <NavLink to="/Login">
-              <li className="font-bold mx-6 text-[15px] hover:text-green-500 py-1 cursor-pointer">
+              <li className="font-bold mx-6 text-[15px] relative z-10 hover:text-green-500 py-1 cursor-pointer">
                 Login
               </li>
             </NavLink>
           )}
 
-          {location.pathname === "/product%20listing/ProductsPage" && (
+          {location.pathname === "/product%20listing/ProductsPage" ? (
             <li className="ml-3">
               <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             </li>
-          )}
-
-          {location.pathname !== "/product%20listing/ProductsPage" && (
-            <li className=" opacity-0">-----------</li>
+          ) : (
+            <li className="opacity-0">-----------</li>
           )}
         </ul>
-
       </div>
     </div>
   );
