@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from "../Users";
+import { auth } from "../Users";
+import { Transaction } from "firebase/firestore/lite";
 
 const Login = () => {
   const [Email, setEmail] = useState("");
@@ -54,14 +55,10 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(auth, Email, Password)
-    .then(
-      (userCredentials) => {
+      .then((userCredentials) => {
         console.log(userCredentials);
-      }
-    )
-    .catch(
-      (error) => console.log(error)
-    )
+      })
+      .catch((error) => console.log(error));
 
     /*if (validateForm()) {
       // Submit form if valid
@@ -72,7 +69,7 @@ const Login = () => {
       console.log("Form has errors.");
     }
   };*/
-};
+  };
 
   return (
     <div>
@@ -84,14 +81,14 @@ const Login = () => {
             "url(https://www.mowernew.com/wp-content/uploads/2023/07/pexels-gilmer-diaz-estela-6345502-1200x800.jpg)",
         }}
       >
-        <div className="flex flex-row justify-center rounded-r-[40px] bg-stone-300 rounded-l-[40px] w-[900px] m-[300px] h-[400px]">
+        <div className="flex flex-row justify-center rounded-r-[40px] bg-white rounded-l-[40px] w-[900px] m-[300px] h-[400px]">
           <div className="flex items-center ">
             <form className="mx-[80px]" onSubmit={handleSubmit}>
               <h1 className="text-[20px] font-bold ml-[130px]">Hello!</h1>
               <h2 className="ml-[80px]">Sign into your account</h2>
               <div>
                 <input
-                  className="font-bold p-4 mt-3 rounded-[20px] h-[40px] w-[350px]"
+                  className="font-bold p-4 mt-3  h-[40px] w-[350px]"
                   type="text"
                   placeholder="Enter your Email"
                   value={Email}
@@ -101,7 +98,7 @@ const Login = () => {
                   <div className="text-red-500">{errors.Email}</div>
                 )}
                 <input
-                  className="font-bold p-4 mt-6 rounded-[20px] h-[40px] w-[350px]"
+                  className="font-bold p-4 mt-6  h-[40px] w-[350px]"
                   type="password"
                   placeholder="Password"
                   value={Password}
@@ -110,25 +107,31 @@ const Login = () => {
                 {errors.Password && (
                   <div className="text-red-500">{errors.Password}</div>
                 )}
-                <div className="mt-4">
+                <div className="mt-4 flex justify-evenly ">
                   <input
                     type="checkbox"
                     checked={RememberMe}
                     onChange={handleRememberMeChange}
                   />
-                  <label className="ml-2">Remember Me</label>
+                  
+                  <label className="">Remember Me</label>
+                  <button >Forgot Password?</button>
                 </div>
                 <button
                   type="submit"
-                  className="mt-4 bg-green-500 text-white text-md p-2 rounded-xl hover:bg-green-700"
+                  className="mt-4 bg-green-500 text-white text-md p-2 w-[350px] rounded-xl hover:bg-green-700"
                 >
                   Submit
                 </button>
+                <div className=" mt-4 flex">
+                  <p>Dont have an account?</p>
+                  <button className=" bg-green-500  hover:bg-green-700 rounded-md w-[70px] text-teal-50">SingUP</button>
+                </div>
               </div>
             </form>
           </div>
 
-          <div className="bg-green-500 rounded-[40px] text-white p-4 h-[400px] w-[600px] right-10">
+          <div className="bg-green-500 rounded-[40px]  hover:bg-green-700 transition-shadow  text-white p-4 h-[400px] w-[600px] right-10">
             <div className="mt-24">
               <h1 className="font-bold text-[45px] text-center">
                 Welcome Back!
@@ -140,7 +143,6 @@ const Login = () => {
             </div>
           </div>
         </div>
-        
       </div>
       <Footer></Footer>
     </div>
