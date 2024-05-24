@@ -6,6 +6,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, app } from "../../FireBaseConfig";
 import { getDoc, getFirestore, collection } from "firebase/firestore";
 import { userContext } from "../Users";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
   const [Email, setEmail] = useState("");
@@ -16,7 +17,8 @@ const Login = () => {
     Password: "",
   });
 
-  const {isSignedIn, setSignedIn, userData, setUserData} = useContext(userContext);
+  const { isSignedIn, setSignedIn, userData, setUserData } =
+    useContext(userContext);
 
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ const Login = () => {
   const getDetails = async (userCredentials) => {
     const ref = await getDoc(colRef, {
       userid: userCredentials.user.uid,
-      username: auth.currentUser.displayName
+      username: auth.currentUser.displayName,
     });
     console.log("data added successfully");
   };
@@ -71,19 +73,7 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, Email, Password)
-      .then((userCredentials) => {
-        console.log(userCredentials);
-        setSignedIn(true);
-      }
-    )
-    .catch(
-      (error) => console.log(error)
-    )
-
-    navigate("/HomePage");
-
-    /*if (validateForm()) {
+    if (validateForm()) {
       // Submit form if valid
       console.log("Form is valid, submitting...");
       console.log("Remember Me:", RememberMe);
@@ -91,7 +81,13 @@ const Login = () => {
     } else {
       console.log("Form has errors.");
     }
-  };*/
+    signInWithEmailAndPassword(auth, Email, Password)
+      .then((userCredentials) => {
+        console.log(userCredentials);
+        setSignedIn(true);
+        navigate("/HomePage");
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -136,9 +132,9 @@ const Login = () => {
                     checked={RememberMe}
                     onChange={handleRememberMeChange}
                   />
-                  
+
                   <label className="">Remember Me</label>
-                  <button >Forgot Password?</button>
+                  <button>Forgot Password?</button>
                 </div>
                 <button
                   type="submit"
@@ -148,7 +144,11 @@ const Login = () => {
                 </button>
                 <div className=" mt-4 flex">
                   <p>Dont have an account?</p>
-                  <button className=" bg-green-500  hover:bg-green-700 rounded-md w-[70px] text-teal-50">SingUP</button>
+                  <NavLink to="/SignUp">
+                    <button className=" bg-green-500  hover:bg-green-700 rounded-md w-[70px] text-teal-50">
+                      SingUP
+                    </button>
+                  </NavLink>
                 </div>
               </div>
             </form>
