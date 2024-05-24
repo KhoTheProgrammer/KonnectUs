@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import KonnectUslogo from "./Konnect1.png";
 import Search from "../Search and Filtering/Search";
 import { NavLink, useLocation } from "react-router-dom";
 import DropDown from "./DropDown";
+import { userContext } from "../Users";
 
 export default function NavBar({
-  isSignedIn,
-  setSignedIn,
   searchTerm,
   setSearchTerm,
 }) {
+
+  const {isSignedIn} = useContext(userContext);
   const [showDropDown, setShowDropDown] = useState(false);
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
@@ -67,7 +68,7 @@ export default function NavBar({
   const mapButtons = (button) => (
     <li
       key={button.name}
-      className=" font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer"
+      className=" font-bold mx-4 text-[15px] hover:text-green-500 py-1 cursor-pointer"
     >
       <NavLink to={button.link}>{button.name}</NavLink>
     </li>
@@ -129,12 +130,9 @@ export default function NavBar({
           </NavLink>
         )}
 
-{!isSmallScreen && location.pathname === "/Alt/ProductsPage" && (
-            <li className="ml-6">
-              <Search
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-              />
+{location.pathname === "/product%20listing/ProductsPage" && (
+            <li className="ml-3">
+              <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             </li>
           )}
       </ul>

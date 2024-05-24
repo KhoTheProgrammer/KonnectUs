@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { userContext } from "../Users";
 
-function Main(props) {
+function Main() {
+  const { isSignedIn } = useContext(userContext);
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const images = [
@@ -37,15 +40,15 @@ function Main(props) {
         <h3 className="text-2xl mt-[1%] m-0">
           Connect farmers and buyers effortlessly
         </h3>
-        {!props.isSignedIn ?
-          (<NavLink to="/SignUp">
+        {!isSignedIn ? (
+          <NavLink to="/SignUp">
             <button className="bg-green-500  hover:bg-green-400 text-white font-bold py-2 px-4 rounded-3xl mt-[20%]">
               Join Us Now
             </button>
-          </NavLink>)
-          :
+          </NavLink>
+        ) : (
           <p></p>
-        }
+        )}
       </div>
     </div>
   );

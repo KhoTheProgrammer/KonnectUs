@@ -18,6 +18,7 @@ export default function MessageBox(props) {
     };
 
     updateMessages([...messages, newMessage]);
+    setMessage("");
   };
 
   const handleMessage = (e) => {
@@ -30,7 +31,7 @@ export default function MessageBox(props) {
       <form onSubmit={handleSubmit}>
         <div className="flex items-center px-3 py-2 rounded-lg">
           <textarea
-            name="Message"
+            value={message}
             placeholder="Message"
             onChange={handleMessage}
             row="1"

@@ -13,7 +13,7 @@ const ProductForm = () => {
   const [image, setImage] = useState(null);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault( );
     const newProduct = {
       name: productName,
       price: price,

@@ -64,18 +64,18 @@ export default function Users() {
           </div>
         </NavLink>
       </div>
-      <div className="border-solid border grid grid-cols-4 p-4 bg-green-500">
+      <div className="border-solid border grid grid-cols-4 lg:p-4 p-2 bg-green-500">
         <div className="mb-3">
-          <h3 className="font-bold text-xl text-white">USERNAME</h3>
+          <h3 className="font-bold lg:text-xl text-base text-white">USERNAME</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold text-xl text-white">FIRST NAME</h3>
+          <h3 className="font-bold lg:text-xl text-base text-white">FIRST NAME</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold text-xl text-white">LAST NAME</h3>
+          <h3 className="font-bold lg:text-xl text-base text-white">LAST NAME</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold text-xl text-white">EMAIL</h3>
+          <h3 className="font-bold lg:text-xl text-base text-white">EMAIL</h3>
         </div>
       </div>
       {users.map((user, index) => (
