@@ -10,7 +10,7 @@ export default function NavBar({
   setSearchTerm,
 }) {
 
-  const {isSignedIn} = useContext(userContext);
+  const { isSignedIn } = useContext(userContext);
   const [showDropDown, setShowDropDown] = useState(false);
   const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
@@ -18,12 +18,9 @@ export default function NavBar({
 
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu); 
+    setShowMenu(!showMenu);
   };
 
-  const closeMenu = () => {
-    setShowMenu(false); 
-  };
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 600);
@@ -54,7 +51,7 @@ export default function NavBar({
       name: "Team",
       link: "/Team",
     },
-   
+
     {
       name: "Reviews",
       link: "/RatingAndReviews/ReviewsPage",
@@ -82,12 +79,12 @@ export default function NavBar({
         className="mb-4 h-14 w-[50]"
       />
 
-<div className="flex justify-end items-center">
-        
+      <div className="flex justify-end items-center">
+
         {isSmallScreen ? (
           <div
             className="block lg:hidden top-6 right-3 absolute cursor-pointer"
-            onClick={toggleMenu} 
+            onClick={toggleMenu}
           >
             <svg
               className="h-6 w-6"
@@ -105,38 +102,40 @@ export default function NavBar({
             </svg>
           </div>
         ) : null}
-       
 
-
-      <ul className={`${
-            isSmallScreen ? (showMenu ? "block" : "hidden") : "flex"
-          } lg:flex lg:justify-end lg:items-center`}>
-        {buttons.map(mapButtons)}
-        {isSignedIn ? (
-          <li
-            onClick={(e) => {
-              e.preventDefault();
-              setShowDropDown(!showDropDown);
-            }}
-            className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer"
-          >
-            <DropDown isOpen={showDropDown} />
-          </li>
-        ) : (
-          <NavLink to="/Login">
-            <li className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer">
-              Login
+        <ul className={`${isSmallScreen ? (showMenu ? "block" : "hidden") : "flex"
+          } lg:flex  lg:justify-end lg:items-center`}>
+          {buttons.map(mapButtons)}
+          {isSignedIn ? (
+            <li
+              onClick={(e) => {
+                e.preventDefault();
+                setShowDropDown(!showDropDown);
+              }}
+              className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer"
+            >
+              <DropDown isOpen={showDropDown} />
             </li>
-          </NavLink>
-        )}
+          ) : (
+            <NavLink to="/Login">
+              <li className="font-bold mx-6 text-[15px] hover:text-green-500 py-1 cursor-pointer">
+                Login
+              </li>
+            </NavLink>
+          )}
 
-{location.pathname === "/product%20listing/ProductsPage" && (
+          {location.pathname === "/product%20listing/ProductsPage" && (
             <li className="ml-3">
               <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             </li>
           )}
-      </ul>
-    </div>
+
+          {location.pathname !== "/product%20listing/ProductsPage" && (
+            <li className=" opacity-0">-----------</li>
+          )}
+        </ul>
+
+      </div>
     </div>
   );
 }
