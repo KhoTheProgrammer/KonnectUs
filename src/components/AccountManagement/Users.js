@@ -1,28 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { userContext } from "../Users";
 
 export default function Users() {
-  const [users, setUsers] = useState([]);
+  const {userData} = useContext(userContext)
   const [selectedUser, setSelectedUser] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const url = "/Users.json";
-    fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok " + response.statusText);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setUsers(data.Users);
-        console.log("Parsed JSON data:", data.Users);
-      })
-      .catch((error) =>
-        console.error("Error fetching or parsing JSON:", error)
-      );
-  }, []);
+  // useEffect(() => {
+  //   const url = "/Users.json";
+  //   fetch(url)
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok " + response.statusText);
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       setUsers(data.Users);
+  //       console.log("Parsed JSON data:", data.Users);
+  //     })
+  //     .catch((error) =>
+  //       console.error("Error fetching or parsing JSON:", error)
+  //     );
+  // }, []);
 
   // Function to handle option icon click
   const handleOptionClick = (user) => {
@@ -41,7 +42,7 @@ export default function Users() {
   return (
     <div className="w-full p-8">
       <div className="flex">
-        <h2 className="text-xl font-bold mb-8">Users ({users.length})</h2>
+        <h2 className="text-xl font-bold mb-8">Users ({userData.length})</h2>
         <NavLink to="/Signup" className="ml-auto">
           <div className=" flex">
             <svg
@@ -78,8 +79,8 @@ export default function Users() {
           <h3 className="font-bold lg:text-xl text-base text-white">EMAIL</h3>
         </div>
       </div>
-      {users.map((user, index) => (
-        <div key={index} className="mb-3 border-solid border grid grid-cols-4 p-4 hover:bg-green-500">
+      {userData.map((user) => (
+        <div key={user.uid} className="mb-3 border-solid border grid grid-cols-4 p-4 hover:bg-green-500">
           <h3>{user.username}</h3>
           <h3>{user.firstname}</h3>
           <h3>{user.lastname}</h3>

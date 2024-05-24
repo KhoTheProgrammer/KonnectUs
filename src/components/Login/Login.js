@@ -6,6 +6,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth, app } from "../../FireBaseConfig";
 import { getDoc, getFirestore, collection } from "firebase/firestore";
 import { userContext } from "../Users";
+import { NavLink } from "react-router-dom";
 
 const Login = () => {
   const [Email, setEmail] = useState("");
@@ -16,7 +17,8 @@ const Login = () => {
     Password: "",
   });
 
-  const {isSignedIn, setSignedIn, userData, setUserData} = useContext(userContext);
+  const { isSignedIn, setSignedIn, userData, setUserData } =
+    useContext(userContext);
 
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ const Login = () => {
   const getDetails = async (userCredentials) => {
     const ref = await getDoc(colRef, {
       userid: userCredentials.user.uid,
-      username: auth.currentUser.displayName
+      username: auth.currentUser.displayName,
     });
     console.log("data added successfully");
   };
@@ -71,20 +73,7 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, Email, Password)
-    .then(
-      (userCredentials) => {
-        console.log(userCredentials);
-        setSignedIn(true);
-      }
-    )
-    .catch(
-      (error) => console.log(error)
-    )
-
-    navigate("/HomePage");
-
-    /*if (validateForm()) {
+    if (validateForm()) {
       // Submit form if valid
       console.log("Form is valid, submitting...");
       console.log("Remember Me:", RememberMe);
@@ -92,8 +81,14 @@ const Login = () => {
     } else {
       console.log("Form has errors.");
     }
-  };*/
-};
+    signInWithEmailAndPassword(auth, Email, Password)
+      .then((userCredentials) => {
+        console.log(userCredentials);
+        setSignedIn(true);
+        navigate("/HomePage");
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div>
@@ -105,14 +100,14 @@ const Login = () => {
             "url(https://www.mowernew.com/wp-content/uploads/2023/07/pexels-gilmer-diaz-estela-6345502-1200x800.jpg)",
         }}
       >
-        <div className="flex flex-row justify-center rounded-r-[40px] bg-stone-300 rounded-l-[40px] w-[900px] m-[300px] h-[400px]">
+        <div className="flex flex-row justify-center rounded-r-[40px] bg-white rounded-l-[40px] w-[900px] m-[300px] h-[400px]">
           <div className="flex items-center ">
             <form className="mx-[80px]" onSubmit={handleSubmit}>
               <h1 className="text-[20px] font-bold ml-[130px]">Hello!</h1>
               <h2 className="ml-[80px]">Sign into your account</h2>
               <div>
                 <input
-                  className="font-bold p-4 mt-3 rounded-[20px] h-[40px] w-[350px]"
+                  className="font-bold p-4 mt-3  h-[40px] w-[350px]"
                   type="text"
                   placeholder="Enter your Email"
                   value={Email}
@@ -122,7 +117,7 @@ const Login = () => {
                   <div className="text-red-500">{errors.Email}</div>
                 )}
                 <input
-                  className="font-bold p-4 mt-6 rounded-[20px] h-[40px] w-[350px]"
+                  className="font-bold p-4 mt-6  h-[40px] w-[350px]"
                   type="password"
                   placeholder="Password"
                   value={Password}
@@ -131,25 +126,35 @@ const Login = () => {
                 {errors.Password && (
                   <div className="text-red-500">{errors.Password}</div>
                 )}
-                <div className="mt-4">
+                <div className="mt-4 flex justify-evenly  ">
                   <input
                     type="checkbox"
                     checked={RememberMe}
                     onChange={handleRememberMeChange}
                   />
-                  <label className="ml-2">Remember Me</label>
+
+                  <label className="">Remember Me</label>
+                  <button>Forgot Password?</button>
                 </div>
                 <button
                   type="submit"
-                  className="mt-4 bg-green-500 text-white text-md p-2 rounded-xl hover:bg-green-700"
+                  className="mt-4 bg-green-500 text-white text-md p-2 w-[350px] rounded-xl hover:bg-green-700"
                 >
                   Submit
                 </button>
+                <div className=" mt-4 flex">
+                  <p>Dont have an account?</p>
+                  <NavLink to="/SignUp">
+                    <button className=" bg-green-500  hover:bg-green-700 rounded-md w-[70px] text-teal-50">
+                      SingUP
+                    </button>
+                  </NavLink>
+                </div>
               </div>
             </form>
           </div>
 
-          <div className="bg-green-500 rounded-[40px] text-white p-4 h-[400px] w-[600px] right-10">
+          <div className="bg-green-500 rounded-[40px]  hover:bg-green-700 text-white p-4 h-[400px] w-[600px] right-10">
             <div className="mt-24">
               <h1 className="font-bold text-[45px] text-center">
                 Welcome Back!
@@ -161,7 +166,6 @@ const Login = () => {
             </div>
           </div>
         </div>
-        
       </div>
       <Footer></Footer>
     </div>
