@@ -7,7 +7,7 @@ import { userContext } from "./components/Users";
 function App() {
   const [isSignedIn, setSignedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState([]);
   return (
     <userContext.Provider
       value={{ isSignedIn, setSignedIn, userData, setUserData }}
