@@ -20,7 +20,7 @@ const AccountReports = () => {
   return (
     <div>
       <NavBar></NavBar>
-    <div className=" p-20">
+    <div className=" p-30">
       <h>
         <ul className=" p-2  bg-green-500 flex items-center justify-center  text-white font-bold text-3 max-w-auto  mx-3   mt-3">
           REPORTS
@@ -43,7 +43,7 @@ const AccountReports = () => {
             />
           </div>
           <div>
-            <label htmlFor="Reason" className=" text- to-black">
+            <label htmlFor="Reason" className=" text- to-black ">
               REASON:
             </label>
             <textarea
