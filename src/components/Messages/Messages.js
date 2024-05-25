@@ -50,7 +50,7 @@ export default function Messages() {
       snapShot.forEach((doc) => {
         messages.push({ ...doc.data(), id: doc.id });
       });
-      setMessage(sortMessages(messages));
+      setMessage(messages);
     });
     return () => unsubscribe();
   }, []);
