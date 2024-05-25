@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
 import DropDown from "./DropDown";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { userContext } from "../Users";
 
 export default function MessagesNavBar() {
   const [dropDownIsOpen, setDropDownIsOpen] = useState(false);
+  const {farmerUsername} = useContext(userContext);
 
   return (
     <div className="flex flex-row justify-between h-[80px] text-white w-full md:w-[77%] bg-green-700 fixed top-0">
@@ -41,8 +43,8 @@ export default function MessagesNavBar() {
           </svg>
         </div>
         <div className=" p-2 pr-9">
-          <button className="hover:bg-green-900 p-2 pr-[90px] rounded-xl flex items-center text-4xl">
-            UserName
+          <button className="hover:bg-green-900 p-2 pr-[90px] text-white rounded-xl flex items-center text-4xl">
+            {farmerUsername}
           </button>
         </div>
       </div>
