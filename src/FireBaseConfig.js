@@ -10,7 +10,7 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { useContext } from "react";
-import { useCollectionData } from "react-firebase-hooks/firestore";
+
 import { userContext } from "./components/Users";
 
 //KonnectUs Firebase configuration
