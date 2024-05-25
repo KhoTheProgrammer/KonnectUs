@@ -1,8 +1,14 @@
 //This file describes how each message in a chat should look
+import { auth } from "../../FireBaseConfig";
+import { useContext } from "react";
+import { userContext } from "../Users";
 
 export default function MessageTile({ message }) {
   //this returns the message tile for the signed in user
-  if (message.id === "me") {
+
+  const { farmerUsername } = useContext(userContext);
+
+  if (message.sender === auth.currentUser.uid) {
     return (
       <div>
         <div className="flex flex-row justify-end">
@@ -10,10 +16,10 @@ export default function MessageTile({ message }) {
             <div className=" w-full max-w-[320px] leading-1.5 p-3 border-green-500 bg-green-500 pl-10 rounded-l-[40px]">
               <div className="flex items-center space-x-2 rtl:space-x-reverse justify-end">
                 <span className=" text-sm font-normal bg-green-500 text-white">
-                  {message.timestamp}
+                  {message.time}
                 </span>
                 <span className=" text-sm font-semibold bg-green-500 text-white">
-                  {message.id}
+                  Me
                 </span>
               </div>
               <p className=" text-sm font-normal py-2.5 bg-green-500 text-white ">
@@ -60,10 +66,10 @@ export default function MessageTile({ message }) {
             <div className=" w-full max-w-[320px] leading-1.5 p-3 border-gray-500 bg-gray-500 pr-10  rounded-r-[40px]">
               <div className="flex items-center space-x-2 rtl:space-x-reverse">
                 <span className=" text-sm font-semibold bg-gray-500 text-white">
-                  {message.id}
+                  {farmerUsername}
                 </span>
                 <span className=" text-sm font-normal bg-gray-500 text-white">
-                  {message.timestamp}
+                  {message.time}
                 </span>
               </div>
               <p className=" text-sm font-normal py-2.5 bg-gray-500 text-white ">
