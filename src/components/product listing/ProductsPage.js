@@ -26,8 +26,8 @@ const ProductsPage = () => {
       market: "Mzuzu market",
       quantity: "50kg",
       image: "https://world-crops.com/wp-content/uploads/Corn-Maize-1.jpg",
-      username: "Nduayhuoo",
-      userid: "4ctpNUz6cPZVGmpl0x18DZTLTOm1",
+      username: "kondwani",
+      userid: "BnTYYgKRMXaY7lbZtPiWyo6n4NX2",
     },
 
     {
@@ -38,8 +38,8 @@ const ProductsPage = () => {
       quantity: "50kg",
       image:
         "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
-      username: "Nduayhuoo",
-      userid: "4ctpNUz6cPZVGmpl0x18DZTLTOm1",
+      username: "kondwani",
+      userid: "BnTYYgKRMXaY7lbZtPiWyo6n4NX2",
     },
     {
       id: 4,
@@ -49,8 +49,8 @@ const ProductsPage = () => {
       quantity: "200kg",
       image:
         "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
-      username: "frank",
-      userid: "4ctpNUz6cPZVGmpl0x18DZTLTOm1",
+      username: "chim",
+      userid: "jrxauySBksMJTOe9eMM0W6PMqOH3",
     },
     {
       id: 5,
@@ -60,8 +60,8 @@ const ProductsPage = () => {
       quantity: "1000kg",
       image:
         "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
-      username: "RobertoBitah",
-      userid: "XsM69Dw1lldaDx3JhKfbHjVD3oA3",
+      username: "chim",
+      userid: "jrxauySBksMJTOe9eMM0W6PMqOH3",
     },
 
     {
@@ -95,8 +95,8 @@ const ProductsPage = () => {
       quantity: "2000kg",
       image:
         "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
-      username: "RobertoBitah",
-      userid: "XsM69Dw1lldaDx3JhKfbHjVD3oA3",
+      username: "johnson_kamanga",
+      userid: "OQrVJQ6kANSWG3EsNDrSItRQDum2",
     },
     {
       id: 9,
@@ -106,8 +106,8 @@ const ProductsPage = () => {
       quantity: "100kg",
       image:
         "https://th.bing.com/th/id/OIP.M0k-9tJAkEWRSBow1WxZYAHaEK?rs=1&pid=ImgDetMain",
-      username: "AJ",
-      userid: "4tRFBUuzISbs4U6iGIKtloqRtY33",
+      username: "johnson_kamanga",
+      userid: "OQrVJQ6kANSWG3EsNDrSItRQDum2",
     },
 
     {
@@ -141,8 +141,8 @@ const ProductsPage = () => {
       quantity: "28kg",
       image:
         "https://th.bing.com/th/id/OIP.C2dQ4im8zSEBw-t9stoIWQHaD8?rs=1&pid=ImgDetMain",
-      username: "AJ",
-      userid: "4tRFBUuzISbs4U6iGIKtloqRtY33",
+      username: "Osato",
+      userid: "S1rgQWy6Amb36Zb3w7RQw8mA7I23",
     },
   ]);
 
