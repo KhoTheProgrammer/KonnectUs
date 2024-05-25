@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { userContext } from "../Users";
+import { auth } from "../../FireBaseConfig";
 export default function Create() {
   const { userData } = useContext(userContext);
   const [Fname, setFname] = useState("");
@@ -8,6 +9,14 @@ export default function Create() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [bio, setBio] = useState("");
   const [email, setEmail] = useState("");
+  let currentUser = {};
+
+  userData.map((user) => {
+    if (user.userid === auth.currentUser.uid) {
+      currentUser = user;
+      console.log(currentUser);
+    }
+  });
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -29,12 +38,6 @@ export default function Create() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    userData.firstname = Fname;
-    userData.lastname = Lname;
-    userData.email = email;
-    userData.phoneNumber = phoneNumber;
-    userData.dateOfBirth = dateOfBirth;
-    userData.bio = bio;
   };
   return (
     <div className="md:w-3/4 w-screen flex justify-center mx-auto">
@@ -52,7 +55,7 @@ export default function Create() {
           <br></br>
           <input
             type="text"
-            placeholder={userData.firstname}
+            placeholder={currentUser.fname}
             required
             className="py-4 w-full  mb-8 px-2 rounded-lg"
           ></input>{" "}
@@ -66,7 +69,7 @@ export default function Create() {
           <br></br>
           <input
             type="text"
-            placeholder={userData.firstname}
+            placeholder={currentUser.lname}
             required
             className="py-4 w-full  mb-8 px-2 rounded-lg"
           ></input>{" "}
@@ -80,7 +83,7 @@ export default function Create() {
           <br></br>
           <input
             type="email"
-            placeholder={userData.email}
+            placeholder={currentUser.userid}
             required
             className="py-4 px-2 w-full  mb-8 rounded-lg"
           ></input>{" "}
