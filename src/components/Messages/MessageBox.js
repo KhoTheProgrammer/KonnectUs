@@ -1,30 +1,26 @@
 //this file describes the component(text box) which users type into when sending a message
 
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { auth, sendMessage, getChatID } from "../../FireBaseConfig";
+import { userContext } from "../Users";
 
 export default function MessageBox(props) {
-    const messages = props.messages;
-    const updateMessages = props.updateMessages;
-
-    const [message, setMessage] = useState("");
+  const messages = props.messages;
+  const [message, setMessage] = useState("");
+  const { farmerID, farmerUsername } = useContext(userContext);
 
   const handleSubmit = (e) => {
     //to be defined later
     e.preventDefault();
-    const newMessage = {
-      text : message,
-      id: 'me',
-      timestamp: messages.length
-    };
-
-    updateMessages([...messages, newMessage]);
+    sendMessage(getChatID(farmerID), farmerID, message, messages.length + 1);
+    console.log(`you sent : ${message} || it was sent to ${farmerUsername}`);
     setMessage("");
   };
 
   const handleMessage = (e) => {
     e.preventDefault();
     setMessage(e.target.value);
-  }
+  };
 
   return (
     <div className="fixed bottom-0 w-full md:w-[77%]">
