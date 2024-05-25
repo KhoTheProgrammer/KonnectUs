@@ -53,7 +53,7 @@ const handleEdit = (index) => {
       <div flex flex-center>
     <div className="container mx-auto">
     
-      <form onSubmit={handleSubmit} className="mt-8bg-white w-full h-3/4 p-6 m-8 rounded-lg">
+      <form onSubmit={handleSubmit} className="mt-8bg-white w-half h-3/4 p-6 m-8 rounded-lg">
         <div className="mb-4">
           <label className="block text-black text-sm font-bold mb-2">
             Product Name
