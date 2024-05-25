@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import {NavLink} from "react-router-dom"
 import Filter from "../Search and Filtering/Filter";
+import { userContext } from "../Users";
+import { getChatID } from "../../FireBaseConfig";
 const ProductsPage = () => {
   const [products, setproducts] = useState([
     {
@@ -11,8 +13,9 @@ const ProductsPage = () => {
       price: "K1500",
       market: "Machinga",
       quantity: "1kg",
-      image:
-        "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+      image: "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+      username: "Nduayhuoo" ,
+      userid: "4ctpNUz6cPZVGmpl0x18DZTLTOm1"      
     },
 
     {
@@ -22,6 +25,8 @@ const ProductsPage = () => {
       market: "Zomba market",
       quantity: "50kg",
       image: "https://world-crops.com/wp-content/uploads/Corn-Maize-1.jpg",
+      username: "Nduayhuoo" ,
+      userid: "4ctpNUz6cPZVGmpl0x18DZTLTOm1" 
     },
 
     {
@@ -30,8 +35,9 @@ const ProductsPage = () => {
       price: "k700",
       market: "Balaka martket",
       quantity: "50kg",
-      image:
-        "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+      image: "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+      username: "Nduayhuoo" ,
+      userid: "4ctpNUz6cPZVGmpl0x18DZTLTOm1"   
     },
     {
       id: 4,
@@ -39,8 +45,9 @@ const ProductsPage = () => {
       price: "K5000",
       market: "Balaka martket",
       quantity: "2kg",
-      image:
-        "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
+      image: "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
+      username: "frank" ,
+      userid: "4ctpNUz6cPZVGmpl0x18DZTLTOm1" 
     },
     {
       id: 5,
@@ -48,8 +55,9 @@ const ProductsPage = () => {
       price: "k1500",
       market: "Machinga",
       quantity: "1000kg",
-      image:
-        "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+      image: "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+      username: "RobertoBitah",
+      userid: "XsM69Dw1lldaDx3JhKfbHjVD3oA3"
     },
 
     {
@@ -59,6 +67,8 @@ const ProductsPage = () => {
       market: "zomba market",
       quantity: "50kg",
       image: "https://world-crops.com/wp-content/uploads/Corn-Maize-1.jpg",
+      username: "RobertoBitah",
+      userid: "XsM69Dw1lldaDx3JhKfbHjVD3oA3"
     },
 
     {
@@ -67,8 +77,9 @@ const ProductsPage = () => {
       price: "k700",
       market: "Thyolo market",
       quantity: "50kg",
-      image:
-        "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+      image: "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+      username: "RobertoBitah",
+      userid: "XsM69Dw1lldaDx3JhKfbHjVD3oA3"
     },
     {
       id: 8,
@@ -76,8 +87,9 @@ const ProductsPage = () => {
       price: "k5000",
       market: "Balaka martket",
       quantity: "2kg",
-      image:
-        "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
+      image:"https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
+      username: "RobertoBitah",
+      userid: "XsM69Dw1lldaDx3JhKfbHjVD3oA3"
     },
     {
       id: 9,
@@ -85,8 +97,9 @@ const ProductsPage = () => {
       price: "k500",
       market: "Machinga",
       quantity: "100kg",
-      image:
-        "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+      image:"https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+      username: "AJ",
+      userid: "4tRFBUuzISbs4U6iGIKtloqRtY33"
     },
 
     {
@@ -96,6 +109,8 @@ const ProductsPage = () => {
       market: "zomba market",
       quantity: "50kg",
       image: "https://world-crops.com/wp-content/uploads/Corn-Maize-1.jpg",
+      username: "AJ",
+      userid: "4tRFBUuzISbs4U6iGIKtloqRtY33"
     },
 
     {
@@ -104,8 +119,9 @@ const ProductsPage = () => {
       price: "k700",
       market: "Balaka martket",
       quantity: "50kg",
-      image:
-        "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+      image: "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+      username: "AJ",
+      userid: "4tRFBUuzISbs4U6iGIKtloqRtY33"
     },
     {
       id: 12,
@@ -113,13 +129,16 @@ const ProductsPage = () => {
       price: "k5000",
       market: "Balaka market",
       quantity: "28kg",
-      image:
-        "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
+      image: "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
+      username: "AJ",
+      userid: "4tRFBUuzISbs4U6iGIKtloqRtY33"
     },
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("");
+
+  const {setFarmerID, setFarmerUsername, chatID, setChatID } = useContext(userContext);
 
   const filteredProducts = products.filter((product) => {
     if (filter) {
@@ -151,7 +170,15 @@ const ProductsPage = () => {
                 <p className="text-black mb-4 text-lg"><span className="font-bold">Location: </span>{product.market}</p>
                 <p className="text-black mb-2 text-lg"><span className="font-bold">Quantity: </span>{product.quantity}</p>
                 <NavLink to="/Messages/Messages">
-                  <button className="bg-green-500 block m-auto text-white p-2 rounded-lg font-bold hover:bg-green-700">
+                  <button 
+                  onClick={(event) => {
+                    setFarmerID(product.userid);
+                    setFarmerUsername(product.username);
+                    setChatID(getChatID(product.userid));
+                    console.log(`set farmerid to ${product.userid} and farmerusername to ${product.username} and chatid to ${chatID} `);
+                    console.log(`chatID call: ${getChatID(product.userid)}`)
+                  }}
+                  className="bg-green-500 block m-auto text-white p-2 rounded-lg font-bold hover:bg-green-700">
                     ENQUIRE
                   </button>
                 </NavLink>
