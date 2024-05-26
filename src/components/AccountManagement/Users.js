@@ -3,11 +3,10 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { userContext } from "../Users";
 import { auth } from "../../FireBaseConfig";
 
-export default function Users() {
+export default function Users({isSmallScreen, toggleMenu}) {
   const {userData} = useContext(userContext)
   const [selectedUser, setSelectedUser] = useState(null);
   const navigate = useNavigate();
-
   // useEffect(() => {
   //   const url = "/Users.json";
   //   fetch(url)
@@ -42,9 +41,25 @@ export default function Users() {
 
   return (
     <div className="lg:w-full w-screen lg:p-8 md:p-4 p-2 min-h-screen h-auto">
-      <div className="flex">
+      <div className="flex justify-between lg:justify-normal">
+        {isSmallScreen && <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              onClick={toggleMenu}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>}
+      
         <h2 className="text-xl font-bold mb-8">Users ({userData.length})</h2>
-        <NavLink to="/Signup" className="ml-auto">
+        <NavLink to="/Signup" className="lg:ml-auto">
           <div className=" flex">
             <svg
               data-slot="icon"
