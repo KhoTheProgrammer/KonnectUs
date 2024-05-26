@@ -9,17 +9,20 @@ import { app } from "../FireBaseConfig";
 import { userContext } from "./Users";
 
 const SignUp = () => {
-  const usersData = []
+  const usersData = [];
   const navigate = useNavigate();
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [userID, setUserID] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   //import userContext variables
-  const {isSignedIn, setSignedIn, userData, setUserData} = useContext(userContext);
+  const { isSignedIn, setSignedIn, userData, setUserData } =
+    useContext(userContext);
 
   const database = getFirestore(app);
   const colRef = collection(database, "UserData");
@@ -38,10 +41,17 @@ const SignUp = () => {
   const handleFname = (e) => setFname(e.target.value);
   const handleLname = (e) => setLname(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
+  const handleConfirmPassword = (e) => setConfirmPassword(e.target.value);
   const handleUsername = (e) => setUser(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      setPasswordError("Passwords do not match");
+      return;
+    }
+    setPasswordError("");
+
     const users = {
       username: user,
       firstname: fname,
@@ -59,16 +69,15 @@ const SignUp = () => {
         setDetails(userCredentials);
         setUserData(usersData);
         setSignedIn(true);
+        navigate("/HomePage");
       })
       .catch((error) => console.log(error));
-
-    navigate("/HomePage");
   };
 
   return (
     <div>
       <NavBar />
-      <div className="bg-green-500 min-h-screen p-10">
+      <div className="bg-gradient-to-r from-green-400 via-yellow-300 to-green-600 min-h-screen p-10">
         <div className="flex justify-center items-center mx-auto bg-white rounded-lg p-8 md:p-10 lg:p-12 max-w-lg sm:max-w-md md:max-w-lg lg:max-w-xl">
           <form onSubmit={handleSubmit} className="w-full">
             <div className="mb-4">
@@ -121,6 +130,17 @@ const SignUp = () => {
                 className="w-full p-2 border border-gray-300 rounded"
               />
             </div>
+            <div className="mb-4">
+              <label className="block text-sm font-bold mb-2">CONFIRM PASSWORD</label>
+              <input
+                type="password"
+                onChange={handleConfirmPassword}
+                required
+                placeholder="Confirm your password"
+                className="w-full p-2 border border-gray-300 rounded"
+              />
+            </div>
+            {passwordError && <p className="text-red-500">{passwordError}</p>}
             <div className="flex justify-center">
               <button
                 type="submit"
