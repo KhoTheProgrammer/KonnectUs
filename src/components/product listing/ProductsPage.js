@@ -96,7 +96,7 @@ const ProductsPage = () => {
       market: "Balaka market",
       quantity: "2000kg",
       image:
-        "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+        "https://s-media-cache-ak0.pinimg.com/originals/bb/aa/79/bbaa795f950434c8537f6829813962c8.jpg",
       username: "johnson_kamanga",
       userid: "OQrVJQ6kANSWG3EsNDrSItRQDum2",
     },
