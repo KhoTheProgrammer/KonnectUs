@@ -59,7 +59,7 @@ const Team = () => {
       market: "Developer",
       quantity: "Designer",
       image:eric,
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/282999306_115419094504001_2687045033368541942_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEOBqPOr2RYZhzTCuDuVBszvgXqGgl8WlC-BeoaCXxaUBK9_g5nZ0QYI0oYd5YIPRXnduKswBJuT6zGoOQ1F2od&_nc_ohc=rr4_WGwQcNQQ7kNvgHpB3wb&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYD3hNEpVbXJ3AenXIsqzyM1OYB5O6fvSFY1tyObjH1Zwg&oe=664C31A5",
+        
     },
 
     {
