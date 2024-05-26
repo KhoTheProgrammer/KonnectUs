@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
-import kho from "./IMG_0134.jpg"
-import eric from "./IMG_9799.jpg"
-import Nduayhuoo from "./Nduayhuoo.jpg"
+import kho from "./IMG_0134.jpg";
+import eric from "./IMG_9799.jpg";
+import daud from "./IMG_3908.jpg";
+import chimwemwe from "./chimmwepic.png";
 
 const Team = () => {
   const [members, setmembers] = useState([
@@ -33,8 +34,7 @@ const Team = () => {
       market: "Developer",
       quantity: "Designer",
       image:
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/295916765_1798159527212334_8349121538674233371_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFs0wlj4hxnriOqaH5orq7FNFDRf-excY80UNF_57Fxj1Z8S0m_U5f-1GTSrswLQtTJVaPampF7aRKVjLa0lsUD&_nc_ohc=sfl8NauZPIgQ7kNvgEa-iWP&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYDAbu1PV867TbZQzj08TIGQaWlxjK9rsaZyUH9Kyr0zNQ&oe=664C1449",
-    },
+chimwemwe    },
     {
       id: 4,
       name: "Chimwemwe Katenje",
@@ -49,8 +49,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/428598318_2714192982062896_5635226273016430478_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFa5yKlaAWDtZ4HH_WYE8xjLk57hP-PuzMuTnuE_4-7MyaKk4cBz76K4iiXEPaApdwblWJ8kfnFlHFhwB1tNtx1&_nc_ohc=hNEi74n9bxkQ7kNvgHy7_cP&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYB-yu_VmaYeKee8KbDqnqO-XNBW4Mjj-lyEP42Arfo6Hg&oe=664C2D76",
+      image: daud,
     },
 
     {
@@ -59,7 +58,8 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image: eric,
+      image:
+        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/282999306_115419094504001_2687045033368541942_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEOBqPOr2RYZhzTCuDuVBszvgXqGgl8WlC-BeoaCXxaUBK9_g5nZ0QYI0oYd5YIPRXnduKswBJuT6zGoOQ1F2od&_nc_ohc=rr4_WGwQcNQQ7kNvgHpB3wb&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYD3hNEpVbXJ3AenXIsqzyM1OYB5O6fvSFY1tyObjH1Zwg&oe=664C31A5",
     },
 
     {
@@ -68,8 +68,9 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image: Nduayhuoo,
-    }
+      image:
+        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/341900967_207999891949071_7728087525263611268_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEK_RKdhv9lCYNIWQeHistmEblhfu9BDXgRuWF-70ENeGf9r2M2theXFvg5suyeAyVjjWWrO7kROptA8bZBXyvp&_nc_ohc=U2tG9m7r5xcQ7kNvgF5Kc41&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYCYkVpgFvZAG_CdCsdCxaPogXV_225BDGFF9-wDqb1jYg&oe=664C351A",
+    },
   ]);
 
   return (
@@ -102,15 +103,9 @@ const Team = () => {
                 <h2 className="text-xl font-bold text-black mb-2">
                   {product.name}
                 </h2>
-                <p className=" text-black mb-2 text-lg">
-                  {product.price}
-                </p>
-                <p className=" text-black mb-4 text-lg">
-                  {product.market}
-                </p>
-                <p className=" text-black mb-2 text-lg">
-                  {product.quantity}
-                </p>
+                <p className=" text-black mb-2 text-lg">{product.price}</p>
+                <p className=" text-black mb-4 text-lg">{product.market}</p>
+                <p className=" text-black mb-2 text-lg">{product.quantity}</p>
                 <NavLink to="/Messages">
                   <button className="bg-green-500 block m-auto text-white p-2 rounded-lg font-bold hover:bg-green-700">
                     CONTACT
