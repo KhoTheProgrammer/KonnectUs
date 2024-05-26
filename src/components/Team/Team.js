@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import kho from "./IMG_0134.jpg";
 import eric from "./IMG_9799.jpg";
 import daud from "./IMG_3908.jpg";
+import chimwemwe from "./IMG_3908.jpg";
 
 const Team = () => {
   const [members, setmembers] = useState([
