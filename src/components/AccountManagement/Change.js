@@ -1,4 +1,15 @@
+import { useContext } from "react";
+import { auth } from "../../FireBaseConfig";
+import { userContext } from "../Users";
+
 export default function Change({password, setPassword}) {
+  const { userData } = useContext(userContext);
+  let currentUser = {};
+  userData.map((user) => {
+    if (user.userid === auth.currentUser.uid) {
+      currentUser = user;
+    }
+  });
 
   return (
     <div className="w-3/4 flex justify-center mx-auto h-screen items-center">
@@ -36,6 +47,5 @@ export default function Change({password, setPassword}) {
       </form>
     </div>
     </div>
-    
   );
 }
