@@ -3,23 +3,22 @@ import { userContext } from "../Users";
 import { auth } from "../../FireBaseConfig";
 export default function Create() {
   const { userData } = useContext(userContext);
-  const [Fname, setFname] = useState("");
-  const [Lname, setLname] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState(new Date());
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [bio, setBio] = useState("");
-  const [email, setEmail] = useState("");
   let currentUser = {};
-
   userData.map((user) => {
     if (user.userid === auth.currentUser.uid) {
       currentUser = user;
-      console.log(currentUser);
     }
   });
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
+  const [Fname, setFname] = useState(currentUser.fname);
+  const [Lname, setLname] = useState(currentUser.lname);
+  const [dateOfBirth, setDateOfBirth] = useState(new Date());
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [bio, setBio] = useState("");
+  const [UserId, setUserId] = useState(currentUser.userid);
+
+  const handleUserId = (e) => {
+    setUserId(e.target.value);
   };
   const handlePhoneNumber = (e) => {
     setPhoneNumber(e.target.value);
@@ -38,6 +37,12 @@ export default function Create() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    userData.map((user) => {
+      if (user.userid === auth.currentUser.uid) {
+        user.fname = Fname;
+        user.lname = Lname;
+      }
+    });
   };
   return (
     <div className="md:w-3/4 w-screen flex justify-center mx-auto">
@@ -48,7 +53,7 @@ export default function Create() {
         <form onSubmit={handleSubmit}>
           <label
             className=" text-lg font-medium text-white"
-            onChange={handleFname}
+            
           >
             First Name
           </label>{" "}
@@ -58,11 +63,12 @@ export default function Create() {
             placeholder={currentUser.fname}
             required
             className="py-4 w-full  mb-8 px-2 rounded-lg"
+            onChange={handleFname}
           ></input>{" "}
           <br></br>
           <label
             className=" text-lg font-medium text-white"
-            onChange={handleLname}
+            
           >
             Last Name
           </label>{" "}
@@ -72,25 +78,27 @@ export default function Create() {
             placeholder={currentUser.lname}
             required
             className="py-4 w-full  mb-8 px-2 rounded-lg"
+            onChange={handleLname}
           ></input>{" "}
           <br></br>
           <label
             className=" text-lg font-medium text-white"
-            onChange={handleEmail}
+            
           >
-            Email
+            User Id
           </label>{" "}
           <br></br>
           <input
-            type="email"
+            type="text"
             placeholder={currentUser.userid}
-            required
+            value={currentUser.userid}
             className="py-4 px-2 w-full  mb-8 rounded-lg"
+            onChange={handleUserId}
           ></input>{" "}
           <br></br>
           <label
             className=" text-lg font-medium text-white"
-            onChange={handlePhoneNumber}
+            
           >
             Phone Number
           </label>{" "}
@@ -98,34 +106,31 @@ export default function Create() {
           <input
             type="tel"
             placeholder="your phone number..."
-            required
             className="py-4 w-full text-black px-2 mb-8 rounded-lg"
+            onChange={handlePhoneNumber}
           ></input>
           <label
             className=" text-lg font-medium text-white"
-            onChange={handleDateOfBirth}
+            
           >
             Date of birth
           </label>
           <br></br>
           <input
             type="date"
-            required
             placeholder=""
             className="py-4 w-full text-black px-2 mb-8 rounded-lg"
+            onChange={handleDateOfBirth}
           />
           <br></br>
           <label
             className=" text-lg font-medium text-white"
-            onChange={handleBio}
+           
           >
             Bio
           </label>
           <br></br>
-          <textarea
-            required
-            className="py-4 w-full text-black px-2 mb-8 rounded-lg"
-          ></textarea>
+          <textarea className="py-4 w-full text-black px-2 mb-8 rounded-lg"  onChange={handleBio}></textarea>
           <button className="block m-auto bg-white mt-3 p-2 text-black font-bold rounded-lg">
             CREATE
           </button>
