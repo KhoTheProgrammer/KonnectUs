@@ -1,4 +1,15 @@
+import { useContext } from "react";
+import { userContext } from "../Users";
+import { auth } from "../../FireBaseConfig";
+
 export default function Delete() {
+  const { userData } = useContext(userContext);
+  let currentUser = {};
+  userData.map((user) => {
+    if (user.userid === auth.currentUser.uid) {
+      currentUser = user;
+    }
+  });
   return (
     <div className="w-3/4 flex justify-center items-center h-screen mx-auto">
       <div className=" bg-green-500 px-24 py-16 rounded-2xl w-3/4">
