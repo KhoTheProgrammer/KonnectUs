@@ -9,7 +9,8 @@ const Product = () => {
   const [marketplace, setMarketplace] = useState("");
   const [quantity, setQuantity] = useState("");
   const [image, setImage] = useState(null);
-  const [editingIndex, setEditingIndex] = useState(-1); // State to track the index of the product being edited
+  const [editingIndex, setEditingIndex] = useState(-1); 
+  const [tempImage, setTempImage] = useState(null); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ const Product = () => {
       price: price,
       marketplace: marketplace,
       quantity: quantity,
-      image: image ? URL.createObjectURL(image) : null 
+      image: tempImage || (image ? URL.createObjectURL(image) : null)
     };
 
     if (editingIndex !== -1) {
@@ -30,12 +31,12 @@ const Product = () => {
       setProducts([...products, newProduct]);
     }
 
-    // Reset form fields
     setProductName("");
     setPrice("");
     setMarketplace("");
     setQuantity("");
     setImage(null);
+    setTempImage(null); // Reset temporary image
   };
 
   const handleDelete = (index) => {
@@ -50,18 +51,19 @@ const Product = () => {
     setPrice(productToEdit.price);
     setMarketplace(productToEdit.marketplace);
     setQuantity(productToEdit.quantity);
-    setImage(null); // Reset the image input
+    setTempImage(productToEdit.image);
     setEditingIndex(index);
   };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setImage(file);
+    setTempImage(URL.createObjectURL(file)); // Update temporary image when a new image is selected
   };
 
   return (
     <div>
-      <NavBar></NavBar>
+      <NavBar />
       <div className="flex justify-center bg-green-500">
         <form onSubmit={handleSubmit} className="mt-8 bg-white w-1/2 h-3/4 p-6 m-8 rounded-lg">
           <div className="mb-4">
@@ -132,7 +134,12 @@ const Product = () => {
               <li key={index} className="border p-4 rounded-lg flex flex-col justify-between">
                 <div>
                   {product.image && (
-                    <img src={product.image} alt={product.name} className="w-full h-32 object-cover mb-2" />
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-32 object-cover mb-2"
+                      onClick={() => handleEdit(index)}
+                    />
                   )}
                   <div className="mb-2">{product.name} - K{product.price} - {product.marketplace} - {product.quantity}</div>
                 </div>
@@ -155,11 +162,12 @@ const Product = () => {
           </ul>
         </div>
       </div>
-      <Footer />
+      <Footer></Footer>
     </div>
   );
 };
 
 export default Product;
+
 
 

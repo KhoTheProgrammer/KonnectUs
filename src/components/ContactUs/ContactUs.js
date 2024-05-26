@@ -3,11 +3,11 @@ import Footer from "../HomePage/Footer";
 import NavBar from "../HomePage/NavBar";
 
 const ContactUs = () => {
+  const [success, setSuccess] = useState("");
   const handleChange = (e) => {};
 
   const handleSubmit = (e) => {
     const formEle = document.querySelector("form");
-    e.preventDefault();
     const formdata = new FormData(formEle);
     fetch(
       "https://script.google.com/macros/s/AKfycbyFgZQmQ_jzR_9_-yO0v-cbG6KE8Np_RS1Tw5_ovXkKQl5Dliev8KU282gS5p0VRcRhCg/exec", {
@@ -15,6 +15,7 @@ const ContactUs = () => {
         body: formdata
       }
     );
+    setSuccess("Message successfully sent");
   };
 
   return (
@@ -88,12 +89,14 @@ const ContactUs = () => {
       
           ></textarea>
           <br />
+          {success && <div className=" text-xl text-center mb-4">{success}</div>}
           <button
             type="submit"
             className="bg-green-500 block font-bold text-white m-auto p-4 rounded hover:bg-green-700"
           >
             CONTACT
           </button>
+          
         </form>
       </div>
       <Footer />
