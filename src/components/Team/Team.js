@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
+import kho from "./IMG_0134.jpg"
+import eric from "./IMG_9799.jpg"
 
 const Team = () => {
   const [members, setmembers] = useState([
@@ -11,8 +13,7 @@ const Team = () => {
       price: "Group leader",
       market: "Developer",
       quantity: "Project Manager",
-      image:
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/421955589_857644819441818_748859348488021815_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHvMvTQNLONASeA_Wpw1CF_7KZaCJ7s9C7sploInuz0LqR-HheEP6C5JkwaowxthfnuBk9C-BRCozaJH2ya1CU4&_nc_ohc=rXAV_js4HMUQ7kNvgEJtcnH&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYCShTAJgY0JT7ociPtsHJJGCXS29Cy9A5-Axyf9VR1MNw&oe=664C1942",
+      image: kho,
     },
 
     {
@@ -21,7 +22,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image: "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/409008332_327573653396622_894419312922931690_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGjVCjRiGh9WcC7fbpzNatEj3GXH0CX5faPcZcfQJfl9rMDZDKWaE75WqST8zHMIWno14ZYsh4U8tjdDt8Yk52B&_nc_ohc=a0HigY2NqoEQ7kNvgEM_aPB&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYBtgHdWG470Godd1R6TU_-0BDQfiOr-6ptIqI4_n3fEFA&oe=664C247E",
+      image: eric,
     },
 
     {
