@@ -14,7 +14,7 @@ const Team = () => {
       price: "Group leader",
       market: "Developer",
       quantity: "Project Manager",
-      image: kho,
+      image: chimwemwe,
     },
 
     {
@@ -23,7 +23,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image: eric,
+      image: kho,
     },
 
     {
@@ -41,8 +41,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/269669318_108812561701000_3322554232703235991_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHD_J0qiCQ4RWykw1ZXC_U2S-jkwN_rowBL6OTA3-ujAK_Pt5GPR7kJTTGg2BjQpzVhgoY0Bwxm0UxNAvITXCNa&_nc_ohc=nSxBljAJsCwQ7kNvgEBef_W&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYD0Nyx24cTNnhZBJJ1yyvWAs7ulxILG5GLYOAx8k8-zLQ&oe=664C38E9",
+      image:chimwemwe,
     },
     {
       id: 5,

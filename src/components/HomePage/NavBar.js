@@ -1,13 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import KonnectUslogo from "./Konnect1.png";
-import Search from "../Search and Filtering/Search";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, Link } from "react-router-dom";
 import DropDown from "./DropDown";
 import { userContext } from "../Users";
 
 export default function NavBar({
-  searchTerm,
-  setSearchTerm,
+ 
 }) {
   const { isSignedIn } = useContext(userContext);
   const [showDropDown, setShowDropDown] = useState(false);
@@ -45,7 +43,8 @@ export default function NavBar({
       key={button.name}
       className="font-bold mx-4 text-[15px] hover:text-green-500 py-1 cursor-pointer relative z-10"
     >
-      <NavLink to={button.link}>{button.name}</NavLink>
+      <NavLink className={({ isActive }) => (isActive ? ' text-yellow-400' : 'text-black')} to={button.link} >{button.name} </NavLink>
+
     </li>
   );
 
@@ -96,20 +95,16 @@ export default function NavBar({
               <DropDown isOpen={showDropDown} />
             </li>
           ) : (
-            <NavLink to="/Login">
+            <NavLink to="/Login" className={({ isActive }) => (isActive ? 'text-yellow-400' : 'text-black')}>
               <li className="font-bold mx-6 text-[15px] relative z-10 hover:text-green-500 py-1 cursor-pointer">
                 Login
               </li>
             </NavLink>
+
           )}
 
-          {!isSmallScreen && location.pathname === "/product%20listing/ProductsPage" ? (
-            <li className="ml-3">
-              <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            </li>
-          ) : (
-            <li className="opacity-0">-----------</li>
-          )}
+          <li className="opacity-0">-----------</li>
+
         </ul>
       </div>
     </div>
