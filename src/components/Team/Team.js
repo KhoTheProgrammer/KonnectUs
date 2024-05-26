@@ -3,7 +3,7 @@ import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
 import kho from "./IMG_0134.jpg"
-import eric from "./osato.jpg"
+import eric from "./IMG_9799.jpg"
 
 const Team = () => {
   const [members, setmembers] = useState([
@@ -13,7 +13,7 @@ const Team = () => {
       price: "Group leader",
       market: "Developer",
       quantity: "Project Manager",
-      image: kho,
+      image: chimwemwe,
     },
 
     {
@@ -40,8 +40,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:
-        "https://photos.fife.usercontent.google.com/pw/AP1GczPnI3Cp1fk0OyVbp3VZ5PMRAH8xYwHwyu31c0o2Nr6riKtDwEk6r7c=w482-h642-s-no-gm?authuser=0",
+      image:chimwemwe,
     },
     {
       id: 5,
