@@ -4,6 +4,7 @@ import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
 import kho from "./IMG_0134.jpg"
 import eric from "./IMG_9799.jpg"
+import Nduayhuoo from "./Nduayhuoo.jpg"
 
 const Team = () => {
   const [members, setmembers] = useState([
@@ -67,8 +68,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/341900967_207999891949071_7728087525263611268_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEK_RKdhv9lCYNIWQeHistmEblhfu9BDXgRuWF-70ENeGf9r2M2theXFvg5suyeAyVjjWWrO7kROptA8bZBXyvp&_nc_ohc=U2tG9m7r5xcQ7kNvgF5Kc41&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYCYkVpgFvZAG_CdCsdCxaPogXV_225BDGFF9-wDqb1jYg&oe=664C351A",
+      image: Nduayhuoo,
     }
   ]);
 
