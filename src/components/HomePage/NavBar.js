@@ -103,7 +103,7 @@ export default function NavBar({
             </NavLink>
           )}
 
-          {location.pathname === "/product%20listing/ProductsPage" ? (
+          {!isSmallScreen && location.pathname === "/product%20listing/ProductsPage" ? (
             <li className="ml-3">
               <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             </li>

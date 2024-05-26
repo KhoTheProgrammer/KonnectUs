@@ -16,9 +16,9 @@ const Login = () => {
     Email: "",
     Password: "",
   });
+  const [errorCode, setErrorCode] = useState("");
 
-  const { isSignedIn, setSignedIn, userData, setUserData } =
-    useContext(userContext);
+  const { setSignedIn, adminData } = useContext(userContext);
 
   const navigate = useNavigate();
 
@@ -67,6 +67,10 @@ const Login = () => {
       errors.Password = "Password must be at least 6 characters long.";
     }
 
+    else if (errorCode === "Firebase: Error (auth/invalid-credential)."){
+      errors.Password = "Password is not valid";
+    }
+
     setErrors(errors);
     return formIsValid;
   };
@@ -77,17 +81,27 @@ const Login = () => {
       // Submit form if valid
       console.log("Form is valid, submitting...");
       console.log("Remember Me:", RememberMe);
-      // Here you can add logic to save the email and password if Remember Me is checked
+      // will implement how to save password and email when remeber me is clicked here
     } else {
       console.log("Form has errors.");
     }
     signInWithEmailAndPassword(auth, Email, Password)
       .then((userCredentials) => {
+        let path = "/HomePage";
         console.log(userCredentials);
         setSignedIn(true);
-        navigate("/HomePage");
+        adminData.map((admin) => {
+          console.log(admin.email);
+          if(admin.email === Email ){ 
+            path = "/AccountManagement/Admin" ;
+          }
+        })
+        navigate(path);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setErrorCode(error.message);
+      });
   };
 
   return (
