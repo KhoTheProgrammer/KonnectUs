@@ -6,6 +6,7 @@ import Filter from "../Search and Filtering/Filter";
 import SmallSearch from "../Search and Filtering/SmallSearch";
 import { userContext } from "../Users";
 import { getChatID } from "../../FireBaseConfig";
+import Search from "../Search and Filtering/Search";
 
 const ProductsPage = () => {
   const [products, setproducts] = useState([
@@ -192,12 +193,16 @@ const ProductsPage = () => {
         // }}
       >
         <div className="container mx-auto px-4 py-8">
-        {isSmallScreen && (
-        <SmallSearch className="hidden xs:block" searchTerm={searchTerm} setSearchTerm={setSearchTerm} isSignedIn={true} setSignedIn={() => {}} /> )}
+        
           <h1 className="text-3xl text-white font-bold text-center mb-8">
-            PRODUCT CATALOGUE
+             PRODUCT CATALOGUE
           </h1>
-          <Filter filter={filter} setFilter={setFilter} />
+       
+          <div className="flex md:flex-row space-y-2 md:space-y-0 md:space-x-0">
+  <Filter filter={filter} setFilter={setFilter} />
+  <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+</div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {filteredProducts.map((product) => (
               <div
