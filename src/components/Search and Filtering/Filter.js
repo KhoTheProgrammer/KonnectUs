@@ -5,9 +5,9 @@ const Filter = ({ filter, setFilter }) => {
     <select
       value={filter}
       onChange={(e) => setFilter(e.target.value)}
-      className="p-2 border rounded-xl"
+      className="p-2 py-1 h-9 border-black mb-6 ml-[470px] w-24 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg "
     >
-      <option value="">All</option>
+      <option value="">Filter By</option>
       <option value="name">Name</option>
       <option value="price">Price</option>
       <option value="market">Location</option>
