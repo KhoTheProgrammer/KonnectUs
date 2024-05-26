@@ -7,7 +7,7 @@ const SmallSearch = ({ searchTerm, setSearchTerm }) => {
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
       placeholder="Search.."
-      className="h-8 w-40 mt-0.1  ml-20 top-[-10px]   border-[1px] border-black rounded-xl text-center m-0"
+      className="h-8 w-40 mt-0.1  ml-20 top-[-10px]   border-[1px] border-white rounded-xl text-center m-0"
     />
   );
 };
