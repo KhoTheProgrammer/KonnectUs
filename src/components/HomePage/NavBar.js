@@ -5,7 +5,7 @@ import DropDown from "./DropDown";
 import { userContext } from "../Users";
 
 export default function NavBar({
-  
+ 
 }) {
   const { isSignedIn } = useContext(userContext);
   const [showDropDown, setShowDropDown] = useState(false);
