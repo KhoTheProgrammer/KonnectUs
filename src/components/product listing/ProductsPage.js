@@ -1,9 +1,8 @@
-import React, { useState, useContext,useEffect } from "react";
+import React, { useState, useContext} from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
 import Filter from "../Search and Filtering/Filter";
-import SmallSearch from "../Search and Filtering/SmallSearch";
 import { userContext } from "../Users";
 import { getChatID } from "../../FireBaseConfig";
 import Search from "../Search and Filtering/Search";
@@ -151,7 +150,6 @@ const ProductsPage = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("");
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
 
 
   const { setFarmerID, setFarmerUsername, chatID, setChatID } =
@@ -169,16 +167,6 @@ const ProductsPage = () => {
     );
   });
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 600);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <div>
