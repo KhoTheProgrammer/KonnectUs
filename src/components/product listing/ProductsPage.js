@@ -1,10 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext} from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
 import Filter from "../Search and Filtering/Filter";
 import { userContext } from "../Users";
 import { getChatID } from "../../FireBaseConfig";
+import Search from "../Search and Filtering/Search";
+
 const ProductsPage = () => {
   const [products, setproducts] = useState([
     {
@@ -59,7 +61,7 @@ const ProductsPage = () => {
       market: "machinga",
       quantity: "1000kg",
       image:
-        "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+        "https://th.bing.com/th/id/OIF.j2xH2JsG6mtYDMLGcz1QYg?rs=1&pid=ImgDetMain",
       username: "chim",
       userid: "jrxauySBksMJTOe9eMM0W6PMqOH3",
     },
@@ -94,7 +96,7 @@ const ProductsPage = () => {
       market: "Balaka market",
       quantity: "2000kg",
       image:
-        "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+        "https://s-media-cache-ak0.pinimg.com/originals/bb/aa/79/bbaa795f950434c8537f6829813962c8.jpg",
       username: "johnson_kamanga",
       userid: "OQrVJQ6kANSWG3EsNDrSItRQDum2",
     },
@@ -149,6 +151,7 @@ const ProductsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("");
 
+
   const { setFarmerID, setFarmerUsername, chatID, setChatID } =
     useContext(userContext);
 
@@ -164,9 +167,10 @@ const ProductsPage = () => {
     );
   });
 
+
   return (
     <div>
-      <NavBar></NavBar>
+      <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} isSignedIn={true} setSignedIn={() => {}}/>
       <div
         className="w-full mx-auto px-4 py-8 bg-green-500"
         // style={{
@@ -177,9 +181,16 @@ const ProductsPage = () => {
         // }}
       >
         <div className="container mx-auto px-4 py-8">
+        
           <h1 className="text-3xl text-white font-bold text-center mb-8">
-            PRODUCT CATALOGUE
+             PRODUCT CATALOGUE
           </h1>
+       
+          <div className="flex md:flex-row space-y-2 md:space-y-0 md:space-x-0">
+  <Filter filter={filter} setFilter={setFilter} />
+  <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+</div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {filteredProducts.map((product) => (
               <div

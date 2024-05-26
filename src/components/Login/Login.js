@@ -81,7 +81,7 @@ const Login = () => {
       // Submit form if valid
       console.log("Form is valid, submitting...");
       console.log("Remember Me:", RememberMe);
-      // Here you can add logic to save the email and password if Remember Me is checked
+      // will implement how to save password and email when remeber me is clicked here
     } else {
       console.log("Form has errors.");
     }
