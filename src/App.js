@@ -19,9 +19,10 @@ function App() {
 const userDataRef = collection(database, "UserData");
 const adminDataRef = collection(database, "AdminAccounts");
 
-  useEffect(() => {
+
+//render system user data
+useEffect(() => {
     const queryUserData = query(userDataRef);
-    const queryAdminData = query(adminDataRef);
     const unsubscribe = onSnapshot(queryUserData, (snapShot) => {
       let data = [];
       snapShot.forEach((doc) => {
@@ -33,6 +34,8 @@ const adminDataRef = collection(database, "AdminAccounts");
     return () => unsubscribe();
   }, []);
 
+  
+  //render admin data
   useEffect(() => {
     const queryAdminData = query(adminDataRef);
     const unsubscribe = onSnapshot(queryAdminData, (snapShot) => {
@@ -48,7 +51,7 @@ const adminDataRef = collection(database, "AdminAccounts");
 
   return (
     <userContext.Provider
-      value={{ isSignedIn, setSignedIn, userData, setUserData, farmerID, setFarmerID, farmerUsername, setFarmerUsername, chatID, setChatID }}
+      value={{ isSignedIn, setSignedIn, userData, setUserData, farmerID, setFarmerID, farmerUsername, setFarmerUsername, chatID, setChatID, isAdmin, setIsAdmin, adminData }}
     >
       <RouterProvider router={router}></RouterProvider>
     </userContext.Provider>
