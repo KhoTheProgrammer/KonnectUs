@@ -59,7 +59,7 @@ const ProductsPage = () => {
       market: "machinga",
       quantity: "1000kg",
       image:
-        "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+        "https://th.bing.com/th/id/OIF.j2xH2JsG6mtYDMLGcz1QYg?rs=1&pid=ImgDetMain",
       username: "chim",
       userid: "jrxauySBksMJTOe9eMM0W6PMqOH3",
     },
