@@ -10,8 +10,7 @@ import Product from "./components/product listing/Product";
 import AboutUs from "./components/AboutUs/AboutUs";
 import SignUp from "./components/SignUp";
 import ContactUs from "./components/ContactUs/ContactUs";
-import Admin from "./components/AccountManagement/Admin";
-import EditPost from "./components/product listing/EditPost";
+import Admin from "./components/AccountManagement/Admin"
 import Chats from "./components/Messages/Chats";
 import AccountReports from "./components/AccountReporting/AccountReports";
 import Users from "./components/AccountManagement/Users";
@@ -78,10 +77,6 @@ export const router = createBrowserRouter([
   {
     path: "/AccountManagement/SideBar",
     element: <SideBar></SideBar>
-  },
-  {
-    path: "/product listing/EditPost",
-    element: <EditPost />
   },
   {
     path: "/Messages/Chats",

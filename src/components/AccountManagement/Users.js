@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { userContext } from "../Users";
+import { auth } from "../../FireBaseConfig";
 
 export default function Users() {
   const {userData} = useContext(userContext)
@@ -82,10 +83,10 @@ export default function Users() {
       {userData.map((user) => (
         <div key={user.uid} className="mb-3 border-solid border grid grid-cols-4 p-4 hover:bg-green-500">
           <h3>{user.username}</h3>
-          <h3>{user.firstname}</h3>
-          <h3>{user.lastname}</h3>
+          <h3>{user.fname}</h3>
+          <h3>{user.lname}</h3>
           <div className=" flex">
-            <h3>{user.email} </h3>
+            <h3>{user.userid} </h3>
             <svg
               data-slot="icon"
               fill="none"
