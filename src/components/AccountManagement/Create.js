@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { userContext } from "../Users";
-import { auth } from "../../FireBaseConfig";
+import { auth, database } from "../../FireBaseConfig";
+import { setDoc, doc } from "firebase/firestore";
 export default function Create() {
   const { userData } = useContext(userContext);
   const [Fname, setFname] = useState("");
@@ -17,6 +18,13 @@ export default function Create() {
       console.log(currentUser);
     }
   });
+
+  async function updateUserData(newDetails) {
+    await setDoc(doc(database, "UserData", currentUser.id), newDetails, {
+      merge: true,
+    });
+    console.log(`updated details to: ${newDetails}`);
+  }
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -38,6 +46,14 @@ export default function Create() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    updateUserData({
+      fname: Fname,
+      lname: Lname,
+      email: email,
+      dob: dateOfBirth,
+      bio: bio,
+      phoneno: phoneNumber,
+    });
   };
   return (
     <div className="md:w-3/4 w-screen flex justify-center mx-auto">
@@ -46,83 +62,65 @@ export default function Create() {
           CREATE PROFILE
         </h2>
         <form onSubmit={handleSubmit}>
-          <label
-            className=" text-lg font-medium text-white"
-            onChange={handleFname}
-          >
-            First Name
-          </label>{" "}
+          <label className=" text-lg font-medium text-white">First Name</label>{" "}
           <br></br>
           <input
+            onChange={handleFname}
             type="text"
             placeholder={currentUser.fname}
             required
             className="py-4 w-full  mb-8 px-2 rounded-lg"
           ></input>{" "}
           <br></br>
-          <label
-            className=" text-lg font-medium text-white"
-            onChange={handleLname}
-          >
+          <label className=" text-lg font-medium text-white">
             Last Name
           </label>{" "}
           <br></br>
           <input
+            onChange={handleLname}
             type="text"
             placeholder={currentUser.lname}
             required
             className="py-4 w-full  mb-8 px-2 rounded-lg"
           ></input>{" "}
           <br></br>
-          <label
-            className=" text-lg font-medium text-white"
-            onChange={handleEmail}
-          >
-            Email
-          </label>{" "}
+          <label className=" text-lg font-medium text-white">Email</label>{" "}
           <br></br>
           <input
             type="email"
+            onChange={handleEmail}
             placeholder={currentUser.userid}
             required
             className="py-4 px-2 w-full  mb-8 rounded-lg"
           ></input>{" "}
           <br></br>
-          <label
-            className=" text-lg font-medium text-white"
-            onChange={handlePhoneNumber}
-          >
+          <label className=" text-lg font-medium text-white">
             Phone Number
           </label>{" "}
           <br></br>
           <input
+            onChange={handlePhoneNumber}
             type="tel"
             placeholder="your phone number..."
             required
             className="py-4 w-full text-black px-2 mb-8 rounded-lg"
           ></input>
-          <label
-            className=" text-lg font-medium text-white"
-            onChange={handleDateOfBirth}
-          >
+          <label className=" text-lg font-medium text-white">
             Date of birth
           </label>
           <br></br>
           <input
+            onChange={handleDateOfBirth}
             type="date"
             required
             placeholder=""
             className="py-4 w-full text-black px-2 mb-8 rounded-lg"
           />
           <br></br>
-          <label
-            className=" text-lg font-medium text-white"
-            onChange={handleBio}
-          >
-            Bio
-          </label>
+          <label className=" text-lg font-medium text-white">Bio</label>
           <br></br>
           <textarea
+            onChange={handleBio}
             required
             className="py-4 w-full text-black px-2 mb-8 rounded-lg"
           ></textarea>
