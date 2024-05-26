@@ -41,7 +41,7 @@ export default function Users() {
   };
 
   return (
-    <div className="w-full p-8">
+    <div className="lg:w-full w-screen lg:p-8 md:p-4 p-2 min-h-screen h-auto">
       <div className="flex">
         <h2 className="text-xl font-bold mb-8">Users ({userData.length})</h2>
         <NavLink to="/Signup" className="ml-auto">
@@ -68,16 +68,16 @@ export default function Users() {
       </div>
       <div className="border-solid border grid grid-cols-4 lg:p-4 p-2 bg-green-500">
         <div className="mb-3">
-          <h3 className="font-bold lg:text-xl text-base text-white">USERNAME</h3>
+          <h3 className="font-bold lg:text-xl md:text-base text-sm sm:uppercase text-white">Username</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold lg:text-xl text-base text-white">FIRST NAME</h3>
+          <h3 className="font-bold lg:text-xl md:text-base text-sm sm:uppercase text-white">First Name</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold lg:text-xl text-base text-white">LAST NAME</h3>
+          <h3 className="font-bold lg:text-xl md:text-base text-sm sm:uppercase text-white">Last Name</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold lg:text-xl text-base text-white">EMAIL</h3>
+          <h3 className="font-bold lg:text-xl md:text-base text-sm sm:uppercase text-white">Email</h3>
         </div>
       </div>
       {userData.map((user) => (
