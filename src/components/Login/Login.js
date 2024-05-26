@@ -16,9 +16,9 @@ const Login = () => {
     Email: "",
     Password: "",
   });
+  const [errorCode, setErrorCode] = useState("");
 
-  const { isSignedIn, setSignedIn, userData, setUserData } =
-    useContext(userContext);
+  const { setSignedIn, adminData } = useContext(userContext);
 
   const navigate = useNavigate();
 
@@ -67,6 +67,10 @@ const Login = () => {
       errors.Password = "Password must be at least 6 characters long.";
     }
 
+    else if (errorCode === "Firebase: Error (auth/invalid-credential)."){
+      errors.Password = "Password is not valid";
+    }
+
     setErrors(errors);
     return formIsValid;
   };
@@ -83,11 +87,21 @@ const Login = () => {
     }
     signInWithEmailAndPassword(auth, Email, Password)
       .then((userCredentials) => {
+        let path = "/HomePage";
         console.log(userCredentials);
         setSignedIn(true);
-        navigate("/HomePage");
+        adminData.map((admin) => {
+          console.log(admin.email);
+          if(admin.email === Email ){ 
+            path = "/AccountManagement/Admin" ;
+          }
+        })
+        navigate(path);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setErrorCode(error.message);
+      });
   };
 
   return (
