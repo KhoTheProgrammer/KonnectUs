@@ -4,6 +4,7 @@ import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
 import kho from "./IMG_0134.jpg"
 import eric from "./IMG_9799.jpg"
+import chimwemwe from "./chimmwepic.png"
 
 const Team = () => {
   const [members, setmembers] = useState([
@@ -32,8 +33,7 @@ const Team = () => {
       market: "Developer",
       quantity: "Designer",
       image:
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/295916765_1798159527212334_8349121538674233371_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFs0wlj4hxnriOqaH5orq7FNFDRf-excY80UNF_57Fxj1Z8S0m_U5f-1GTSrswLQtTJVaPampF7aRKVjLa0lsUD&_nc_ohc=sfl8NauZPIgQ7kNvgEa-iWP&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYDAbu1PV867TbZQzj08TIGQaWlxjK9rsaZyUH9Kyr0zNQ&oe=664C1449",
-    },
+chimwemwe    },
     {
       id: 4,
       name: "Chimwemwe Katenje",
