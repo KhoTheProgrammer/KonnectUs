@@ -11,9 +11,10 @@ import AboutUs from "./components/AboutUs/AboutUs";
 import SignUp from "./components/SignUp";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Admin from "./components/AccountManagement/Admin"
-import EditPost from "./components/product listing/EditPost";
 import Chats from "./components/Messages/Chats";
 import AccountReports from "./components/AccountReporting/AccountReports";
+import Users from "./components/AccountManagement/Users";
+import SideBar from "./components/AccountManagement/SideBar";
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -66,12 +67,16 @@ export const router = createBrowserRouter([
     element: <ContactUs></ContactUs>
   },
   {
-    path:"/Admin",
+    path:"/AccountManagement/Admin",
     element: <Admin></Admin>
   },
   {
-    path: "/product listing/EditPost",
-    element: <EditPost />
+    path: "/AccountManagement/Users",
+    element: <Users></Users>
+  },
+  {
+    path: "/AccountManagement/SideBar",
+    element: <SideBar></SideBar>
   },
   {
     path: "/Messages/Chats",
