@@ -1,13 +1,11 @@
-import React, { useEffect, useState, useContext} from "react";
+import React, { useState, useContext} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { userContext } from "../Users";
-import { auth } from "../../FireBaseConfig";
 
-export default function Users() {
+export default function Users({isSmallScreen, toggleMenu}) {
   const {userData} = useContext(userContext)
   const [selectedUser, setSelectedUser] = useState(null);
   const navigate = useNavigate();
-
   // useEffect(() => {
   //   const url = "/Users.json";
   //   fetch(url)
@@ -41,10 +39,26 @@ export default function Users() {
   };
 
   return (
-    <div className="w-full p-8">
-      <div className="flex">
+    <div className="lg:w-full w-screen lg:p-8 md:p-4 p-2 min-h-screen h-auto">
+      <div className="flex justify-between lg:justify-normal">
+        {isSmallScreen && <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              onClick={toggleMenu}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>}
+      
         <h2 className="text-xl font-bold mb-8">Users ({userData.length})</h2>
-        <NavLink to="/Signup" className="ml-auto">
+        <NavLink to="/Signup" className="lg:ml-auto">
           <div className=" flex">
             <svg
               data-slot="icon"
@@ -68,16 +82,16 @@ export default function Users() {
       </div>
       <div className="border-solid border grid grid-cols-4 lg:p-4 p-2 bg-green-500">
         <div className="mb-3">
-          <h3 className="font-bold lg:text-xl text-base text-white">USERNAME</h3>
+          <h3 className="font-bold lg:text-xl md:text-base text-sm sm:uppercase text-white">Username</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold lg:text-xl text-base text-white">FIRST NAME</h3>
+          <h3 className="font-bold lg:text-xl md:text-base text-sm sm:uppercase text-white">First Name</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold lg:text-xl text-base text-white">LAST NAME</h3>
+          <h3 className="font-bold lg:text-xl md:text-base text-sm sm:uppercase text-white">Last Name</h3>
         </div>
         <div className="mb-3">
-          <h3 className="font-bold lg:text-xl text-base text-white">EMAIL</h3>
+          <h3 className="font-bold lg:text-xl md:text-base text-sm sm:uppercase text-white">Email</h3>
         </div>
       </div>
       {userData.map((user) => (
