@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
-import kho from "./IMG_0134.jpg"
-import eric from "./IMG_9799.jpg"
-import Nduayhuoo from "./Nduayhuoo.jpg"
-import daud from "./IMG_3900.jpg"
-
+import kho from "./IMG_0134.jpg";
+import Eric from "./osato.jpg"
+import Nduayhuoo from "./Nduayhuoo.jpg";
+import daud from "./IMG_3900.jpg";
+import solophina from "./WhatsApp Image 2024-05-26 at 15.14.19_631e642f.jpg";
+import johnson from "./Picsart_22-06-26_16-21-22-598.jpg"
+import chimwemwe from "./chimmwepic.png"
 const Team = () => {
   const [members, setmembers] = useState([
     {
@@ -15,7 +17,7 @@ const Team = () => {
       price: "Group leader",
       market: "Developer",
       quantity: "Project Manager",
-      image: chimwemwe,
+      image: solophina,
     },
 
     {
@@ -33,15 +35,15 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:chimwemwe 
-   },
+      image: johnson,
+    },
     {
       id: 4,
       name: "Chimwemwe Katenje",
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:chimwemwe,
+      image: chimwemwe,
     },
     {
       id: 5,
@@ -58,7 +60,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image: eric,
+      image: Eric,
     },
 
     {
@@ -68,7 +70,7 @@ const Team = () => {
       market: "Developer",
       quantity: "Designer",
       image: Nduayhuoo,
-    }
+    },
   ]);
 
   return (
