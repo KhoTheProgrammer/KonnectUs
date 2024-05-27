@@ -7,14 +7,14 @@ import Eric from "./osato.jpg"
 import Nduayhuoo from "./Nduayhuoo.jpg";
 import daud from "./IMG_3900.jpg";
 import solophina from "./WhatsApp Image 2024-05-26 at 15.14.19_631e642f.jpg";
-import johnson from "./Picsart_22-06-26_16-21-22-598.jpg"
+import johnson from "./PXL_20220616_122041597-1.jpg"
 import chimwemwe from "./chimmwepic.png"
 const Team = () => {
   const [members, setmembers] = useState([
     {
       id: 1,
       name: "Solophina Mkandawire",
-      price: "Group leader",
+      role: "Group leader",
       market: "Developer",
       quantity: "Project Manager",
       image: solophina,
