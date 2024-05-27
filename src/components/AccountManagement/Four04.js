@@ -12,7 +12,7 @@ const Four04 = () => {
             But dont worry, you can find plenty of other things on our homepage
           </h1>
           <NavLink to="/HomePage">
-          <button className=" bg-green-500 p-2 rounded-lg">Back to Homepage</button>
+          <button className=" bg-green-500 p-2 rounded-lg text-white font-bold underline">Back to Homepage</button>
           </NavLink>
           
         </div>
