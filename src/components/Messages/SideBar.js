@@ -77,7 +77,7 @@ const drawChats = (chat) => (
 
 export default function SideBar() {
   return (
-    <div className="fixed left-0 h-0 w-0 md:w-[23%] flex flex-row md:h-screen border-r-[1px] border-gray-400">
+    <div className=" left-0 h-0 w-0 md:fixed md:w-[23%] flex flex-row md:h-screen border-r-[1px] border-gray-400">
       <div className="bg-gray-300 p-[6px]">
         <NavLink to="/HomePage">
           <div className="h-[55px]">
@@ -98,7 +98,7 @@ export default function SideBar() {
           </div>
         </NavLink>
         <NavLink to="/Messages/Chats">
-          <div>
+          <div className = "hidden md:block">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -116,7 +116,7 @@ export default function SideBar() {
           </div>
         </NavLink>
         <NavLink to="/AccountManagement/AccountPage">
-          <div>
+          <div className = "hidden md:block">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -140,7 +140,7 @@ export default function SideBar() {
         </NavLink>
       </div>
       <div className="flex flex-col bg-gray-200">
-        <ul>{chats.map(drawChats)}</ul>
+        <ul className="hidden md:block">{chats.map(drawChats)}</ul>
       </div>
     </div>
   );
