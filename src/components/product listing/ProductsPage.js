@@ -1,4 +1,4 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
@@ -170,26 +170,30 @@ const ProductsPage = () => {
 
   return (
     <div>
-      <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} isSignedIn={true} setSignedIn={() => {}}/>
+      <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} isSignedIn={true} setSignedIn={() => { }} />
       <div
         className="w-full mx-auto px-4 py-8 bg-green-500"
-        // style={{
-        //   backgroundImage:
-        //     'url("https://www.ashwameghagri.com/images/event_3.jpg")',
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "center",
-        // }}
+      // style={{
+      //   backgroundImage:
+      //     'url("https://www.ashwameghagri.com/images/event_3.jpg")',
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      // }}
       >
         <div className="container mx-auto px-4 py-8">
-        
+
           <h1 className="text-3xl text-white font-bold text-center mb-8">
-             PRODUCT CATALOGUE
+            PRODUCT CATALOGUE
           </h1>
-       
-          <div className="flex md:flex-row space-y-2 md:space-y-0 md:space-x-0">
-  <Filter filter={filter} setFilter={setFilter} />
-  <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-</div>
+
+          <div className="flex flex-col md:flex-row items-center justify-center md:space-x-0 space-y-1 md:space-y-0 w-full">
+            <div className="flex justify-center">
+              <Filter filter={filter} setFilter={setFilter} />
+            </div>
+            <div className="flex justify-center">
+              <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {filteredProducts.map((product) => (
