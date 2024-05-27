@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { userContext } from "../Users";
 import { auth } from "../../FireBaseConfig";
-export default function Create() {
+export default function Create({isSmallScreen, toggleMenu}) {
   const { userData } = useContext(userContext);
   let currentUser = {};
   userData.map((user) => {
@@ -47,6 +47,21 @@ export default function Create() {
   return (
     <div className="lg:w-3/4 w-screen flex justify-center mx-auto">
       <div className=" bg-green-500 w-full lg:px-24 p-8 m-4 lg:py-16 rounded-2xl">
+      {isSmallScreen && <svg
+              className="h-6 w-6 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              onClick={toggleMenu}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>}
         <h2 className="text-center font-bold text-3xl text-white mb-8">
           CREATE PROFILE
         </h2>
