@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../HomePage/Footer";
 import NavBar from "../HomePage/NavBar";
+import pic from "./fourth.webp";
 
 const ContactUs = () => {
   const [success, setSuccess] = useState("");
@@ -25,7 +26,7 @@ const ContactUs = () => {
         className="bg-gray-300 flex justify-center items-center bg-cover bg-center"
         style={{
           backgroundImage:
-            "url(https://get.pxhere.com/photo/nature-grass-plant-field-farm-lawn-meadow-prairie-sunlight-leaf-flower-green-crop-agriculture-farmland-in-rural-areas-grassland-habitat-views-ecosystem-natural-environment-grass-family-plant-stem-computer-wallpaper-land-plant-every-day-793337.jpg)",
+            `url(${pic})`,
         }}
       >
         <form
@@ -35,7 +36,7 @@ const ContactUs = () => {
           <h1 className="text-center md:text-4xl font-bold text-lg mb-4 text-green-500">
             CONTACT US
           </h1>
-          <label className="font-bold">First Name</label>
+          <label className="">First Name</label>
           <br />
           <input
             type="text"
@@ -46,7 +47,7 @@ const ContactUs = () => {
            
           />
           <br />
-          <label className="font-bold">Last Name</label>
+          <label className="">Last Name</label>
           <br />
           <input
             type="text"
@@ -57,7 +58,7 @@ const ContactUs = () => {
            
           />
           <br />
-          <label className="font-bold">Email</label>
+          <label className="">Email</label>
           <br />
           <input
             type="email"
@@ -68,7 +69,7 @@ const ContactUs = () => {
           
           />
           <br />
-          <label className="font-bold">Phone Number</label>
+          <label className="">Phone Number</label>
           <br />
           <input
             type="tel"
@@ -79,7 +80,7 @@ const ContactUs = () => {
          
           />
           <br />
-          <label className="font-bold">Message</label>
+          <label className="">Message</label>
           <br />
           <textarea
             className="w-full mb-8 rounded-md"

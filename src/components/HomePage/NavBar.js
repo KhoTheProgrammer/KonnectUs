@@ -89,7 +89,7 @@ export default function NavBar() {
               }}
               className="font-bold mx-6 text-lg hover:text-green-500 py-1 cursor-pointer"
             >
-              <DropDown isOpen={showDropDown} />
+              <DropDown className=" lg:top-[36px] sm:mt-18  lg:mt-1 absolute font-bold bg-white rounded-b-lg " isOpen={showDropDown} />
             </li>
           ) : (
             <NavLink to="/Login" className={({ isActive }) => (isActive ? 'text-yellow-400' : 'text-black')}>
