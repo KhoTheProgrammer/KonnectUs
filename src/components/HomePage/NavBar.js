@@ -93,7 +93,7 @@ export default function NavBar() {
             </li>
           ) : (
             <NavLink to="/Login" className={({ isActive }) => (isActive ? 'text-yellow-400' : 'text-black')}>
-              <li className="font-bold mx-6 text-[15px] relative z-10 hover:text-green-500 py-1 cursor-pointer">
+              <li className="font-bold mx-6 mt-1 text-[15px] relative z-10 hover:text-green-500 py-1 cursor-pointer">
                 Login
               </li>
             </NavLink>
