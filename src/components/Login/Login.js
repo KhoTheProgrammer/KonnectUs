@@ -7,6 +7,7 @@ import { auth, app } from "../../FireBaseConfig";
 import { getDoc, getFirestore, collection } from "firebase/firestore";
 import { userContext } from "../Users";
 import { NavLink } from "react-router-dom";
+import second from "./second.webp";
 
 const Login = () => {
   const [Email, setEmail] = useState("");
@@ -110,8 +111,7 @@ const Login = () => {
       <div
         className="bg-cover bg-center h-screen flex items-center justify-center py-3"
         style={{
-          backgroundImage:
-            "url(https://www.mowernew.com/wp-content/uploads/2023/07/pexels-gilmer-diaz-estela-6345502-1200x800.jpg)",
+          backgroundImage: `url(${second})`
         }}
       >
         <div className="flex flex-col md:flex-row justify-center rounded-2xl bg-white w-full max-w-5xl mx-4 md:mx-10 lg:mx-auto p-4 md:p-6 lg:p-8 shadow-lg">
