@@ -3,10 +3,12 @@ import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
 import kho from "./IMG_0134.jpg";
-import eric from "./IMG_9799.jpg";
-import daud from "./IMG_3908.jpg";
-import chimwemwe from "./chimmwepic.png";
-
+import Eric from "./osato.jpg"
+import Nduayhuoo from "./Nduayhuoo.jpg";
+import daud from "./IMG_3900.jpg";
+import solophina from "./WhatsApp Image 2024-05-26 at 15.14.19_631e642f.jpg";
+import johnson from "./Picsart_22-06-26_16-21-22-598.jpg"
+import chimwemwe from "./chimmwepic.png"
 const Team = () => {
   const [members, setmembers] = useState([
     {
@@ -15,7 +17,7 @@ const Team = () => {
       price: "Group leader",
       market: "Developer",
       quantity: "Project Manager",
-      image: chimwemwe,
+      image: solophina,
     },
 
     {
@@ -33,15 +35,15 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:
-chimwemwe    },
+      image: johnson,
+    },
     {
       id: 4,
       name: "Chimwemwe Katenje",
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:chimwemwe,
+      image: chimwemwe,
     },
     {
       id: 5,
@@ -58,8 +60,7 @@ chimwemwe    },
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/282999306_115419094504001_2687045033368541942_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEOBqPOr2RYZhzTCuDuVBszvgXqGgl8WlC-BeoaCXxaUBK9_g5nZ0QYI0oYd5YIPRXnduKswBJuT6zGoOQ1F2od&_nc_ohc=rr4_WGwQcNQQ7kNvgHpB3wb&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYD3hNEpVbXJ3AenXIsqzyM1OYB5O6fvSFY1tyObjH1Zwg&oe=664C31A5",
+      image: Eric,
     },
 
     {
@@ -68,8 +69,7 @@ chimwemwe    },
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/341900967_207999891949071_7728087525263611268_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEK_RKdhv9lCYNIWQeHistmEblhfu9BDXgRuWF-70ENeGf9r2M2theXFvg5suyeAyVjjWWrO7kROptA8bZBXyvp&_nc_ohc=U2tG9m7r5xcQ7kNvgF5Kc41&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYCYkVpgFvZAG_CdCsdCxaPogXV_225BDGFF9-wDqb1jYg&oe=664C351A",
+      image: Nduayhuoo,
     },
   ]);
 
