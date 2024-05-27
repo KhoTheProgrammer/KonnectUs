@@ -20,7 +20,7 @@ export default function Dashboard({ clickValue, setClickValue }) {
   };
   return (
     <div>
-      <div className="hidden lg:block h-full bg-green-500 w-52">
+      <div className="h-full bg-green-500 w-52">
         <div className=" p-4 text-white font-bold">
           <p className="mb-7 text-center text-MD">KHOTHEPROGRAMMER</p>
           <p
