@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
-import { collection, addDoc, query, onSnapshot, getDocs, where, orderBy } from "firebase/firestore";
+import { collection, addDoc, query, onSnapshot, getDocs, where, orderBy, limit } from "firebase/firestore";
 import { database, auth } from "../../FireBaseConfig";
 
 const Product = () => {
@@ -17,7 +17,7 @@ const Product = () => {
   const productDataRef = collection(database, "products"); 
 
   useEffect(() => {
-    const queryPosts = query(productDataRef,  where("userid", "==", auth.currentUser.uid) );
+    const queryPosts = query(productDataRef,  where("userid", "==", auth.currentUser.uid), limit(3) );
     const unsubscribe = onSnapshot(queryPosts, (snapShot) => {
       let posts = [];
       snapShot.forEach((doc) => {
