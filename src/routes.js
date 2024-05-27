@@ -15,6 +15,7 @@ import Chats from "./components/Messages/Chats";
 import AccountReports from "./components/AccountReporting/AccountReports";
 import Users from "./components/AccountManagement/Users";
 import SideBar from "./components/AccountManagement/SideBar";
+import Four04 from "./components/AccountManagement/Four04";
 
 // Variable to store routes
 export const router = createBrowserRouter([
@@ -85,6 +86,10 @@ export const router = createBrowserRouter([
   {
     path: "/AccountReporting/AccountReports",
     element: <AccountReports />
+  },
+  {
+    path: "*",
+    element: <Four04></Four04>
   }
 ]);
 

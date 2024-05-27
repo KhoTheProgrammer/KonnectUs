@@ -45,8 +45,8 @@ export default function Create() {
     });
   };
   return (
-    <div className="md:w-3/4 w-screen flex justify-center mx-auto">
-      <div className=" bg-green-500 w-full md:px-24 p-8 md:py-16 rounded-2xl">
+    <div className="lg:w-3/4 w-screen flex justify-center mx-auto">
+      <div className=" bg-green-500 w-full lg:px-24 p-8 m-4 lg:py-16 rounded-2xl">
         <h2 className="text-center font-bold text-3xl text-white mb-8">
           CREATE PROFILE
         </h2>

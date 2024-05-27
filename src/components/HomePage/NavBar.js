@@ -1,17 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import KonnectUslogo from "./Konnect1.png";
-import { NavLink, useLocation, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import DropDown from "./DropDown";
 import { userContext } from "../Users";
 
-export default function NavBar({
- 
-}) {
+export default function NavBar() {
   const { isSignedIn } = useContext(userContext);
   const [showDropDown, setShowDropDown] = useState(false);
-  const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1024);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -19,7 +16,7 @@ export default function NavBar({
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 600);
+      setIsSmallScreen(window.innerWidth <= 1024);
     };
 
     window.addEventListener("resize", handleResize);
@@ -41,7 +38,7 @@ export default function NavBar({
   const mapButtons = (button) => (
     <li
       key={button.name}
-      className="font-bold mx-4 text-[15px] hover:text-green-500 py-1 cursor-pointer relative z-10"
+      className="font-bold h-6 mx-4 text-[15px] hover:text-green-500 py-1 cursor-pointer "
     >
       <NavLink className={({ isActive }) => (isActive ? ' text-yellow-400' : 'text-black')} to={button.link} >{button.name} </NavLink>
 
@@ -49,7 +46,7 @@ export default function NavBar({
   );
 
   return (
-    <div className="grid grid-cols-[1fr_3fr] p-3 m-0 h-[80px]">
+    <div className="grid grid-cols-[1fr_3fr] p-3 m-0 h-[80px] relative z-30">
       <img
         src={KonnectUslogo}
         alt="KonnectUs Logo"
@@ -96,7 +93,7 @@ export default function NavBar({
             </li>
           ) : (
             <NavLink to="/Login" className={({ isActive }) => (isActive ? 'text-yellow-400' : 'text-black')}>
-              <li className="font-bold mx-6 text-[15px] relative z-10 hover:text-green-500 py-1 cursor-pointer">
+              <li className="font-bold mx-6 mt-1 text-[15px] relative z-10 hover:text-green-500 py-1 cursor-pointer">
                 Login
               </li>
             </NavLink>

@@ -1,18 +1,22 @@
 import React, { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { userContext } from "../Users";
+import first from "./first.webp";
+import second from "./second.webp";
+import third from "./third.jpg";
+import fourth from "./fourth.webp"
+import fifth from "./fifth.jpg";
 
 function Main() {
   const { isSignedIn } = useContext(userContext);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = [
-    "https://oxfordvitality.co.uk/cdn/shop/articles/13929060_ml-e1484929844678.jpg",
-    "https://www.greenlife.co.ke/wp-content/uploads/2022/04/Tomatoes-Farm-scaled-1-1536x1024.jpg",
-    "https://get.pxhere.com/photo/nature-grass-plant-field-farm-lawn-meadow-prairie-sunlight-leaf-flower-green-crop-agriculture-farmland-in-rural-areas-grassland-habitat-views-ecosystem-natural-environment-grass-family-plant-stem-computer-wallpaper-land-plant-every-day-793337.jpg",
-    "https://www.greenlife.co.ke/wp-content/uploads/2022/04/farming_passion.jpg",
-    "https://as2.ftcdn.net/v2/jpg/04/81/76/79/1000_F_481767956_lPVpcVJt7HseHsUi2ThNIcWVNUs7Q6mm.jpg"
+  const images = [first,
+    second,
+    third,
+    fourth,
+    fifth
   ];
   useEffect(() => {
     const interval = setInterval(() => {
