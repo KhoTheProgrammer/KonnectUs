@@ -14,7 +14,7 @@ const Team = () => {
     {
       id: 1,
       name: "Solophina Mkandawire",
-      price: "Group leader",
+      role: "Group leader",
       market: "Developer",
       quantity: "Project Manager",
       image: solophina,
