@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
-import kho from "./IMG_0134.jpg";
-import eric from "./IMG_9799.jpg";
-import daud from "./IMG_3908.jpg";
-import chimwemwe from "./chimmwepic.png";
-import Nduayhuoo from "./Nduayhuoo.jpg";
+import kho from "./IMG_0134.jpg"
+import eric from "./IMG_9799.jpg"
+import Nduayhuoo from "./Nduayhuoo.jpg"
+import daud from "./IMG_3900.jpg"
+import chimwemwe from "./chimmwepic.png"
 
 const Team = () => {
   const [members, setmembers] = useState([
@@ -59,7 +59,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-      image:eric,
+      image: eric,
     },
 
     {
@@ -69,7 +69,7 @@ const Team = () => {
       market: "Developer",
       quantity: "Designer",
       image: Nduayhuoo,
-    },
+    }
   ]);
 
   return (
