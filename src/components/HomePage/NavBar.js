@@ -1,17 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import KonnectUslogo from "./Konnect1.png";
-import { NavLink, useLocation, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import DropDown from "./DropDown";
 import { userContext } from "../Users";
 
-export default function NavBar({
- 
-}) {
+export default function NavBar() {
   const { isSignedIn } = useContext(userContext);
   const [showDropDown, setShowDropDown] = useState(false);
-  const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1024);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -19,7 +16,7 @@ export default function NavBar({
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 600);
+      setIsSmallScreen(window.innerWidth <= 1024);
     };
 
     window.addEventListener("resize", handleResize);
