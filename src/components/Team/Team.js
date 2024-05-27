@@ -3,19 +3,12 @@ import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
 import kho from "./IMG_0134.jpg";
-<<<<<<< HEAD
-import eric from "./IMG_9799.jpg";
-import daud from "./IMG_3908.jpg";
-import chimwemwe from "./IMG_3908.jpg";
-
-=======
 import Eric from "./osato.jpg"
 import Nduayhuoo from "./Nduayhuoo.jpg";
 import daud from "./IMG_3900.jpg";
 import solophina from "./WhatsApp Image 2024-05-26 at 15.14.19_631e642f.jpg";
 import johnson from "./Picsart_22-06-26_16-21-22-598.jpg"
 import chimwemwe from "./chimmwepic.png"
->>>>>>> 4cb93a813bb40ddcf6deb33c9c573bfdb25edc9b
 const Team = () => {
   const [members, setmembers] = useState([
     {
@@ -42,12 +35,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-<<<<<<< HEAD
-      image:
-        "https://scontent.fllw1-1.fna.fbcdn.net/v/t39.30808-6/295916765_1798159527212334_8349121538674233371_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFs0wlj4hxnriOqaH5orq7FNFDRf-excY80UNF_57Fxj1Z8S0m_U5f-1GTSrswLQtTJVaPampF7aRKVjLa0lsUD&_nc_ohc=sfl8NauZPIgQ7kNvgEa-iWP&_nc_zt=23&_nc_ht=scontent.fllw1-1.fna&oh=00_AYDAbu1PV867TbZQzj08TIGQaWlxjK9rsaZyUH9Kyr0zNQ&oe=664C1449",
-=======
       image: johnson,
->>>>>>> 4cb93a813bb40ddcf6deb33c9c573bfdb25edc9b
     },
     {
       id: 4,
@@ -72,12 +60,7 @@ const Team = () => {
       price: "Group Member",
       market: "Developer",
       quantity: "Designer",
-<<<<<<< HEAD
-      image:eric,
-        
-=======
       image: Eric,
->>>>>>> 4cb93a813bb40ddcf6deb33c9c573bfdb25edc9b
     },
 
     {
