@@ -167,7 +167,7 @@ const Product = () => {
                       onClick={() => handleEdit(index)}
                     />
                   )}
-                  <div className="mb-2">{product.name} - K{product.price} - {product.market} - {product.quantity}</div>
+                  <div className="mb-2">{product.name} - {product.price} - {product.market} - {product.quantity}</div>
                 </div>
                 <div>
                   <button
