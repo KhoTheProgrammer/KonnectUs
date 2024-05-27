@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from '../HomePage/NavBar';
 import Footer from '../HomePage/Footer';
 
@@ -8,7 +8,18 @@ const ReviewRating = () => {
   const [comment, setComment] = useState('');
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false); // State to track whether a review is being submitted
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    const storedReviews = localStorage.getItem('reviews');
+    if (storedReviews) {
+      setReviews(JSON.parse(storedReviews));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+  }, [reviews]);
 
   const handleRatingClick = (selectedRating) => {
     setRating(selectedRating === rating ? 0 : selectedRating);
@@ -32,25 +43,22 @@ const ReviewRating = () => {
       alert("Please select a rating.");
       return;
     }
-    setIsSubmitting(true); // Set submitting state to true when review is being submitted
+    setIsSubmitting(true);
     const newReview = {
       rating: rating,
       comment: comment,
       name: name,
       location: location,
-      date: new Date().toISOString().slice(0, 10), // Get current date in YYYY-MM-DD format
+      date: new Date().toISOString().slice(0, 10),
     };
     setReviews([...reviews, newReview]);
-    // Here you can add logic to send the review data to your backend or perform any other necessary action.
-    // You can also reset the rating, comment, name, and location fields after submission if needed.
     setRating(0);
     setComment('');
     setName('');
     setLocation('');
-    setIsSubmitting(false); // Reset submitting state after submission
+    setIsSubmitting(false);
   };
 
-  // renders stars
   const renderStars = (count) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -112,13 +120,13 @@ const ReviewRating = () => {
           <button 
             type="submit"
             className="bg-green-500 text-white py-2 px-4 rounded hover:bg-yellow-400 w-1/2 mx-auto block"
-            disabled={isSubmitting} // Disable button while review is being submitted
+            disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Submit Review"}
           </button>
         </form>
         <div className="bg-gray-200 p-4 rounded-lg">
-          <h3 className="text-2xl font-bold mb-4 text-center">Customer current Reviews</h3>
+          <h3 className="text-2xl font-bold mb-4 text-center">Customer Reviews</h3>
           <ul>
             {reviews.map((review, index) => (
               <li key={index} className="mb-4 border-b pb-4">
