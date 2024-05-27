@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
 import { NavLink } from "react-router-dom";
-import kho from "./IMG_0134.jpg";
+import kho from "./IMG_9799.jpg";
 import Eric from "./osato.jpg"
 import Nduayhuoo from "./Nduayhuoo.jpg";
 import daud from "./IMG_3900.jpg";
