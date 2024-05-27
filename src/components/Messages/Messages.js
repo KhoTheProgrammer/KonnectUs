@@ -23,26 +23,6 @@ export default function Messages() {
   //get a reference to a subcollection in Chats
   const subChatRef = collection(database, "Chats", chatID, "messages");
 
-  const sortMessages = (messages) => {
-    let sort = messages;
-    for (let i = 0; i < messages.length; i++) {
-      let key = sort[i];
-      let k = i - 1;
-
-      while (k >= 0 && key.timestamp < messages[i].timestamp) {
-        sort[i + 1] = sort[k];
-        console.log(
-          `${sort[i + 1].text} at ${sort[i + 1].timestamp} vs ${
-            sort[k].text
-          } at ${sort[k].timestamp}`
-        );
-        k--;
-      }
-
-      return sort;
-    }
-  };
-
   useEffect(() => {
     const queryMessages = query(subChatRef, orderBy("timestamp"));
     const unsubscribe = onSnapshot(queryMessages, (snapShot) => {
@@ -59,12 +39,12 @@ export default function Messages() {
 
   return (
     <div
-      className="flex flex-row h-full"
+      className="flex flex-row min-h-screen h-full w-full bg-fixed"
       style={{
         backgroundImage: `url(${Background})`,
       }}
     >
-      <div className="w-0 h-0 md:w-[30%] md:h-full bg-green-300 ">
+      <div className="w-0 h-0 md:w-[30%] md:h-full">
         <SideBar />
       </div>
       <div className="w-full lg:min-h-full">

@@ -1,7 +1,19 @@
 import { useContext, useState } from "react";
 import { userContext } from "../Users";
-import { auth } from "../../FireBaseConfig";
+import { auth, database } from "../../FireBaseConfig";
+import { setDoc, doc } from "firebase/firestore";
+
 export default function Create({isSmallScreen, toggleMenu}) {
+
+  
+  async function updateUserData(newDetails) {
+    await setDoc(doc(database, "UserData", currentUser.id), newDetails, {
+      merge: true,
+    });
+    console.log(`updated details to: ${newDetails}`);
+  }
+
+
   const { userData } = useContext(userContext);
   let currentUser = {};
   userData.map((user) => {
@@ -9,7 +21,7 @@ export default function Create({isSmallScreen, toggleMenu}) {
       currentUser = user;
     }
   });
-
+const [email, setEmail] = useState("");
   const [Fname, setFname] = useState(currentUser.fname);
   const [Lname, setLname] = useState(currentUser.lname);
   const [dateOfBirth, setDateOfBirth] = useState(new Date());
@@ -17,9 +29,14 @@ export default function Create({isSmallScreen, toggleMenu}) {
   const [bio, setBio] = useState("");
   const [UserId, setUserId] = useState(currentUser.userid);
 
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  }
   const handleUserId = (e) => {
     setUserId(e.target.value);
   };
+
   const handlePhoneNumber = (e) => {
     setPhoneNumber(e.target.value);
   };
@@ -37,11 +54,13 @@ export default function Create({isSmallScreen, toggleMenu}) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    userData.map((user) => {
-      if (user.userid === auth.currentUser.uid) {
-        user.fname = Fname;
-        user.lname = Lname;
-      }
+    updateUserData({
+      fname: Fname,
+      lname: Lname,
+      email: email,
+      dob: dateOfBirth,
+      bio: bio,
+      phoneno: phoneNumber,
     });
   };
   return (
@@ -74,11 +93,11 @@ export default function Create({isSmallScreen, toggleMenu}) {
           </label>{" "}
           <br></br>
           <input
+            onChange={handleFname}
             type="text"
             placeholder={currentUser.fname}
             required
             className="py-4 w-full  mb-8 px-2 rounded-lg"
-            onChange={handleFname}
           ></input>{" "}
           <br></br>
           <label
@@ -100,15 +119,15 @@ export default function Create({isSmallScreen, toggleMenu}) {
             className=" text-lg font-medium text-white"
             
           >
-            User Id
+            Email
           </label>{" "}
           <br></br>
           <input
             type="text"
-            placeholder={currentUser.userid}
-            value={currentUser.userid}
+            placeholder="enter email"
+            value={email}
             className="py-4 px-2 w-full  mb-8 rounded-lg"
-            onChange={handleUserId}
+            onChange={handleEmail}
           ></input>{" "}
           <br></br>
           <label
@@ -119,10 +138,10 @@ export default function Create({isSmallScreen, toggleMenu}) {
           </label>{" "}
           <br></br>
           <input
+            onChange={handlePhoneNumber}
             type="tel"
             placeholder="your phone number..."
             className="py-4 w-full text-black px-2 mb-8 rounded-lg"
-            onChange={handlePhoneNumber}
           ></input>
           <label
             className=" text-lg font-medium text-white"
@@ -132,10 +151,10 @@ export default function Create({isSmallScreen, toggleMenu}) {
           </label>
           <br></br>
           <input
+            onChange={handleDateOfBirth}
             type="date"
             placeholder=""
             className="py-4 w-full text-black px-2 mb-8 rounded-lg"
-            onChange={handleDateOfBirth}
           />
           <br></br>
           <label
