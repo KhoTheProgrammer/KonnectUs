@@ -33,7 +33,7 @@ export default function MessagesNavBar() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-16 h-16 "
+            className="w-10 md:w-16 h-10 md:h-16"
           >
             <path
               strokeLinecap="round"
@@ -43,7 +43,7 @@ export default function MessagesNavBar() {
           </svg>
         </div>
         <div className=" p-2 pr-9">
-          <button className="hover:bg-green-900 p-2 pr-[90px] text-white rounded-xl flex items-center text-4xl">
+          <button className="hover:bg-green-900 p-2 pr-[90px] text-2xl text-white rounded-xl flex items-center md:text-4xl">
             {farmerUsername}
           </button>
         </div>

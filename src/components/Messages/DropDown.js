@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const buttons = [
   {
     name: "View Account",
-    link: "/Alt/ProductsPage",
+    link: "/product listing/ProductsPage",
   },
   {
     name: "Report",
