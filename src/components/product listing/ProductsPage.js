@@ -6,7 +6,18 @@ import Filter from "../Search and Filtering/Filter";
 import { userContext } from "../Users";
 import { getChatID } from "../../FireBaseConfig";
 import Search from "../Search and Filtering/Search";
-
+import beans from "./beans.jpg"
+import maize from "./maize.jpg"
+import cow from "./cow.jpg"
+import goat from "./livestock---sideview-of-a-boer-goat-kid-on-a-green-pasture---dodd-city--texas--usa--530704190-5c3fe72246e0fb00010eb949.jpg"
+import pumpkin from "./pumpkin.jpg"
+import chicken from "./istock_000006350265-chicken_6.webp"
+import cassava from "./fresh-cassava-root.jpg"
+import onion from "./onion.jpg"
+import potato from "./potato.png"
+import pawpaw from "./pawpaw.jpg"
+import chambo from "./fish.jpg"
+import tomato from "./OIF.jpg"
 const ProductsPage = () => {
   const [products, setproducts] = useState([
     {
@@ -15,8 +26,7 @@ const ProductsPage = () => {
       price: "K1500",
       market: "Machinga",
       quantity: "1kg",
-      image:
-        "https://th.bing.com/th/id/OIP.NPA3NW4kQ3Ea0HC4ol99dgHaE8?rs=1&pid=ImgDetMain",
+      image:beans,
       username: "Nduayhuoo",
       userid: "4ctpNUz6cPZVGmpl0x18DZTLTOm1",
     },
@@ -27,7 +37,7 @@ const ProductsPage = () => {
       price: "K7000",
       market: "Mzuzu market",
       quantity: "50kg",
-      image: "https://world-crops.com/wp-content/uploads/Corn-Maize-1.jpg",
+      image: maize,
       username: "kondwani",
       userid: "BnTYYgKRMXaY7lbZtPiWyo6n4NX2",
     },
@@ -38,8 +48,7 @@ const ProductsPage = () => {
       price: "k700",
       market: "Chitipa market",
       quantity: "50kg",
-      image:
-        "https://th.bing.com/th/id/OIP.ZC5AUtfnhnf5d1LuM6YBjgHaFk?w=1600&h=1205&rs=1&pid=ImgDetMain",
+      image:potato,
       username: "kondwani",
       userid: "BnTYYgKRMXaY7lbZtPiWyo6n4NX2",
     },
@@ -49,8 +58,7 @@ const ProductsPage = () => {
       price: "K5000",
       market: "Liwonde martket",
       quantity: "200kg",
-      image:
-        "https://th.bing.com/th/id/R.6bd670e04e3ad7a4d0ddcef1dca83c2e?rik=jfx%2b1LRSZZYfaQ&pid=ImgRaw&r=0",
+      image:chicken,
       username: "chim",
       userid: "jrxauySBksMJTOe9eMM0W6PMqOH3",
     },
@@ -60,8 +68,7 @@ const ProductsPage = () => {
       price: "k1500",
       market: "machinga",
       quantity: "1000kg",
-      image:
-        "https://th.bing.com/th/id/OIF.j2xH2JsG6mtYDMLGcz1QYg?rs=1&pid=ImgDetMain",
+      image:tomato,
       username: "chim",
       userid: "jrxauySBksMJTOe9eMM0W6PMqOH3",
     },
@@ -72,8 +79,7 @@ const ProductsPage = () => {
       price: "k100",
       market: "zomba market",
       quantity: "550kg",
-      image:
-        "https://5.imimg.com/data5/SELLER/Default/2022/12/UC/JB/TH/106482549/onion-500x500.png",
+      image:onion,
       username: "RobertoBitah",
       userid: "XsM69Dw1lldaDx3JhKfbHjVD3oA3",
     },
@@ -84,8 +90,7 @@ const ProductsPage = () => {
       price: "k700",
       market: "Thylo market",
       quantity: "50kg",
-      image:
-        "https://th.bing.com/th/id/OIP.nSstYWPGnK2A1LJF3h_nVgHaE9?rs=1&pid=ImgDetMain",
+      image:pumpkin,
       username: "RobertoBitah",
       userid: "XsM69Dw1lldaDx3JhKfbHjVD3oA3",
     },
@@ -95,8 +100,7 @@ const ProductsPage = () => {
       price: "k50000",
       market: "Balaka market",
       quantity: "2000kg",
-      image:
-        "https://s-media-cache-ak0.pinimg.com/originals/bb/aa/79/bbaa795f950434c8537f6829813962c8.jpg",
+      image:cow,
       username: "johnson_kamanga",
       userid: "OQrVJQ6kANSWG3EsNDrSItRQDum2",
     },
@@ -106,8 +110,7 @@ const ProductsPage = () => {
       price: "k500",
       market: "machinga",
       quantity: "100kg",
-      image:
-        "https://th.bing.com/th/id/OIP.M0k-9tJAkEWRSBow1WxZYAHaEK?rs=1&pid=ImgDetMain",
+      image:cassava,
       username: "johnson_kamanga",
       userid: "OQrVJQ6kANSWG3EsNDrSItRQDum2",
     },
@@ -118,8 +121,7 @@ const ProductsPage = () => {
       price: "k40000",
       market: "zomba market",
       quantity: "1500kg",
-      image:
-        "https://th.bing.com/th/id/OIP.X8ckRhahEN70-vwlOqL3lAHaE8?w=5184&h=3456&rs=1&pid=ImgDetMain",
+      image:goat,
       username: "AJ",
       userid: "4tRFBUuzISbs4U6iGIKtloqRtY33",
     },
@@ -130,8 +132,7 @@ const ProductsPage = () => {
       price: "k700",
       market: "Lilongwe market",
       quantity: "50kg",
-      image:
-        "https://th.bing.com/th/id/R.a09ebd038a5afe4d284551407f3cf80a?rik=BJxDkDHwmF6nFw&riu=http%3a%2f%2fwww.faceofmalawi.com%2fwp-content%2fuploads%2f2014%2f10%2fOreochromis-karongae-chambo.jpg&ehk=uJNvUhsVEEsJ4bqrpkdbNHlru%2bewAhc%2fNaOQ9OxO1gQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1",
+      image:chambo,
       username: "AJ",
       userid: "4tRFBUuzISbs4U6iGIKtloqRtY33",
     },
@@ -141,8 +142,7 @@ const ProductsPage = () => {
       price: "k5000",
       market: "Balaka martket",
       quantity: "28kg",
-      image:
-        "https://th.bing.com/th/id/OIP.C2dQ4im8zSEBw-t9stoIWQHaD8?rs=1&pid=ImgDetMain",
+      image:pawpaw,
       username: "Osato",
       userid: "S1rgQWy6Amb36Zb3w7RQw8mA7I23",
     },
