@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useContext} from "react";
+import React, { useState, useContext} from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { userContext } from "../Users";
-import { auth } from "../../FireBaseConfig";
 
 export default function Users({isSmallScreen, toggleMenu}) {
   const {userData} = useContext(userContext)
