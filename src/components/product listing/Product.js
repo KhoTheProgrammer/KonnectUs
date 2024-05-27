@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../HomePage/NavBar";
 import Footer from "../HomePage/Footer";
+import { collection, addDoc, query, onSnapshot, getDocs, where, orderBy } from "firebase/firestore";
+import { database, auth } from "../../FireBaseConfig";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -11,12 +13,36 @@ const Product = () => {
   const [image, setImage] = useState(null);
   const [editingIndex, setEditingIndex] = useState(-1); // State to track the index of the product being edited
 
+  const productDataRef = collection(database, "products"); 
+
+  useEffect(() => {
+    const queryPosts = query(productDataRef,  where("userid", "==", auth.currentUser.uid) );
+    const unsubscribe = onSnapshot(queryPosts, (snapShot) => {
+      let posts = [];
+      snapShot.forEach((doc) => {
+        console.log("pushing data...");
+        posts.push({ ...doc.data(), id: doc.id });
+        console.log(doc.data());
+      });
+      setProducts(posts);
+    });
+    return () => unsubscribe();
+  }, []);
+
+    /*
+    const productsRef = collection(database, "Products");
+    
+    const postProduct = async (product) => {
+          await addDoc(productsRef, product);
+          console.log(`added product to database: ${product}`);
+  }*/
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newProduct = {
       name: productName,
       price: price,
-      marketplace: marketplace,
+      market: marketplace,
       quantity: quantity,
       image: image ? URL.createObjectURL(image) : null 
     };
@@ -48,7 +74,7 @@ const Product = () => {
     const productToEdit = products[index];
     setProductName(productToEdit.name);
     setPrice(productToEdit.price);
-    setMarketplace(productToEdit.marketplace);
+    setMarketplace(productToEdit.market);
     setQuantity(productToEdit.quantity);
     setImage(null); // Reset the image input
     setEditingIndex(index);
@@ -134,7 +160,7 @@ const Product = () => {
                   {product.image && (
                     <img src={product.image} alt={product.name} className="w-full h-32 object-cover mb-2" />
                   )}
-                  <div className="mb-2">{product.name} - K{product.price} - {product.marketplace} - {product.quantity}</div>
+                  <div className="mb-2">{product.name} - K{product.price} - {product.market} - {product.quantity}</div>
                 </div>
                 <div>
                   <button
